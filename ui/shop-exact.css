@@ -1,0 +1,22 @@
+#phone #game[data-page=shop]{position:absolute;inset:0;border:0;padding:0;display:block;background:#be8f4b}
+#phone #game[data-page=shop]:before,#phone #game[data-page=shop]>.page-title{display:none}
+.shop-exact{position:absolute;inset:0;color:#57371e;background:linear-gradient(#31bcdf 0 90px,#b2803c 90px 100%);font-weight:bold}
+.guild-module-screen{--guild-module-background:url('references/shop.png')}
+.shop-exact-stats{position:absolute;top:16px;left:20px;right:20px;display:flex;gap:10px;height:57px;z-index:2}.shop-exact-stats>span{display:flex;flex:1;align-items:center;justify-content:center;gap:4px;background:linear-gradient(#739c39,#446d25);border:3px solid #f9ecc2;border-radius:20px;box-shadow:0 0 0 2px #7e9b68;color:#fff9e3;font-size:24px;white-space:nowrap}.shop-exact-stats .icon{width:36px;height:40px}
+.shop-exact-counter{position:absolute;top:80px;left:0;right:0;height:349px;background:var(--guild-module-background) 0 -80px/720px 1280px no-repeat}
+.shop-exact-main-tabs{position:absolute;left:20px;right:20px;top:430px;height:57px;display:flex;gap:9px}.shop-exact-main-tabs .game-btn{flex:1}
+#phone .shop-exact .game-btn{border:2px solid #ac7b30;border-image:none;border-radius:12px;box-shadow:inset 0 0 0 3px #fff0a9;background:linear-gradient(#ffe757,#ffbe00);color:#fff9e3;-webkit-text-stroke:3px #815829;paint-order:stroke fill;font-size:27px;padding:4px 9px;min-height:0}
+#phone .shop-exact-main-tabs .secondary{background:linear-gradient(#8f7756,#71583d);box-shadow:inset 0 0 0 3px #bfad8b}
+.shop-exact-donation{position:absolute;top:490px;left:17px;right:17px;height:119px;display:flex;align-items:center;gap:17px;border:5px solid #d0a46a;box-shadow:inset 0 0 0 3px #fff7dd;border-radius:23px;background:#fff0cd;padding:8px 15px}.shop-exact-donation>.icon{width:104px;height:94px}.shop-exact-donation>div{flex:1}.shop-exact-donation strong{font-size:32px;display:block;margin-bottom:12px}.shop-exact-donation span{font-size:23px;white-space:nowrap}.shop-exact-donation b{color:#397e16}.shop-exact-donation .game-btn{height:64px}
+.shop-exact-categories{position:absolute;left:24px;right:24px;top:622px;height:53px;display:flex;gap:8px}.shop-exact-categories .game-btn{flex:1;padding:2px!important;font-size:28px!important;border-radius:16px 16px 0 0!important}
+#phone .shop-exact-categories .secondary{background:linear-gradient(#85b847,#56842d);box-shadow:inset 0 0 0 3px #b9d783}
+.shop-exact-products{position:absolute;top:678px;left:20px;right:20px;bottom:13px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:8px;padding:6px;border:4px solid #b29a62;box-shadow:0 0 0 3px #fff6c9;border-radius:22px;background:#f8edc9}
+.shop-exact-product{position:relative;min-width:0;border:3px solid #d1ba80;border-radius:19px;box-shadow:inset 0 0 0 2px #fffefa;background:linear-gradient(#fff8df,#f9eac1)}
+.shop-exact-product h3{font-size:27px;text-align:center;margin:7px 0 0}.shop-concept-icon{display:grid;place-items:center;width:140px;height:136px;flex:none;border:2px solid #dec783;border-radius:16px;background:radial-gradient(circle at 48% 42%,#fffdf3 0 32%,#f2dfac 63%,#d9b66a 100%);box-shadow:inset 0 0 0 3px #fff5d4,0 2px 3px #76511f33}.shop-gem-icon{display:block;width:116px;height:116px;object-fit:contain;filter:drop-shadow(0 5px 4px #61421f55)}
+.shop-exact-product>.shop-concept-icon{position:absolute;left:10px;top:42px}.shop-exact-price{position:absolute;top:43px;left:157px;right:9px;height:89px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(#a8c96a,#80aa3c);border-radius:15px;color:#fff9dc}.shop-exact-price b{font-size:24px;white-space:nowrap}.shop-exact-price span{font-size:21px;margin-top:8px;border-top:2px solid #b7d781;padding-top:7px;width:90%;text-align:center}
+#phone .shop-exact-product>.game-btn{position:absolute;top:135px;left:157px;right:9px;height:43px;font-size:28px;padding:1px}
+.shop-category-empty{grid-column:1/-1;grid-row:1/-1;display:grid;place-content:center;font-size:30px;color:#87714b}
+#phone .shop-exact .game-btn:before{display:none!important}
+#phone .shop-exact-categories .secondary{background:linear-gradient(#85b847,#56842d)!important;border:2px solid #779446;box-shadow:inset 0 0 0 3px #b9d783}
+#phone .shop-exact-main-tabs .secondary{background:linear-gradient(#8f7756,#71583d)!important;border:2px solid #a2824f;box-shadow:inset 0 0 0 3px #bfad8b}
+.shop-exact-counter{top:87px;height:342px;background-position:0 -87px}

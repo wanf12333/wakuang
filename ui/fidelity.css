@@ -1,0 +1,79 @@
+/* One shared nine-slice parchment/wood shell; content determines height. */
+#phone:not([data-modal=pass]) .modal{border:28px solid transparent;border-image:url('assets/visual/popup-wood-v3.png') 170 fill / 38px / 0 stretch;background:none;border-radius:28px;padding:0 7px 12px;max-height:1120px;box-shadow:0 15px 35px #14231570}
+#phone:not([data-modal=pass]) .modal>h2{height:84px;min-height:84px;flex:none;margin:-14px 20px 12px;padding:17px 8px;font-size:32px;letter-spacing:1px}
+#phone:not([data-modal=pass]) .modal-content{max-height:950px;padding:3px 9px 7px;scrollbar-width:thin}
+#phone .dialog-hero{display:flex;align-items:center;justify-content:center;gap:22px;padding:10px 0 20px;min-height:148px}
+#phone .dialog-art{width:132px;height:132px;object-fit:contain;flex:none;filter:drop-shadow(0 5px 2px #8d60232b)}
+#phone .dialog-hero h3{font-size:30px;margin:0 0 10px;color:#533317}
+#phone .dialog-hero p{font-size:22px;margin:0;line-height:1.4}
+#phone .quality-chip{background:#729939;color:white;border:2px solid #cbdf88;border-radius:8px;padding:3px 12px;font-size:20px}
+#phone .detail-group{border:2px solid #dfbd7c;background:#fff1cc9c;box-shadow:inset 0 0 0 2px #fff9e8;border-radius:13px;padding:3px 14px}
+#phone .detail-stat{display:flex;align-items:center;gap:10px;min-height:60px;padding:10px 0;border-bottom:1px solid #dec08a;font-size:24px}
+#phone .detail-stat:last-child{border-bottom:0}
+#phone .detail-stat .icon{width:34px;height:34px;flex:none}
+#phone .detail-stat span{flex:1}#phone .detail-stat strong{text-align:right;font-size:25px}
+#phone .dialog-total{display:flex;align-items:center;justify-content:center;gap:14px;background:#deedac;border:2px solid #a1b963;border-radius:12px;margin-top:15px;padding:13px 8px;font-size:24px}
+#phone .dialog-total b{font-size:32px;color:#3d721f}#phone .dialog-total .icon{width:38px;height:38px}
+#phone .dialog-caption{text-align:center;font-size:20px;margin:13px 0 0;line-height:1.4}
+#phone .modal-content .actions{margin-top:18px;gap:10px}
+#phone .modal-content .game-btn{min-height:68px;padding:12px 8px;font-size:25px}
+#phone .modal-content .quantity{gap:8px;margin:17px 0}
+#phone .modal-content .quantity output{min-width:80px;font-size:30px;border-radius:9px;background:#fff9e8;box-shadow:inset 0 3px 4px #9d762428}
+#phone .level-pager{display:flex;align-items:center;gap:12px;justify-content:space-between;font-size:29px}
+#phone .level-pager .game-btn{font-size:22px;min-height:58px}
+#phone .level-art{height:205px;overflow:hidden;border:4px solid #c29c58;border-radius:15px;margin:17px 0}
+#phone .level-art img{width:100%;height:100%;object-fit:cover}
+#phone[data-modal=reward] .modal{max-width:580px}
+#phone[data-modal=reward] .reward-list{padding:25px 0 18px;gap:15px;background:radial-gradient(ellipse,#ffe394,transparent 75%)}
+#phone[data-modal=reward] .reward-item{width:88px;font-size:19px}
+#phone[data-modal=reward] .reward-item img{width:65px;height:65px}
+#phone #game:is([data-page=ranking],[data-page=lending],[data-page=notes],[data-page=debt]):before{inset:135px 14px 40px;border:9px solid #40c9ed;border-image:none;border-radius:24px;box-shadow:inset 0 0 0 4px #e2ffff,0 0 0 3px #f4ffff;background:linear-gradient(110deg,#85e6ef,#1cace1)}
+#game[data-page=ranking] .hud{display:none}
+#game[data-page=ranking] .page-title{margin:0 60px 8px;height:96px}
+#game[data-page=ranking] .ranking-tabs{margin:0 12px;gap:5px}
+.rank-rules{border:0;background:none;font-size:20px;color:#155670;padding:0}
+.podium{display:flex;align-items:flex-end;justify-content:center;height:292px;flex:none;margin:0 15px;gap:8px}
+.podium-place{width:32%;text-align:center}.podium-place .medal{height:148px;position:relative}.podium-place .medal img{height:100%;width:100%;object-fit:contain}.podium-place .medal b{position:absolute;left:0;right:0;top:33px;font-size:51px;color:#fff8b0;text-shadow:2px 3px #76521a}
+.podium-place.place-0 .medal{height:180px}.podium-place.place-0 .medal b{top:46px}
+.podium-place.place-1 .medal{filter:grayscale(1)}.podium-place.place-2 .medal{filter:hue-rotate(335deg) saturate(.7)}
+.podium-place section{display:flex;flex-direction:column;gap:7px;border:4px solid #ab9e83;border-radius:13px;background:#fff1ca;padding:15px 5px;box-shadow:inset 0 0 0 3px #fff9e9}
+.podium-place strong{font-size:24px}.podium-place section b{font-size:24px;color:#693c16}
+.rank-head{display:grid;grid-template-columns:80px 1fr 170px;text-align:center;border:3px solid #e3f1a7;border-radius:12px;background:#7baa26;color:white;padding:10px 8px;margin:0 12px;font-weight:bold}
+#game .ranking-list{padding:0 12px 5px}.rank-entry{display:grid;grid-template-columns:62px 1fr 170px;align-items:center;gap:8px;background:#fff1ce;border:2px solid #c6ad7c;border-radius:11px;margin-bottom:5px;min-height:79px;padding:9px 12px;font-size:23px}.rank-entry>b{background:#71a22b;border:3px solid #d6e9a3;border-radius:50%;width:48px;height:48px;display:grid;place-items:center;color:white}.rank-entry strong{text-align:right}
+.self-rank{display:flex;align-items:center;justify-content:space-around;background:linear-gradient(#ffe675,#ffce38);border:4px solid #fff9d3;border-radius:16px;padding:15px 8px;margin:0 12px;flex:none}.self-rank span{font-size:19px;text-align:center}.self-rank b{display:block;font-size:27px}.self-rank>strong{font-size:32px}
+.loan-summary{display:flex;gap:10px;margin:0 8px}.loan-summary>div{display:flex;align-items:center;justify-content:center;gap:10px;flex:1;background:#d8f7fc;border:3px solid #fffbed;border-radius:15px;padding:8px;font-size:20px}.loan-summary b{display:block;font-size:29px}
+.loan-refresh{display:flex;align-items:center;justify-content:space-between;padding:5px 15px;font-size:22px;background:#fff1ce;border-radius:12px;margin:0 8px}
+#game[data-page=lending] .hud{display:none}#game[data-page=lending] .page-title{margin:0 55px;height:96px}
+#game[data-page=lending] .loan-offers .note{height:151px;border:3px solid #cea56c;border-radius:16px;box-shadow:inset 0 0 0 3px #fffbed;background:#fff2d2;gap:12px}
+#game .loan-offers .avatar{width:110px;height:110px;border-radius:12px}.offer-body{flex:1;min-width:0}.offer-body>strong{font-size:27px}.offer-stats{display:flex;justify-content:space-between;margin-top:12px}.offer-stats span{font-size:19px;color:#805c34}.offer-stats b{display:block;font-size:23px;margin-top:4px;color:#573415}
+#game[data-page=notes] .note{background:#fff3d2;border:3px solid #ccab70;border-radius:14px;box-shadow:inset 0 0 0 3px #fff9e8}
+#game:is([data-page=members],[data-page=manage],[data-page=audit],[data-page=apply]) .paper.member{background:#fff1ce;border:3px solid #d8b676;border-radius:15px;box-shadow:inset 0 0 0 3px #fffbed}
+#phone #game:is([data-page=guild],[data-page=aid],[data-page=mine],[data-page=apply],[data-page=members],[data-page=manage],[data-page=audit]){background:linear-gradient(135deg,#87b837,#367643);border:18px solid transparent;border-image:url('assets/visual/popup-wood-v3.png') 170 / 25px / 0 stretch;padding:30px 15px 38px;gap:14px}
+#game[data-page=guild] .page-title{position:static;height:90px;margin:0 50px;flex:none}
+.guild-identity{display:flex;align-items:center;gap:18px;background:#fff1ce;border:4px solid #e5c38a;border-radius:16px;padding:18px;margin-top:12px}.guild-identity>img{width:104px;height:104px;object-fit:contain}.guild-identity h3{font-size:30px;margin:0}.guild-identity small{font-size:23px;color:#528328}.guild-identity p{font-size:20px;margin:10px 0 0}
+.compact-members{background:#fff1ce;border:4px solid #d9bc82;border-radius:16px;padding:12px;display:flex;align-items:center;flex-wrap:wrap;gap:10px}.compact-members>div{display:flex;flex:1;min-width:210px}.compact-members .avatar{width:77px;height:83px;margin-right:-8px;object-fit:contain;border-radius:50%;background:#ace0e4;border:3px solid #fff5d4}.compact-members .game-btn{font-size:21px;padding:9px;min-height:58px}
+#game[data-page=guild] .guild-modules{margin-top:7px;max-height:455px}#game[data-page=guild] .module-card{border-color:#c89a52;box-shadow:inset 0 0 0 3px #fffcdf,0 4px #3b5926}.module-card span{font-size:19px}
+#game[data-page=aid] .guild-scene{display:none}#game[data-page=aid] .page-title{position:static;height:90px;margin:0 50px}#game[data-page=aid] .aid-order{position:relative;flex:none;padding:24px;background:#fff0ce;border:4px solid #edce8b;box-shadow:inset 0 0 0 3px #fff8de}
+#game[data-page=aid] .aid-order:first-of-type{margin-top:10px}#game[data-page=aid] .aid-content>img{width:144px;height:144px}#game[data-page=aid] .aid-content{margin:22px 0}#game[data-page=aid] .aid-order h3{text-align:center;font-size:30px}
+#game[data-page=mine] .mine-illustration{height:330px;border-color:#f4d797}#game[data-page=mine] .aid-order{border-color:#e0bd79}
+#game[data-page=members] .member{min-height:174px}#game[data-page=members] .member .avatar{width:113px;height:113px;border-radius:50%;background:#96dcec;border:4px solid #fff9d8}#game[data-page=members] .member strong{font-size:30px}
+#game[data-page=debt] .hud{display:none}#game[data-page=debt] .page-title{margin:0 60px;height:96px}
+.debt-overview{display:flex;justify-content:space-around;text-align:center;background:#fff2d0;border:4px solid #e6c286;border-radius:17px;padding:25px 8px;flex:none}.debt-overview b{display:block;font-size:39px;margin-top:10px}
+.debt-goal{display:flex;align-items:center;gap:20px;padding:20px 16px;background:#467d22;border:5px solid #ffe59a;border-radius:18px;color:#fff4b9;flex:none}.debt-goal img{width:100px;height:130px;object-fit:contain}.debt-goal h3{font-size:35px;margin:8px 0}.debt-goal p{font-size:23px;margin:0}.debt-goal small{font-size:21px}
+.debt-illustration{display:flex;align-items:center;justify-content:center;flex:1;min-height:150px;background:#fff2ce;border:3px solid #e4cc96;border-radius:18px;overflow:hidden}.debt-mole{width:240px;height:100%;max-height:275px;object-fit:contain}.debt-illustration>div{text-align:center}.debt-illustration>div img{display:block;width:95px;height:95px;margin:auto;object-fit:contain}.debt-illustration strong{display:block;font-size:23px}.debt-illustration b{font-size:40px;color:#467b21}
+.debt-controls{border:3px solid #e0d2a8;background:#fff2d0;border-radius:14px;padding:10px 15px;text-align:center;flex:none}.debt-controls h3{margin:0;font-size:25px}.debt-controls .quantity{margin:10px 0}.debt-controls p{font-size:22px;margin:10px 0}
+#game[data-page=gameplay] .hud,#game[data-page=gameplay]>.page-title{display:none}#game[data-page=gameplay]:before{display:none}
+.play-top{display:flex;gap:12px}.play-top>b{flex:1;text-align:center;background:#a66b30;border:4px solid #e8b65c;box-shadow:inset 0 0 0 3px #744915;border-radius:12px;color:#fff0c8;padding:10px;font-size:30px}.play-instruction{font-size:28px;color:#fff4a1;text-align:center;text-shadow:2px 2px #63451c;margin:2px 0;font-weight:bold}
+.board-coordinates{position:relative;padding:37px 0 0 32px;flex:none}.column-coordinates{position:absolute;left:32px;right:0;top:0;display:flex;height:32px;gap:3px}.row-coordinates{position:absolute;top:37px;bottom:0;left:0;display:flex;flex-direction:column;width:28px;gap:3px}.column-coordinates span,.row-coordinates span{flex:1;display:grid;place-items:center;background:#99682d;border:2px solid #c99c59;border-radius:4px;color:#fff3bf;font-size:22px;font-weight:bold}
+#phone .ranking-tabs .secondary:before{filter:hue-rotate(150deg) saturate(.8)}
+#phone[data-modal=pass] .modal .license-card{height:250px;min-height:250px}
+#phone[data-modal=pass] .modal .license-rights{flex:0 0 270px;min-height:270px}
+#phone[data-modal=pass] .modal-content .actions{margin-top:12px;flex:none}
+#phone[data-modal=pass] .modal .license-live{top:20%;gap:8px;line-height:1.2}
+#phone[data-modal=pass] .modal .license-live strong{font-size:27px}
+#phone[data-modal=pass] .modal .license-stamp{font-size:28px;padding:4px 14px}
+#phone[data-modal=pass] .modal .license-live small{font-size:17px}
+#game[data-page=gameplay] .board{aspect-ratio:.84;gap:3px;background:#634622;border:4px solid #b88642;border-radius:8px;box-shadow:0 0 0 3px #eac47a}
+#game[data-page=gameplay] .tile{border-radius:5px;background-size:118% 118%;background-color:#9b723c}
+#game[data-page=gameplay]>.game-btn.secondary:before{filter:hue-rotate(155deg) saturate(1.3)}
+#game[data-page=gameplay] .play-top>b{background:none;border:8px solid transparent;border-image:url('assets/visual/title-wood-v2.png') 160 230 fill / 15px / 0 stretch;box-shadow:none}

@@ -1,0 +1,107 @@
+#phone #game[data-page=debt]{display:block;inset:0;border:0;padding:0;background:#fff4d4 url('assets/visual/debt-shell.png') center/100% 100% no-repeat}
+/* Outfit changes only at the final, fully repaid milestone. Reuse the home atlases. */
+#phone #game[data-page=debt] .panda-stage[data-outfit=prisoner]{background-image:url('assets/visual/panda-prisoner-helmet-v1.png')}
+#phone #game[data-page=debt] .debt-final-goal{left:48px;right:48px;top:570px;height:142px;padding:12px 24px;gap:20px}
+#phone #game[data-page=debt] .debt-final-goal .debt-contract{width:98px;height:108px}
+#phone #game[data-page=debt] .debt-final-goal .debt-contract b{font-size:14px;top:19px;left:20px}
+#phone #game[data-page=debt] .debt-final-goal small{font-size:21px;letter-spacing:2px}
+#phone #game[data-page=debt] .debt-final-goal h3{font-size:36px;margin:7px 0}
+#phone #game[data-page=debt] .debt-final-goal strong{font-size:20px}
+#phone #game[data-page=debt] .debt-outfit-comparison{position:absolute;left:48px;right:48px;top:736px;height:258px;display:grid;grid-template-columns:minmax(0,1fr) 60px minmax(0,1fr);gap:12px;align-items:center}
+#phone #game[data-page=debt] .debt-outfit-card{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:0;border-image:url('assets/native-ui/parchment-panel.png') 32 fill / 16px / 0 stretch;padding:10px 8px;color:#705333}
+#phone #game[data-page=debt] .debt-outfit-label{font-size:22px;line-height:30px;white-space:nowrap}
+#phone #game[data-page=debt] .debt-outfit-card small{font-size:19px;line-height:26px;white-space:nowrap;color:#8a7254}
+#phone #game[data-page=debt] .debt-outfit-card.is-future .debt-outfit-label{color:#426e2b}
+#phone #game[data-page=debt] .debt-outfit-card .panda-stage{width:162px;height:162px;flex:none;background-image:url('assets/visual/panda-miner-expressions-v2.png');background-size:200% 200%;background-position:var(--panda-x) var(--panda-y);background-repeat:no-repeat}
+#phone #game[data-page=debt] .debt-outfit-card .panda-stage[data-outfit=prisoner]{background-image:url('assets/visual/panda-prisoner-helmet-v1.png')}
+#phone #game[data-page=debt] .debt-outfit-arrow{font-size:46px;color:#c99026;text-align:center;text-shadow:0 2px #fff3bc}
+#phone #game[data-page=debt] .debt-outfit-comparison.is-cleared{grid-template-columns:1fr;left:168px;right:168px}
+#phone #game[data-page=debt]:before,#phone #game[data-page=debt]>.hud{display:none}
+#phone #game[data-page=debt]>.page-title{position:absolute;left:178px;right:171px;top:39px;height:83px;margin:0;padding:0;background:none!important;font-size:64px;color:#fff9dc;-webkit-text-stroke:7px #72351e;paint-order:stroke fill;text-shadow:0 4px #823b21;z-index:2}
+.debt-exact{position:absolute;inset:0;color:#342411;font-weight:bold}
+.debt-totals{position:absolute;left:42px;right:42px;top:163px;height:104px;display:grid;grid-template-columns:1.15fr 1fr 1.15fr;text-align:center;align-items:center}
+.debt-totals>div+div{border-left:2px dashed #c39e67}.debt-totals span{display:block;font-size:29px}.debt-totals b{display:block;font-size:39px;line-height:1.6;color:#622a0d;letter-spacing:-1px}.debt-totals b.paid{color:#29620a}
+.debt-milestones{position:absolute;top:290px;left:35px;right:35px;height:207px;border-top:8px solid #5bc9e9;border-radius:27px 27px 0 0;background:#fff5d9}
+.debt-stage-icons{display:grid;grid-template-columns:repeat(5,1fr);height:128px;margin-top:4px}
+#phone .debt-stage-icons .panda-stage,#phone .debt-later-stage .panda-stage{background-image:url('assets/visual/panda-miner-expressions-v2.png');background-size:200% 200%;background-position:var(--panda-x) var(--panda-y);background-repeat:no-repeat;clip-path:none;aspect-ratio:1;width:128px;height:128px;justify-self:center}
+#phone .debt-later-stage .debt-stage-icon.panda-stage{width:185px!important;height:185px!important;background-size:200% 200%!important;background-position:var(--panda-x) var(--panda-y)!important;clip-path:none!important;flex-shrink:0}
+.debt-stage-icon{display:block;background-image:url('assets/visual/debt-stages.png');background-size:500% 100%;background-position:calc(var(--stage)*25%) center;background-repeat:no-repeat;height:100%;min-width:0}
+.debt-track{position:absolute;top:146px;left:54px;right:54px;height:15px;background:#775034;border:3px solid #63391d;border-radius:15px;box-shadow:inset 0 2px #d8b282,0 2px #fff4c6}.debt-track>i{display:block;height:100%;background:linear-gradient(#fff379,#ffbd0c);border-radius:8px}
+.debt-stage-labels{position:absolute;top:131px;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);text-align:center;font-size:21px;white-space:nowrap}
+.debt-stage-labels i{display:block;margin:0 auto 9px;width:39px;height:39px;border:5px solid #e7c79a;outline:2px solid #66381c;border-radius:50%;background:#86562d;box-shadow:inset 0 0 0 3px #623916}.debt-stage-labels i.lit{background:#ffe22f;border-color:#fff9b0;outline-color:#e29300;box-shadow:0 0 8px #ffbe18,inset 0 0 0 3px #ef9a06}
+.debt-near{position:absolute;left:124px;right:124px;top:511px;height:47px;display:flex;align-items:center;justify-content:center;gap:8px;background:#f1e5ad;border:2px solid #869150;border-radius:10px;font-size:24px;white-space:nowrap}.debt-near b{font-size:29px;color:#267416}
+.debt-final-goal{position:absolute;left:58px;right:54px;top:576px;height:157px;border:6px solid #ffcf22;border-radius:24px;background:linear-gradient(100deg,#207329,#397e0a);box-shadow:0 0 0 3px #338330,inset 0 0 0 3px #ffeb93;display:flex;align-items:center;padding:7px 15px;gap:13px}
+.debt-final-goal>img{width:128px;height:139px;object-fit:contain;transform:rotate(-8deg)}.debt-final-goal>div{text-align:center;flex:1;min-width:0}.debt-final-goal small{font-size:26px;color:#fff39b}.debt-final-goal h3{font-size:44px;line-height:1.25;margin:5px 0;color:#fff882;-webkit-text-stroke:4px #20380b;paint-order:stroke fill;text-shadow:0 3px #173807;white-space:nowrap}.debt-final-goal strong{font-size:22px;color:#fff49b;white-space:nowrap}
+.debt-stage-captions{position:absolute;left:65px;right:58px;top:752px;display:flex;justify-content:space-between;gap:65px}.debt-stage-captions span{flex:1;text-align:center;background:#f1e5ae;border:2px solid #8c9554;border-radius:9px;padding:5px 0;font-size:23px;white-space:nowrap}
+.debt-before-after{position:absolute;left:25px;right:24px;top:792px;height:292px;background:url('assets/visual/debt-before-after.png') center/100% 100% no-repeat}
+.debt-arrow{position:absolute;left:43%;top:31%;font-size:80px;color:#ffc612;-webkit-text-stroke:4px #915011;paint-order:stroke fill;text-shadow:0 0 5px #fff;line-height:1}
+.debt-later-stage{position:absolute;left:40px;right:40px;top:792px;height:284px;display:flex;justify-content:space-around;gap:60px}.debt-later-stage .debt-stage-icon{width:250px;height:260px}
+.debt-hut-badge{position:absolute;left:392px;right:70px;top:1033px;height:70px;text-align:center;padding:5px;background:linear-gradient(#5b9713,#2c6b07);border:4px solid #aace33;box-shadow:0 0 0 2px #356915;border-radius:13px;color:#fffde3}.debt-hut-badge strong{display:block;font-size:25px}.debt-hut-badge span{font-size:18px}
+.debt-payment{position:absolute;left:37px;right:36px;top:1110px;height:122px;border:4px solid #5acce9;background:linear-gradient(#199ecb,#0089bf);border-radius:22px 22px 0 0;display:flex;color:#fffbe4;padding:5px 14px;gap:15px}
+.debt-wallet{position:relative;width:185px;flex:none;padding-left:6px}.debt-wallet span{font-size:25px;-webkit-text-stroke:2px #214559;paint-order:stroke fill}.debt-wallet>img{position:absolute;left:74px;top:0;width:90px;height:88px;object-fit:contain}.debt-wallet b{display:block;font-size:30px;margin-top:25px;color:#fff582;-webkit-text-stroke:3px #153a4b;paint-order:stroke fill}
+.debt-payment-right{flex:1;min-width:0}.debt-payment-right h3{font-size:23px;text-align:center;margin:0 0 4px;-webkit-text-stroke:2px #164057;paint-order:stroke fill}.debt-payment-right .quantity{display:flex;gap:8px;align-items:center;margin:0}.debt-payment-right output{flex:1;min-width:0;text-align:center;background:#115779;border:3px solid #58c7e8;border-radius:9px;color:white;font-size:33px;line-height:48px}
+#phone #game[data-page=debt] .game-btn{background:linear-gradient(#ffde49,#ffc42a 55%,#eea411);border:3px solid #9b6419;border-image:none;border-radius:12px;box-shadow:inset 0 0 0 3px #fff3af,0 3px #734f1c;color:#fff7dc;-webkit-text-stroke:3px #79421a;paint-order:stroke fill;text-shadow:0 2px #784b1b}
+#phone #game[data-page=debt] .quantity .game-btn{min-height:54px;height:54px;padding:0 10px;font-size:30px}.debt-submit{position:absolute;left:177px;right:165px;top:1210px;height:63px}#phone #game[data-page=debt] .debt-submit .game-btn{width:100%;min-height:61px;height:61px;font-size:34px;padding:0 8px;white-space:nowrap}
+/* Keep live actions within the 720x1280 safe region. */
+.debt-before-after{height:248px}.debt-later-stage{height:248px}.debt-later-stage .debt-stage-icon{height:240px}
+.debt-hut-badge{top:994px;height:61px}.debt-hut-badge strong{font-size:22px}.debt-hut-badge span{font-size:16px}
+.debt-payment{top:1062px;height:102px}.debt-submit{top:1158px}
+.debt-stage-icon{background-size:500% 300%}
+.debt-before-after{top:742px;height:314px}.debt-before-after .debt-arrow{top:45%}
+.debt-before-after{top:720px;height:355px}
+.debt-hut-badge{top:994px;height:65px}.debt-hut-badge strong{line-height:26px}.debt-hut-badge span{display:block;line-height:19px}
+.debt-submit{top:1172px;height:51px}#phone #game[data-page=debt] .debt-submit .game-btn{height:51px;min-height:51px;font-size:32px}
+/* Alpha extraction trims transparent margins; use the delivered atlas bounds. */
+.debt-stage-icon{background-size:500% 170%}
+.debt-before-after{top:775px;height:280px}
+.debt-stage-captions{z-index:1}
+.debt-contract{position:relative;display:block;width:128px;height:139px;flex:none}.debt-contract img{width:100%;height:100%;object-fit:contain}.debt-contract b{position:absolute;top:24px;left:28px;font-size:18px;color:#57391e;transform:rotate(-10deg);white-space:nowrap}
+/* Debt dialog family reuses the page palette and existing contract PNG. */
+#phone:is([data-modal=repay],[data-modal=repaid],[data-modal=debtCleared],[data-modal=loan],[data-modal=note],[data-modal=guildDetail],[data-modal=applied],[data-modal=createGuild],[data-modal=exchange],[data-modal=contribute],[data-modal=aidRequest]) .modal{width:560px;max-width:100%;border:10px solid #38bce4;border-image:none;background:linear-gradient(115deg,#fff9e7,#fff0c8);border-radius:26px;box-shadow:0 0 0 4px #f7ffff,inset 0 0 0 4px #b1edf6,0 14px 30px #122b3850;padding:0 15px 20px}
+#phone:is([data-modal=repay],[data-modal=repaid],[data-modal=debtCleared],[data-modal=loan],[data-modal=note],[data-modal=guildDetail],[data-modal=applied],[data-modal=createGuild],[data-modal=exchange],[data-modal=contribute],[data-modal=aidRequest]) .modal>h2{height:auto;min-height:76px;margin:-27px 25px 14px;padding:14px 8px;background:linear-gradient(#ff8b56,#ff6347)!important;border:4px solid #954b27;border-radius:21px;box-shadow:inset 0 0 0 3px #ffe4a1,0 0 0 3px #f6ffff,0 5px #159ac9;color:#fff9dd;font-size:33px;line-height:1.25;-webkit-text-stroke:4px #813c24;paint-order:stroke fill;text-shadow:0 3px #9b4425}
+#phone:is([data-modal=repay],[data-modal=repaid],[data-modal=debtCleared],[data-modal=loan],[data-modal=note],[data-modal=guildDetail],[data-modal=applied],[data-modal=createGuild],[data-modal=exchange],[data-modal=contribute],[data-modal=aidRequest]) .modal-content{padding:7px 10px 0;overflow:auto}
+.debt-dialog-hero{display:flex;justify-content:center;align-items:center;gap:25px;padding:5px 0 18px}.debt-dialog-hero>img{width:117px;height:128px;object-fit:contain}.debt-dialog-hero>div>span{font-size:25px;font-weight:bold;color:#634024}.debt-dialog-hero strong{display:block;font-size:46px;color:#6d350c;line-height:1.4}.debt-dialog-hero strong .icon{width:40px;height:40px}.debt-dialog-hero .debt-dialog-success{color:#4a941d;font-size:48px;text-align:center}
+.debt-dialog-summary{border:2px solid #dfc18a;border-radius:14px;background:#fff6dd;padding:3px 15px;box-shadow:inset 0 0 0 2px #fffdf0}.debt-dialog-summary>div{display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:57px;font-size:23px}.debt-dialog-summary>div+div{border-top:1px solid #dbc89d}.debt-dialog-summary b{font-size:28px;color:#36791d}.debt-dialog-pass{text-align:center;font-size:22px;color:#4c752d}
+#phone:is([data-modal=repay],[data-modal=repaid],[data-modal=debtCleared],[data-modal=loan],[data-modal=note],[data-modal=guildDetail],[data-modal=applied],[data-modal=createGuild],[data-modal=exchange],[data-modal=contribute],[data-modal=aidRequest]) .actions{margin-top:18px}
+#phone:is([data-modal=repay],[data-modal=repaid],[data-modal=debtCleared],[data-modal=loan],[data-modal=note],[data-modal=guildDetail],[data-modal=applied],[data-modal=createGuild],[data-modal=exchange],[data-modal=contribute],[data-modal=aidRequest]) .game-btn{min-height:68px;padding:9px 12px;background:linear-gradient(#ffe455,#ffc521 55%,#f0a80d);border:3px solid #a56b20;border-image:none;box-shadow:inset 0 0 0 3px #fff5b4,0 3px #936b2a;border-radius:13px;color:#fff8e7;font-size:29px;-webkit-text-stroke:3px #865025;paint-order:stroke fill}
+/* Keep the lower section on three separate, aligned rows. */
+#phone .debt-stage-captions{top:752px;left:54px;right:54px;gap:86px}
+#phone .debt-stage-captions span{font-size:22px;line-height:30px;padding:3px 0}
+#phone .debt-later-stage{top:794px;left:54px;right:54px;height:185px;display:grid;grid-template-columns:1fr 86px 1fr;gap:0;align-items:center;justify-items:center}
+#phone .debt-later-stage .debt-stage-icon{width:192px;height:185px;background-size:500% 170%;clip-path:inset(0 9px)}
+/* Atlas crop: x=815..1182, y=235..620 at 0.48 scale; complete bag and coins. */
+#phone .debt-later-stage .debt-stage-icon[style*="--stage:2"]{width:176px;height:185px;background-size:992.64px 364.8px;background-position:-391.2px -112.8px;clip-path:none}
+#phone .debt-later-stage>.debt-stage-icon:only-child{grid-column:1/-1}
+#phone .debt-later-stage .debt-arrow{position:static;font-size:62px}
+#phone .debt-before-after{top:793px;left:54px;right:54px;height:185px;background-size:contain}
+#phone .debt-before-after .debt-arrow{top:35%;font-size:62px}
+#phone .debt-hut-badge{top:990px;left:54px;right:54px;height:40px;padding:4px 10px;display:flex;justify-content:center;align-items:center;gap:14px;border:2px solid #bac87a;background:#e9f0c9;box-shadow:none;color:#517b24;border-radius:10px}
+#phone .debt-hut-badge strong{font-size:22px;line-height:26px}
+#phone .debt-hut-badge span{font-size:19px;line-height:26px}
+#phone .debt-payment{top:1010px;left:90px;right:90px;height:130px;padding:14px 24px;display:grid;grid-template-columns:minmax(0,1fr);gap:0;border:2px solid #d7b773;border-radius:16px;background:#fff4d7;color:#674320}
+#phone .debt-wallet{width:auto;padding:0;display:grid;grid-template-columns:43px 1fr;grid-template-rows:28px 42px;align-content:center;align-items:center;column-gap:8px;border-right:1px solid #dbc28d}
+#phone .debt-wallet span{grid-column:1/-1;font-size:21px;line-height:28px;-webkit-text-stroke:0}
+#phone .debt-wallet>img{position:static;width:43px;height:43px}
+#phone .debt-wallet b{font-size:27px;line-height:42px;margin:0;color:#568322;-webkit-text-stroke:0}
+#phone .debt-payment-right h3{font-size:23px;line-height:30px;text-align:center;margin:0 0 12px;-webkit-text-stroke:0}
+#phone .debt-payment-right .quantity{display:grid;grid-template-columns:42px minmax(0,1fr) 42px 72px;gap:7px}
+#phone .debt-payment-right output{font-size:27px;line-height:42px;height:44px;background:#fffbea;color:#65421e;border:2px solid #d8b877;border-radius:9px}
+#phone #game[data-page=debt] .quantity .game-btn{width:100%;height:44px;min-height:0;padding:0;font-size:25px}
+#phone .debt-submit{top:1174px;left:130px;right:130px;height:54px}
+#phone #game[data-page=debt] .debt-submit .game-btn{height:54px;min-height:0;font-size:29px}
+#phone #game[data-page=debt] :is(.debt-payment,.debt-submit) .game-btn{background:none!important;border:0!important;border-image:url('assets/visual/guild-button-gold.svg') 14 fill / 14px / 0 stretch!important;border-radius:12px;box-shadow:none;clip-path:none;color:#fff9e3;-webkit-text-stroke:3px #815829;paint-order:stroke fill;text-shadow:none;display:flex;align-items:center;justify-content:center}
+#phone .debt-stage-icons .debt-stage-lending,#phone .debt-later-stage .debt-stage-lending{background-image:url('assets/visual/debt-contract.png');background-size:auto 94%;background-position:center;background-repeat:no-repeat;clip-path:none}
+#phone .debt-stage-labels>div:last-child span{font-size:19px;line-height:21px;display:block}
+#phone .debt-stage-labels small{display:block;font-size:16px;line-height:18px;color:#4e7e24}
+#phone .debt-stage-labels>div:last-child i{margin-bottom:4px}
+#phone .debt-stage-icons .debt-stage-icon[style*="--stage:3"]{width:112px;justify-self:center;background-size:558.36px 205.2px;background-position:-318.6px -40px}
+#phone .debt-stage-icons .debt-stage-lending,#phone .debt-later-stage .debt-stage-lending{background:none;display:flex;justify-content:center;align-items:center}
+#phone .debt-stage-lending .debt-contract{width:100%;height:100%;max-width:166px}
+#phone .debt-stage-lending .debt-contract b{font-size:16px;top:19%;left:24%}
+#phone .debt-later-stage .debt-stage-lending .debt-contract b{font-size:21px}
+#phone .debt-stage-icons .debt-stage-icon[style*="--stage:2"]{width:117px;justify-self:center;background-size:661.76px 243.2px;background-position:-260.8px -75.2px}
+#phone .debt-stage-icons .debt-stage-expression,#phone .debt-later-stage .debt-stage-expression{background-image:url('assets/visual/debt-mole-expressions-v1.png');background-size:300% 100%;background-position:calc(var(--expression)*50%) center;background-repeat:no-repeat;clip-path:none}
+#phone .debt-stage-icons .debt-stage-expression{width:128px;height:128px;justify-self:center}
+#phone .debt-later-stage .debt-stage-expression{width:185px;height:185px}
+#phone .debt-stage-icons .debt-stage-icon[style*="--stage:0"]{width:114px;height:128px;justify-self:center;background-size:620.4px 228px;background-position:0 -57px;clip-path:none}
+#phone .debt-later-stage .debt-stage-icon[style*="--stage:0"]{width:160px;height:185px;background-size:868.56px 319.2px;background-position:0 -72px;clip-path:none}

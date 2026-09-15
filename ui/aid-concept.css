@@ -1,0 +1,88 @@
+#phone #game[data-page=aid]{background:#79a62b}
+.aid-concept{position:absolute;inset:0;background:url('assets/visual/aid-shell-concept.png') center/100% 100% no-repeat;color:#593819;font-weight:bold}
+.aid-concept>h2{position:absolute;top:39px;left:247px;right:154px;margin:0;font-size:62px;white-space:nowrap;color:#fff8dc;-webkit-text-stroke:6px #603613;paint-order:stroke fill}
+.aid-concept-stats{position:absolute;top:155px;left:39px;right:38px;height:73px;display:flex;gap:8px;color:#fffbdc}.aid-concept-stats>span,.aid-concept-stats>button{flex:1;display:flex;gap:5px;align-items:center;font:inherit;background:none;border:0;padding:0;color:inherit;text-align:left;font-size:23px;min-width:0}.aid-concept-stats b{display:block;font-size:26px;margin-top:4px}.aid-concept-stats .icon{width:47px;height:53px}
+.aid-concept-tabs{position:absolute;top:245px;left:30px;right:30px;height:62px;display:flex;gap:8px}
+#phone .aid-concept .game-btn{background:linear-gradient(#ffe452,#ffc215);border:3px solid #b7882b;border-image:none;border-radius:14px;box-shadow:inset 0 0 0 3px #fff4a7;color:#fff9e2;font-size:29px;min-height:0;padding:4px;-webkit-text-stroke:3px #816027;paint-order:stroke fill}
+#phone .aid-concept .game-btn:before{display:none!important}
+#phone .aid-concept-tabs .game-btn{flex:1}#phone .aid-concept-tabs .secondary{background:linear-gradient(#98c53b,#638f16)!important;border-color:#a7ce4e;box-shadow:inset 0 0 0 3px #b4d658}
+.aid-concept-request{position:absolute;left:51px;top:344px;width:345px;height:323px}.aid-concept h3{font-size:32px;margin:0;text-align:center}.aid-concept-resource{display:flex;align-items:center;gap:24px;margin-top:19px}.aid-concept-resource>img{width:161px;height:151px;object-fit:contain}.aid-concept-resource strong{font-size:32px;display:block}.aid-concept-resource b{font-size:53px;color:#4e8a0c;display:block;margin-top:8px}.aid-concept-resource small{font-size:30px;color:#5c381b}
+.aid-concept progress{display:block;width:100%;height:23px;appearance:none;border:2px solid #8d5c25;border-radius:13px;overflow:hidden;background:#845327;margin-top:13px}.aid-concept progress::-webkit-progress-bar{background:#805022}.aid-concept progress::-webkit-progress-value{background:linear-gradient(#c3eb4d,#78b718)}
+.aid-concept-status{display:block;width:133px;font-size:24px;margin-top:21px;color:#497c1d}
+#phone .aid-concept-request>.game-btn{position:absolute;right:0;bottom:4px;width:190px;height:64px;background:linear-gradient(#a8d849,#67a315);border-color:#799d34;box-shadow:inset 0 0 0 3px #d3ef81}
+.aid-concept-orders-title{position:absolute;top:724px;left:230px;right:230px;color:#fff3cf}
+.aid-concept-orders{position:absolute;top:774px;left:42px;right:40px;height:346px;display:grid;grid-template-columns:repeat(3,1fr);gap:21px}.aid-concept-orders article{position:relative;text-align:center;display:flex;align-items:center;flex-direction:column;padding:0 7px}.aid-concept-orders h3{font-size:26px;color:#4e7e1e}.aid-concept-orders article>img{width:130px;height:109px;object-fit:contain;margin-top:6px}.aid-concept-orders strong{font-size:25px}.aid-order-count{font-size:34px;color:#548314}.aid-order-count small{font-size:25px;color:#5c381b}.aid-concept-orders progress{height:18px;margin-top:5px}.aid-concept-orders article>span{font-size:21px;margin-top:7px}.aid-order-reward{display:flex;align-items:center;justify-content:center;gap:8px;font-size:27px;margin-top:4px}.aid-order-reward .icon{width:32px;height:34px}
+#phone .aid-concept-orders .game-btn{position:absolute;bottom:0;width:95%;height:52px;font-size:29px}.aid-concept-orders .aid-empty-order{justify-content:center;color:#9a884f}
+.aid-concept-footer{position:absolute;top:1169px;left:190px;width:306px;text-align:center;color:#fffbd6;font-size:28px}.aid-concept-footer b{display:block;color:#cde958;font-size:43px;margin-top:12px}
+#phone .aid-concept-publish{position:absolute;top:1164px;right:26px;width:169px;height:88px;background:linear-gradient(#58bafb,#2681de);border:3px solid #b8e4fc;box-shadow:inset 0 0 0 3px #71b2e4;font-size:33px}
+.aid-concept-orders article:not(.aid-empty-order)>h3{position:absolute;top:0}
+.aid-concept-orders article>img{position:absolute;top:33px;height:90px;margin:0}
+.aid-concept-orders article>strong{position:absolute;top:127px}
+.aid-concept-orders .aid-order-count{position:absolute;top:155px}
+.aid-concept-orders progress{position:absolute;top:199px;width:90%;margin:0}
+.aid-concept-orders article:not(.aid-empty-order)>span{position:absolute;top:222px;margin:0}
+.aid-concept-orders .aid-order-reward{position:absolute;top:249px;margin:0}
+#phone .aid-concept .aid-concept-publish{top:1154px;right:24px;width:175px;height:106px;background:linear-gradient(#58bafb,#2681de)!important;border-color:#b8e4fc;box-shadow:inset 0 0 0 3px #71b2e4}
+/* Keep the shared association counter/header intact; scroll only aid content. */
+.aid-content-scroll{position:absolute;top:490px;left:0;right:0;bottom:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#a0ba4f #4e811f}
+.aid-content-height{position:relative;height:952px}
+.aid-content-height>.aid-concept{top:-328px;height:1280px;bottom:auto}
+.aid-content-height .aid-concept>h2,.aid-content-height .aid-concept-stats,.aid-content-height .aid-concept-tabs{display:none}
+/* One character only: keep the counter above, use reusable panels below. */
+.aid-content-height{height:780px}
+.aid-content-height>.aid-concept{top:0;height:780px;background:linear-gradient(110deg,#729f2c,#4f7f24);border:7px solid #a47735;border-top:0;box-shadow:inset 0 0 0 3px #d0af61}
+.aid-concept-request{left:17px;right:17px;top:14px;width:auto;height:246px;padding:13px 22px;border:3px solid #d1ae6c;box-shadow:inset 0 0 0 3px #fffaf0;background:linear-gradient(115deg,#fff9e4,#fae8b8);border-radius:21px}
+.aid-concept-request h3{font-size:30px}
+.aid-concept-resource{position:absolute;left:25px;top:54px;gap:17px;margin:0}.aid-concept-resource>img{width:109px;height:108px}.aid-concept-resource strong{font-size:28px}.aid-concept-resource b{font-size:42px;margin-top:4px}
+.aid-concept-request>progress{position:absolute;left:26px;right:26px;bottom:22px;width:calc(100% - 52px);height:21px;margin:0}
+.aid-concept-status{position:absolute;left:365px;top:65px;margin:0;width:224px;font-size:23px;text-align:center}
+#phone .aid-concept-request>.game-btn{right:31px;bottom:66px;width:225px;height:57px}
+.aid-concept-orders-title{top:279px;left:17px;right:17px;font-size:30px}
+.aid-concept-orders{top:325px;left:17px;right:17px;height:335px;gap:12px}
+.aid-concept-orders article{background:linear-gradient(115deg,#fff9e4,#fae8b8);border:3px solid #d1ae6c;box-shadow:inset 0 0 0 3px #fffaf0;border-radius:19px}
+.aid-concept-orders article:not(.aid-empty-order)>h3{top:9px}
+.aid-concept-orders article>img{top:40px;height:79px}
+.aid-concept-orders article>strong{top:119px}
+.aid-concept-orders .aid-order-count{top:147px}
+.aid-concept-orders progress{top:187px}
+.aid-concept-orders article:not(.aid-empty-order)>span{top:213px}
+.aid-concept-orders .aid-order-reward{top:241px}
+#phone .aid-concept-orders .game-btn{bottom:9px;width:88%;height:45px;font-size:25px}
+.aid-concept-footer{top:692px;left:18px;width:calc(100% - 36px);height:62px;background:linear-gradient(#83a944,#507e27);border:3px solid #b6c870;border-radius:17px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:25px}
+.aid-concept-footer b{display:inline;margin:0;font-size:34px}
+#phone .aid-concept .aid-concept-publish{display:none}
+/* Reuse the original blank ornamental card, not a new plain panel. */
+.aid-concept-request,.aid-concept-orders article{background-image:url('assets/visual/aid-shell-concept.png');background-size:347.826% 354.571%;background-position:5.848% 83.351%;background-repeat:no-repeat;border:0;box-shadow:none;border-radius:0}
+.aid-concept-request{top:11px;height:270px;padding-top:17px}
+.aid-concept-request h3:before,.aid-concept-request h3:after{content:'⟶';display:inline-block;color:#d6a64f;margin:0 13px;font-size:32px}
+.aid-concept-request h3:after{transform:rotate(180deg)}
+.aid-concept-resource{top:61px}
+.aid-concept-request>progress{bottom:80px;width:calc(100% - 65px);left:32px}
+.aid-concept-status{left:34px;top:211px;text-align:left;width:240px}
+#phone .aid-concept-request>.game-btn{bottom:21px;height:49px}
+.aid-concept-orders-title{top:294px;height:41px;background:linear-gradient(90deg,#a26a26,#bd8e42,#a26a26);border-top:3px solid #dcba6a;border-bottom:3px solid #8b5c26;left:13px;right:13px;font-size:29px;line-height:35px}
+.aid-concept-orders-title:before{content:'⟶';color:#f9e2a0;margin-right:18px}.aid-concept-orders-title:after{content:'⟵';color:#f9e2a0;margin-left:18px}
+.aid-concept-orders{top:341px;height:414px;gap:12px}
+.aid-concept-orders article:not(.aid-empty-order)>h3{top:17px}
+.aid-concept-orders article>img{top:57px;height:105px}
+.aid-concept-orders article>strong{top:165px}
+.aid-concept-orders .aid-order-count{top:193px}
+.aid-concept-orders progress{top:238px}
+.aid-concept-orders article:not(.aid-empty-order)>span{top:266px}
+.aid-concept-orders .aid-order-reward{top:295px;background:linear-gradient(#8a6937,#5d431f);border:2px solid #d1af65;box-shadow:inset 0 0 0 2px #533e22;border-radius:9px;color:#fff8df;min-width:100px;height:40px;padding:0 10px}
+#phone .aid-concept-orders .game-btn{bottom:20px;height:51px;background:linear-gradient(#ffdf41,#ffb500);border-radius:10px;box-shadow:inset 0 0 0 3px #ffe98d,0 3px #a97725}
+.aid-concept progress::-webkit-progress-value{background:repeating-linear-gradient(90deg,transparent 0 38px,#639417 39px 41px),linear-gradient(#c3eb4d,#78b718)}
+.aid-concept-request,.aid-concept-orders article{background-position:48.15% 83.351%}
+/* Request on the left, publish action on the right; no contribution bar. */
+.aid-concept-request{left:13px;right:auto;width:430px;height:270px;padding:16px 12px}
+.aid-concept-request h3{font-size:27px}.aid-concept-request h3:before,.aid-concept-request h3:after{margin:0 8px;font-size:27px}
+.aid-concept-resource{left:25px;top:58px;gap:22px}.aid-concept-resource>img{width:116px;height:108px}.aid-concept-resource strong{font-size:28px}.aid-concept-resource b{font-size:44px}
+.aid-concept-request>progress{left:26px;width:calc(100% - 52px);bottom:80px}
+.aid-concept-status{left:25px;top:212px;width:155px;font-size:21px}
+#phone .aid-concept-request>.game-btn{right:24px;bottom:20px;width:190px;height:49px;font-size:26px}
+#phone .aid-concept .aid-concept-publish{display:flex;align-items:center;justify-content:center;flex-direction:column;top:34px;right:16px;width:225px;height:226px;font-size:33px;border-radius:23px}
+#phone .aid-concept .aid-concept-publish:before{content:'';display:block!important;width:90px;height:94px;background:url('assets/visual/debt-contract.png') center/contain no-repeat;position:static;transform:none;opacity:1;margin-bottom:17px}
+.aid-daily{position:absolute;top:20px;right:16px;width:225px;height:90px;border:3px solid #bfd17b;border-radius:13px;background:linear-gradient(#749e24,#386e0f);padding:8px 9px;color:#fff6d5;text-align:center;font-size:20px}.aid-daily b{color:#d4ef46;font-size:28px}.aid-daily progress{margin-top:5px;height:13px}.aid-daily small{display:block;font-size:14px;margin-top:4px}
+#phone .aid-concept .aid-concept-publish{top:120px;height:151px;font-size:32px}
+#phone .aid-concept .aid-concept-publish:before{width:64px;height:64px;margin-bottom:7px}
+.aid-concept-orders article:nth-child(2)>h3{color:#27799f}.aid-concept-orders article:nth-child(3)>h3{color:#8258a4}

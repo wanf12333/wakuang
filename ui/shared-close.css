@@ -1,0 +1,11 @@
+/* Same gold nine-slice skin as the approved action buttons. The transparent
+   hit area is larger than the visual button, and stays within the frame. */
+#phone .ui-close{position:absolute;top:34px;right:8px;z-index:20;display:grid;place-items:center;width:88px;height:88px;min-width:88px;min-height:88px;padding:0;margin:0;border:0;border-radius:16px;background:none;box-shadow:none;filter:none;transform:none;cursor:pointer;touch-action:manipulation;line-height:1}
+#phone .ui-close::before{content:'';position:absolute;inset:12px;border:0;border-image:url('assets/visual/guild-button-gold.svg') 14 fill / 12px / 0 stretch;pointer-events:none}
+#phone .ui-close>svg{position:relative;display:block;width:42px;height:42px;pointer-events:none;overflow:visible}
+#phone .ui-close:hover:not(:disabled){filter:brightness(1.08)}
+#phone .ui-close:active:not(:disabled)::before{filter:brightness(.93)}
+#phone .ui-close:focus-visible{outline:4px solid #0899d1;outline-offset:-5px}
+#phone .ui-close:disabled{opacity:.5;cursor:default}
+#phone .modal>.ui-close{top:30px;right:0}
+#phone:not([data-modal=""]) #game>.ui-close{visibility:hidden}

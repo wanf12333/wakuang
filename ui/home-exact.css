@@ -1,0 +1,40 @@
+/* Scope the reference-resolution composition to home, including embedded review. */
+#phone #game[data-page=home]{inset:0;padding:0;border:0;display:block;overflow:hidden;background:none!important}
+#phone #game[data-page=home]>.page-title,
+#phone #game[data-page=home]>.smooth-frame,
+#phone #game[data-page=home]::before,
+#phone #game[data-page=home]::after{display:none!important}
+#phone .home-concept-scene{position:absolute;left:0;top:0;width:941px;height:1672px;transform:scale(.7651434644);transform-origin:top left;isolation:isolate;overflow:hidden;color:#fff7d5;font-weight:bold}
+#phone .hc-defs{position:absolute;pointer-events:none}
+/* Lift the platform and prison together to the user's marked region. */
+#phone .hc-background{position:absolute;inset:0;top:-330px;width:100%;height:125%;z-index:0}
+#phone .hc-architecture{position:absolute;left:130.5px;top:371.6px;width:680px;height:680px;z-index:1;display:block;padding:0;border:0;background:none;cursor:pointer;color:inherit;font:inherit;box-shadow:none}
+#phone .hc-architecture:focus-visible{outline:4px solid #2ad2ff;outline-offset:4px;border-radius:24px}
+.building-entry-label{display:none}
+#phone .hc-building{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+/* Temporarily hide only the scene character; retain the asset and HUD avatar. */
+#phone .hc-character{display:none;position:absolute;left:140px;top:580px;width:400px;height:510px;object-fit:contain;z-index:2;filter:drop-shadow(0 5px 3px #2c331c55)}
+#phone .hc-interface{position:absolute;inset:0;z-index:3;pointer-events:none}
+#phone .hc-control{position:absolute;display:block;padding:0;border:0;background:none;color:inherit;pointer-events:auto;text-decoration:none;box-shadow:none;filter:none;line-height:normal}
+#phone span.hc-control{pointer-events:none}
+#phone .hc-control>svg{display:block;width:100%;height:100%;overflow:visible}
+#phone .hc-control:focus-visible,#phone .hc-start:focus-visible{outline:4px solid #2ad2ff;outline-offset:0}
+
+/* VIP is a top-left resource entry: inactive is muted, active pops once and keeps a soft aura. */
+#phone #game[data-page=home] .home-concept-scene .native-coins{left:124px!important}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-pass{left:14px!important;top:18px!important;width:118px!important;height:126px!important;z-index:6;isolation:isolate;overflow:visible}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-pass>img{position:relative;z-index:2;width:88px;height:88px;transform-origin:50% 58%}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-pass>span{position:relative;z-index:2;font-size:23px;line-height:26px}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-pass>[data-vip-countdown]{min-width:86px;font-variant-numeric:tabular-nums lining-nums;letter-spacing:1px}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-pass::before{content:'';position:absolute;left:50%;top:43px;width:132px;height:132px;z-index:0;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#fffbd8e8 0 9%,#ffd658a8 20%,#f0a61d55 43%,transparent 70%);opacity:0;pointer-events:none}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-pass::after{content:'';position:absolute;left:50%;top:43px;width:98px;height:98px;z-index:1;transform:translate(-50%,-50%) scale(.72);border:4px solid #ffe584;border-radius:50%;box-shadow:0 0 12px #fff4a8,0 0 30px #ffbf32;opacity:0;pointer-events:none}
+#phone #game[data-page=home] .home-concept-scene .hc-pass.is-vip-inactive>img{filter:grayscale(1) brightness(.58) contrast(.86);opacity:.82}
+#phone #game[data-page=home] .home-concept-scene .hc-pass.is-vip-inactive>span{color:#c8c2b5;filter:grayscale(1);opacity:.8}
+#phone #game[data-page=home] .home-concept-scene .hc-pass.is-vip-active::before{opacity:.72;animation:vip-aura 2.6s ease-in-out 1s infinite}
+#phone #game[data-page=home] .home-concept-scene .hc-pass.is-vip-active::after{animation:vip-frame-burst .9s steps(6,end) both}
+#phone #game[data-page=home] .home-concept-scene .hc-pass.is-vip-active>img{animation:vip-badge-pop .9s steps(6,end) both,vip-badge-idle 2.8s ease-in-out 1s infinite;filter:drop-shadow(0 3px 2px #452406cc) drop-shadow(0 0 8px #ffd84b)}
+@keyframes vip-frame-burst{0%{opacity:0;transform:translate(-50%,-50%) scale(.55) rotate(-15deg)}35%{opacity:1}72%{opacity:.8;transform:translate(-50%,-50%) scale(1.12) rotate(4deg)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.32) rotate(9deg)}}
+@keyframes vip-badge-pop{0%{opacity:.2;transform:scale(.62) rotate(-8deg)}28%{opacity:1;transform:scale(1.18) rotate(4deg)}52%{transform:scale(.94) rotate(-2deg)}76%{transform:scale(1.06) rotate(1deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes vip-badge-idle{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.035)}}
+@keyframes vip-aura{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(.9)}50%{opacity:.82;transform:translate(-50%,-50%) scale(1.08)}}
+@media(prefers-reduced-motion:reduce){#phone #game[data-page=home] .home-concept-scene .hc-pass.is-vip-active::before{animation:none;opacity:.62}#phone #game[data-page=home] .home-concept-scene .hc-pass.is-vip-active::after,#phone #game[data-page=home] .home-concept-scene .hc-pass.is-vip-active>img{animation:none}}

@@ -1,0 +1,33 @@
+/* Warehouse source layout: four columns, four complete rows, independent live data. */
+#phone #game[data-page=warehouse]{display:block;inset:0;border:0;box-shadow:none;border-radius:0;padding:0;background:#fff3d4 url('assets/visual/warehouse-shell-exact.png') center/100% 100% no-repeat}
+#phone #game[data-page=warehouse]>.page-title{position:absolute;left:173px;right:170px;top:28px;height:73px;margin:0;padding:0;background:none!important;font-size:49px;color:#fff7dd;-webkit-text-stroke:6px #43280f;paint-order:stroke fill;text-shadow:0 4px #714119}
+#phone #game[data-page=warehouse]>.collection-bar{position:absolute;left:43px;right:43px;top:125px;height:58px;padding:0;display:flex;align-items:center;justify-content:center}
+#phone #game[data-page=warehouse]>.collection-bar>strong{font-size:30px;line-height:1.2;white-space:nowrap}
+#phone #game[data-page=warehouse] #inventory-scroll{position:absolute;left:42px;right:42px;top:190px;height:790px;max-height:none;padding:2px 2px 6px;overflow-y:auto;scrollbar-width:none}
+#phone #game[data-page=warehouse] .item-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+#phone #game[data-page=warehouse] .item-card{height:187px;min-height:187px;padding:14px 3px 5px!important;border-radius:16px;gap:0}
+#phone #game[data-page=warehouse] .item-card img{width:117px!important;height:115px!important;margin:0 auto;object-fit:contain}
+#phone #game[data-page=warehouse] .item-card strong{font-size:25px;line-height:29px}
+#phone #game[data-page=warehouse] .item-card span{font-size:23px;line-height:28px!important}
+#phone #game[data-page=warehouse] .item-card .quality{width:55px;height:56px;font-size:30px;background:linear-gradient(135deg,#b9bfc0,#555f65);padding:2px 7px;border-radius:10px 0 0 0;-webkit-text-stroke:3px #34352d;paint-order:stroke fill}
+#phone #game[data-page=warehouse] [data-quality=E] .quality{background:linear-gradient(135deg,#a9d154,#3b740a)}
+#phone #game[data-page=warehouse] [data-quality=D] .quality{background:linear-gradient(135deg,#49c6fb,#00679e)}
+#phone #game[data-page=warehouse] [data-quality=C] .quality{background:linear-gradient(135deg,#dba2ef,#76258e)}
+#phone #game[data-page=warehouse] [data-quality=B] .quality{background:linear-gradient(135deg,#e9b17a,#a25a26)}
+#phone #game[data-page=warehouse] [data-quality=A] .quality{background:linear-gradient(135deg,#ffdc53,#d08900)}
+#phone #game[data-page=warehouse] [data-quality=S] .quality{background:linear-gradient(135deg,#ff9594,#c23b3b)}
+#phone #game[data-page=warehouse] .item-card.unowned .quality{display:none}
+#phone #game[data-page=warehouse]>.warehouse-dock{position:absolute;left:42px;right:42px;top:993px;height:232px;padding:12px;border:3px solid #d4b17a}
+#phone #game[data-page=warehouse] .selected-preview{height:130px;gap:12px;align-items:flex-start}
+#phone #game[data-page=warehouse] .selected-preview>img{width:147px;height:145px}
+#phone #game[data-page=warehouse] .selected-preview.is-unowned>img{filter:brightness(0);opacity:.75}
+#phone #game[data-page=warehouse] .selected-preview>div{padding-top:0;gap:8px}
+#phone #game[data-page=warehouse] .selected-preview h3{font-size:34px;line-height:42px}
+#phone #game[data-page=warehouse] .selected-preview p,#phone #game[data-page=warehouse] .selected-preview span{font-size:22px;white-space:nowrap}
+#phone #game[data-page=warehouse] .dock-quantity{position:absolute;left:173px;right:15px;top:97px;height:53px;margin:0;gap:8px}
+#phone #game[data-page=warehouse] .dock-quantity output{height:52px;font-size:32px;line-height:48px}
+#phone #game[data-page=warehouse] .dock-total{position:absolute;left:12px;right:12px;bottom:10px;height:56px}
+#phone #game[data-page=warehouse] .dock-total>span{font-size:26px;text-align:center}
+#phone #game[data-page=warehouse] .dock-total b{font-size:36px}
+#phone #game[data-page=warehouse] .warehouse-dock .game-btn{background:linear-gradient(#ffe15a,#ffc42c 55%,#f0a80d);border:3px solid #81521a;border-image:none;border-radius:12px!important;box-shadow:inset 0 0 0 3px #fff5bb,0 3px #b08035;height:52px;min-height:52px!important;font-size:28px!important;padding:0 14px!important;color:#fff6dc;-webkit-text-stroke:3px #70431a;paint-order:stroke fill}
+#phone #game[data-page=warehouse] .warehouse-dock .game-btn:before{display:none}

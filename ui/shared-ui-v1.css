@@ -1,0 +1,60 @@
+/* Shared 9-slice artwork. Geometry, content and actions remain in the system styles. */
+/* Three ID weights intentionally outrank old per-system !important skin rules. */
+#phone#phone#phone [data-ui-skin]{background:none!important;border-color:transparent!important;border-image:none!important;box-shadow:none!important;clip-path:none!important;filter:none!important}
+#phone#phone#phone [data-ui-skin="panel"]{border-image:url('assets/shared-ui-v1/panel.png') 28 fill / 28px / 0 stretch!important;background:none!important;border-radius:0!important;isolation:isolate}
+#phone#phone#phone [data-ui-skin="card"]{border-image:url('assets/shared-ui-v1/card.png') 14 fill / 14px / 0 stretch!important}
+#phone#phone#phone [data-ui-skin="title"]{border-image:url('assets/shared-ui-v1/title.png') 24 fill / 24px / 0 stretch!important;color:#fff2cf!important}
+#phone#phone#phone [data-ui-skin="title"]{translate:0 18px;font-size:30px!important;line-height:40px!important}
+#phone#phone#phone [data-ui-skin="button"]{border-image:url('assets/shared-ui-v1/button.png') 18 fill / 18px / 0 stretch!important;color:#4a2c10!important}
+#phone#phone#phone [data-ui-skin="secondary"]{border-image:url('assets/shared-ui-v1/secondary.png') 18 fill / 18px / 0 stretch!important;color:#fff2cf!important}
+#phone#phone#phone [data-ui-skin]::before,#phone#phone#phone [data-ui-skin]::after{display:none!important;background:none!important;border-image:none!important;content:none!important}
+#phone#phone#phone [data-ui-skin="title"],#phone#phone#phone [data-ui-skin="title"] *,#phone#phone#phone [data-ui-skin="secondary"],#phone#phone#phone [data-ui-skin="secondary"] *{color:#fff2cf!important;-webkit-text-stroke:0!important;text-shadow:0 1px 2px #382312!important}
+#phone#phone#phone [data-ui-skin="button"],#phone#phone#phone [data-ui-skin="button"] *{color:#4a2c10!important;-webkit-text-stroke:0!important;text-shadow:none!important}
+#phone#phone#phone [data-ui-skin]:disabled{filter:grayscale(1) brightness(.74)!important;opacity:1!important}
+#phone#phone#phone [data-ui-skin="card"]:is(.selected,.is-selected,.selected-item,.is-current,.chosen){outline:3px solid #f6c555;outline-offset:-4px}
+#phone#phone#phone [data-ui-skin]:focus-visible{outline:3px solid #f6c555!important;outline-offset:2px}
+#phone#phone#phone :is([data-ui-skin="button"],[data-ui-skin="secondary"]):not(:disabled):active{filter:brightness(.88)!important}
+#phone#phone#phone :is(.debt-track,.mine-exact-track,.growth-meter,.online-track-line){background:#423323!important;border-color:#8b693e!important}
+#phone#phone#phone :is(.debt-track,.mine-exact-track,.growth-meter,.online-track-line)>i{background:#e8ad32!important}
+#phone#phone#phone :is(#game,.modal)>.ui-close{display:flex!important;align-items:center;justify-content:center;position:absolute;top:18px!important;right:16px!important;width:64px!important;height:64px!important;min-width:64px!important;padding:10px!important;z-index:50}
+#phone#phone#phone .ui-close>svg{width:42px!important;height:42px!important;filter:none!important}
+#phone#phone#phone [data-ui-ink="dark"]{color:#54351d!important;-webkit-text-stroke:0!important;text-shadow:none!important}
+#phone#phone#phone input[type="checkbox"][data-ui-skin]{appearance:none;-webkit-appearance:none;position:relative;cursor:pointer}
+#phone#phone#phone input[type="checkbox"][data-ui-skin]:checked::after{display:block!important;content:'✓'!important;position:absolute;inset:0;color:#fff2cf;font-size:22px;line-height:1;text-align:center;pointer-events:none}
+
+/* Warehouse typography: three complete rows, independent art/name/count slots. */
+#phone#phone#phone [data-ui-skin="paper"]{border-image:url('assets/shared-ui-v1/paper.png') 14 fill / 14px / 0 stretch!important;color:#705636!important;text-shadow:none!important}
+#phone#phone#phone button[data-ui-skin="paper"]{filter:none!important;opacity:1!important}
+#phone#phone#phone .activity-row{min-height:166px!important;padding:22px!important;gap:18px!important}
+#phone#phone#phone .activity-row>.achievement-badge{width:76px!important;height:76px!important;object-fit:contain;flex:none}
+#phone#phone#phone .activity-row>div{gap:12px!important}
+#phone#phone#phone .activity-row strong{font-size:26px!important;line-height:36px!important}
+#phone#phone#phone .activity-row small{font-size:22px!important;line-height:30px!important}
+#phone#phone#phone .activity-row>.game-btn{width:128px!important;min-width:128px!important;font-size:24px!important}
+#phone#phone#phone .activity-row.is-claimed>.game-btn{color:#657646!important}
+#phone#phone#phone .activity-list{gap:20px!important}
+@keyframes mine-panel-in{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
+@media (prefers-reduced-motion:no-preference){#phone .modal{animation:mine-panel-in .18s ease-out}#phone [data-ui-skin="button"]{transition:filter .12s ease-out}}
+#phone#phone#phone #game[data-page="warehouse"] #inventory-scroll{top:190px!important;height:708px!important;padding:4px!important}
+#phone#phone#phone #game[data-page="warehouse"] .item-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 12px!important}
+#phone#phone#phone #game[data-page="warehouse"] .item-card{position:relative;height:222px!important;min-height:222px!important;padding:0!important;display:block!important}
+#phone#phone#phone #game[data-page="warehouse"] .item-card>img,#phone#phone#phone #game[data-page="warehouse"] .item-card>.undiscovered-gem{position:absolute;left:50%;top:22px;transform:translateX(-50%);width:100px!important;height:98px!important;margin:0!important}
+#phone#phone#phone #game[data-page="warehouse"] .item-card>strong{position:absolute;left:12px;right:12px;top:132px;height:34px;font-size:24px!important;line-height:34px!important;text-align:center;white-space:nowrap}
+#phone#phone#phone #game[data-page="warehouse"] .item-card>span:not(.undiscovered-gem){position:absolute;left:10px;right:10px;top:176px;height:28px;font-size:22px!important;line-height:28px!important;text-align:center;white-space:nowrap}
+#phone#phone#phone #game[data-page="warehouse"]>.warehouse-dock{top:920px!important;height:318px!important;padding:20px!important}
+#phone#phone#phone #game[data-page="warehouse"] .selected-preview{position:relative;height:120px!important;display:block!important}
+#phone#phone#phone #game[data-page="warehouse"] .selected-preview>img,#phone#phone#phone #game[data-page="warehouse"] .selected-preview>.undiscovered-gem{position:absolute;left:4px;top:2px;width:104px!important;height:106px!important}
+#phone#phone#phone #game[data-page="warehouse"] .selected-preview>div{position:absolute;left:132px;right:0;top:0;padding:0!important;display:block!important}
+#phone#phone#phone #game[data-page="warehouse"] .selected-preview h3{position:relative;margin:0!important;height:40px;font-size:30px!important;line-height:40px!important;display:flex;align-items:center;gap:12px}
+#phone#phone#phone #game[data-page="warehouse"] .selected-preview h3 small{position:static!important;margin:0!important;font-size:22px!important;line-height:28px!important}
+#phone#phone#phone #game[data-page="warehouse"] .selected-preview p{position:static!important;margin:12px 0 0!important;font-size:23px!important;line-height:30px!important}
+#phone#phone#phone #game[data-page="warehouse"] .selected-preview>div>span{position:static!important;display:block;margin-top:5px!important;font-size:23px!important;line-height:30px!important;font-weight:600}
+#phone#phone#phone #game[data-page="warehouse"] .dock-quantity{left:24px!important;right:24px!important;top:151px!important;height:62px!important;display:flex!important;gap:12px!important}
+#phone#phone#phone #game[data-page="warehouse"] .dock-quantity output{flex:1;min-width:0;height:62px!important;line-height:62px!important;font-size:28px!important;text-align:center}
+#phone#phone#phone #game[data-page="warehouse"] .dock-quantity .game-btn{width:68px!important;min-width:68px!important;flex:none;padding:0!important;height:62px!important;min-height:62px!important;font-size:26px!important}
+#phone#phone#phone #game[data-page="warehouse"] .dock-quantity .game-btn:last-child{width:108px!important}
+#phone#phone#phone #game[data-page="warehouse"] .dock-total{left:24px!important;right:24px!important;bottom:20px!important;height:64px!important;display:flex!important;gap:16px!important;align-items:center}
+#phone#phone#phone #game[data-page="warehouse"] .dock-total>span{flex:1;min-width:0;font-size:23px!important;line-height:34px!important;text-align:left!important;display:flex;align-items:center;gap:10px}
+#phone#phone#phone #game[data-page="warehouse"] .dock-total b{font-size:30px!important;line-height:36px!important}
+#phone#phone#phone #game[data-page="warehouse"] .dock-total .game-btn{width:142px!important;min-width:142px!important;flex:none;height:64px!important;min-height:64px!important;font-size:28px!important;padding:0!important}
+#phone#phone#phone #game[data-page="warehouse"] .discovery-note{margin-top:32px!important;font-size:24px!important;line-height:36px!important;text-align:center}

@@ -1,0 +1,150 @@
+/* Home-only entry rail. Keep action ownership in home-exact.js; this file changes composition only. */
+#phone #game[data-page=home] .home-concept-scene .hc-interface{
+ --entry-left:24px;
+ --entry-right:767px;
+ --entry-width:150px;
+ --entry-height:128px;
+ --entry-icon:92px;
+ --entry-row-1:430px;
+ --entry-row-2:560px;
+ --entry-row-3:690px;
+ --entry-row-4:820px;
+ --entry-row-5:950px;
+ --entry-row-6:1080px;
+}
+
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry:not(.hc-pass){
+ width:var(--entry-width)!important;
+ height:var(--entry-height)!important;
+ gap:2px;
+ border-radius:24px;
+ transform-origin:50% 60%;
+ transition:transform .12s ease,filter .12s ease;
+}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry:not(.hc-pass)>img,
+#phone #game[data-page=home] .home-concept-scene .hc-homestead .homestead-icon,
+#phone #game[data-page=home] .home-concept-scene .home-ledger-entry .ledger-icon{
+ width:var(--entry-icon)!important;
+ height:var(--entry-icon)!important;
+}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry:not(.hc-pass)>span{
+ max-width:148px;
+ overflow:hidden;
+ font-size:24px;
+ line-height:30px;
+ text-overflow:clip;
+}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry:not(.hc-pass):hover{filter:brightness(1.08)}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry:not(.hc-pass):active{transform:scale(.94)}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry:not(.hc-pass):focus-visible{outline:4px solid #64dcff;outline-offset:2px}
+
+/* Workshop becomes a contextual shortcut beside the depth readout. */
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-workshop{
+ left:665px!important;
+ top:1246px!important;
+ z-index:8;
+ width:78px!important;
+ height:78px!important;
+ display:grid;
+ place-items:center;
+ gap:0;
+ box-sizing:border-box;
+ overflow:visible;
+ border:4px solid #ffe49a!important;
+ border-radius:50%;
+ background:radial-gradient(circle at 38% 30%,#ffe385 0 10%,#d88924 36%,#744019 72%,#321d10 100%)!important;
+ box-shadow:inset 0 0 0 3px #9c5a1d,inset 0 -7px 8px #3b210b99,0 3px 3px #211309,0 0 15px #ffd75ba8!important;
+ filter:none;
+ animation:workshop-entry-pulse 1.8s ease-in-out infinite;
+}
+#phone #game[data-page=home] .home-concept-scene .hc-workshop::before{
+ content:'';
+ position:absolute;
+ inset:-10px;
+ z-index:-1;
+ border:3px solid #ffd769;
+ border-radius:50%;
+ opacity:.65;
+ pointer-events:none;
+}
+#phone #game[data-page=home] .home-concept-scene .hc-workshop::after{
+ content:'›';
+ position:absolute;
+ left:-24px;
+ top:18px;
+ color:#ffe784;
+ font:900 35px/35px Arial,sans-serif;
+ text-shadow:0 2px 2px #3c210d,0 0 8px #ffbd37;
+ pointer-events:none;
+ animation:workshop-entry-arrow 1.15s ease-in-out infinite;
+}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-workshop>img{
+ width:55px!important;
+ height:55px!important;
+ transform:rotate(-8deg);
+ filter:drop-shadow(0 3px 2px #2b170bcc);
+}
+#phone #game[data-page=home] .home-concept-scene .hc-workshop>span{display:none}
+#phone #game[data-page=home] .home-concept-scene .hc-workshop:hover{filter:brightness(1.12)}
+#phone #game[data-page=home] .home-concept-scene .hc-workshop:active{transform:scale(.9)}
+@keyframes workshop-entry-pulse{0%,100%{box-shadow:inset 0 0 0 3px #9c5a1d,inset 0 -7px 8px #3b210b99,0 3px 3px #211309,0 0 10px #ffd75b77}50%{box-shadow:inset 0 0 0 3px #9c5a1d,inset 0 -7px 8px #3b210b99,0 3px 3px #211309,0 0 24px #ffe073dd}}
+@keyframes workshop-entry-arrow{0%,100%{transform:translateX(0);opacity:.65}50%{transform:translateX(6px);opacity:1}}
+
+/* Depth and pickaxe share one clickable plate, centered over the mining CTA. */
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-workshop.depth-workshop{
+ left:307px!important;top:1232px!important;width:390px!important;height:82px!important;
+ display:grid;grid-template-columns:48px minmax(0,1fr) 48px;align-items:center;justify-items:center;gap:6px;
+ padding:8px 16px!important;border:3px solid #d2a657!important;border-radius:14px;
+ background:linear-gradient(#493a28,#251f19)!important;
+ box-shadow:inset 0 0 0 2px #715331,0 4px 5px #150f0a99!important;animation:none;
+}
+#phone #game[data-page=home] .home-concept-scene .depth-workshop::before,
+#phone #game[data-page=home] .home-concept-scene .depth-workshop::after{display:none}
+#phone #game[data-page=home] .home-concept-scene .hc-native-entry.hc-workshop.depth-workshop>img{
+ width:48px!important;height:54px!important;transform:none;filter:drop-shadow(0 2px 2px #0008);
+}
+.depth-workshop .mining-max-depth{width:100%;text-align:center;font-size:29px;line-height:38px;color:#fff1c8;white-space:nowrap;font-variant-numeric:tabular-nums;text-shadow:0 2px #20160b}
+.depth-workshop>i{display:grid;place-items:center;width:48px;height:54px;font-size:0;color:#ffd879}
+.depth-workshop>i::after{content:'';width:12px;height:12px;border-top:4px solid currentColor;border-right:4px solid currentColor;transform:rotate(45deg)}
+
+/* The ledger is a live status entry, but visually belongs to the same navigation rail. */
+#phone #game[data-page=home] .home-concept-scene .home-ledger-entry{
+ left:var(--entry-left)!important;
+ top:var(--entry-row-2)!important;
+ z-index:7;
+ width:var(--entry-width)!important;
+ height:var(--entry-height)!important;
+ gap:2px;
+}
+#phone #game[data-page=home] .home-concept-scene .home-ledger-entry .ledger-label{
+ font-size:24px;
+ line-height:30px;
+}
+
+/* Left rail: growth, inventory and long-term systems. */
+#phone #game[data-page=home] .home-concept-scene .hc-homestead,
+#phone #game[data-page=home] .home-concept-scene .hc-warehouse,
+#phone #game[data-page=home] .home-concept-scene .hc-gems,
+#phone #game[data-page=home] .home-concept-scene .hc-ranking{left:var(--entry-left)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-homestead{top:var(--entry-row-1)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-warehouse{top:var(--entry-row-3)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-gems{top:var(--entry-row-4)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-ranking{top:var(--entry-row-5)!important}
+
+/* Right rail: daily return first, followed by appearance and association. */
+#phone #game[data-page=home] .home-concept-scene .hc-checkin,
+#phone #game[data-page=home] .home-concept-scene .hc-beauty,
+#phone #game[data-page=home] .home-concept-scene .hc-wardrobe,
+#phone #game[data-page=home] .home-concept-scene .hc-guild,
+#phone #game[data-page=home] .home-concept-scene .hc-achievements{left:var(--entry-right)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-checkin{top:var(--entry-row-1)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-beauty{top:var(--entry-row-2)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-wardrobe{top:var(--entry-row-3)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-guild{top:var(--entry-row-4)!important}
+#phone #game[data-page=home] .home-concept-scene .hc-achievements{top:var(--entry-row-5)!important}
+
+@media(prefers-reduced-motion:reduce){
+ #phone #game[data-page=home] .home-concept-scene .hc-native-entry:not(.hc-pass){transition:none}
+ #phone #game[data-page=home] .home-concept-scene .hc-workshop,
+ #phone #game[data-page=home] .home-concept-scene .hc-workshop::after{animation:none}
+}

@@ -1,0 +1,95 @@
+/* Approved illustrated layout, design coordinates. Content stays interactive. */
+#phone#phone#phone:is([data-modal="checkin"],[data-modal="achievements"],[data-modal="workshop"]) .modal{width:760px!important;height:1360px!important;max-height:none!important;padding:0!important}
+#phone#phone#phone:is([data-modal="checkin"],[data-modal="achievements"],[data-modal="workshop"]) .modal>h2{position:absolute!important;left:150px!important;top:4px!important;width:460px!important;height:110px!important;min-height:110px!important;margin:0!important;padding:0 24px!important;font-size:48px!important;line-height:110px!important;text-align:center!important}
+#phone#phone#phone:is([data-modal="checkin"],[data-modal="achievements"],[data-modal="workshop"]) .modal>.modal-content{position:absolute!important;left:36px!important;right:36px!important;top:148px!important;bottom:32px!important;width:auto!important;height:auto!important;padding:0!important;overflow:hidden!important}
+#phone#phone#phone .pv-layout{position:relative;height:100%;color:#55361d;font-size:24px;line-height:1.4}
+#phone#phone#phone .pv-layout h3,#phone#phone#phone .pv-layout h4,#phone#phone#phone .pv-layout p{margin:0}
+#phone#phone#phone .pv-layout .icon{width:30px;height:30px;object-fit:contain;vertical-align:middle;flex:none}
+#phone#phone#phone .pv-layout .game-btn{min-height:64px;font-size:26px;line-height:36px;padding:10px 16px}
+#phone#phone#phone .pv-layout .pv-primary{display:block;width:100%;height:86px;min-height:86px;font-size:34px;font-weight:800;line-height:54px;margin:12px 0 20px}
+#phone#phone#phone .pv-note{font-size:22px;line-height:32px;text-align:center;color:#876d48;margin-top:16px!important}
+#phone#phone#phone .pv-daily-hero{height:274px;position:relative}
+#phone#phone#phone .pv-daily-hero h3{text-align:center;height:44px;line-height:44px;font-size:30px}
+#phone#phone#phone .pv-pouch{position:absolute;left:0;top:44px;width:370px;height:228px;object-fit:contain}
+#phone#phone#phone .pv-daily-amount{position:absolute;left:380px;right:8px;top:64px;text-align:center}
+#phone#phone#phone .pv-daily-amount b{display:block;font-size:84px;line-height:116px;color:#b87914;text-shadow:0 2px #fff1b3}
+#phone#phone#phone .pv-daily-amount span{display:block;font-size:32px;line-height:44px;font-weight:800}
+#phone#phone#phone .pv-week{height:344px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:164px 164px;gap:14px 10px;margin:0 0 22px}
+#phone#phone#phone .pv-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid #d7bf88;border-radius:12px;background:#f4e7c5;padding:6px;color:#72522e;filter:none!important;opacity:1!important;font:inherit}
+#phone#phone#phone .pv-day.is-current{border:3px solid #ca9c40;background:#ffefb9}
+#phone#phone#phone .pv-day.is-claimed{background:#eee7cd;color:#627748}
+#phone#phone#phone .pv-day span{font-size:24px;line-height:30px;font-weight:700}
+#phone#phone#phone .pv-day .icon{width:56px;height:56px}
+#phone#phone#phone .pv-day b{font-size:27px;line-height:34px}
+#phone#phone#phone .pv-day small{font-size:18px;line-height:24px}
+#phone#phone#phone .pv-seventh{grid-column:4;grid-row:1/span 2;background:#fff0ba;border:2px solid #d6ac4a}
+#phone#phone#phone .pv-seventh .icon{width:125px;height:125px}
+#phone#phone#phone .pv-online{border-top:2px solid #bc965f;padding-top:18px}
+#phone#phone#phone .pv-section-heading{display:flex;align-items:center;justify-content:space-between;height:44px;margin-bottom:14px}
+#phone#phone#phone .pv-section-heading h3{font-size:32px;line-height:44px}
+#phone#phone#phone .pv-section-heading>span{font-size:22px;color:#657c3e}
+#phone#phone#phone .pv-online-summary{display:flex;gap:20px;background:#f4e7c5;border:1px solid #dbc495;border-radius:12px;padding:14px;height:252px}
+#phone#phone#phone .pv-online-focus{width:160px;flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;border-right:1px solid #c9ad79;padding-right:12px}
+#phone#phone#phone .pv-online-focus>strong{font-size:23px;line-height:32px}
+#phone#phone#phone .pv-online-focus>.icon{width:44px;height:44px}
+#phone#phone#phone .pv-online-focus>b{font-size:30px;line-height:36px}
+#phone#phone#phone .pv-online-focus .game-btn{height:58px;min-height:58px;width:142px;font-size:24px;padding:4px}
+#phone#phone#phone .pv-online-focus>small{font-size:16px;line-height:21px;color:#73834c}
+#phone#phone#phone .pv-online-track{flex:1;min-width:0;padding:8px 0}
+#phone#phone#phone .pv-online-track>strong{display:block;font-size:23px;line-height:34px;white-space:nowrap}
+#phone#phone#phone .pv-timeline{display:flex;justify-content:space-between;margin:18px 0 12px;background:linear-gradient(transparent 17px,#b4a181 17px,#b4a181 23px,transparent 23px)}
+#phone#phone#phone .pv-timeline button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0;width:62px;color:#998567;font:inherit;opacity:1!important;filter:none!important}
+#phone#phone#phone .pv-timeline b{font-size:32px;line-height:40px}
+#phone#phone#phone .pv-timeline .is-ready{color:#c48c0a}
+#phone#phone#phone .pv-timeline .is-claimed{color:#638046}
+#phone#phone#phone .pv-timeline span{font-size:19px;line-height:26px;white-space:nowrap}
+#phone#phone#phone .pv-links{display:flex;gap:12px}
+#phone#phone#phone .pv-links .pv-link{min-height:50px;flex:1;padding:4px;font-size:22px;line-height:32px;color:#63763d!important;background:none!important;border:0!important;border-image:none!important;box-shadow:none!important;text-decoration:underline}
+#phone#phone#phone .pv-online-details h3{font-size:36px;text-align:center;margin:8px 0 20px}
+#phone#phone#phone .pv-online-details>p{text-align:center;margin:0 0 26px}
+#phone#phone#phone .pv-online-row{display:grid;grid-template-columns:160px 1fr 150px;grid-template-rows:50px 38px;align-items:center;gap:8px;padding:20px 10px;border-bottom:1px solid #c7ac7c;height:152px}
+#phone#phone#phone .pv-online-row>.game-btn{grid-column:3;grid-row:1}
+#phone#phone#phone .pv-online-row>small{font-size:20px;color:#768248}
+#phone#phone#phone .pv-online-row>small:last-child{grid-column:3;text-align:center}
+#phone#phone#phone .pv-online-row .pv-online-money{display:flex;gap:8px;align-items:center;font-size:30px}
+#phone#phone#phone .pv-online-details>.game-btn{width:100%;margin-top:24px}
+#phone#phone#phone .pv-tabs{display:flex;gap:12px;height:76px;margin-bottom:16px}
+#phone#phone#phone .pv-tabs>.game-btn{flex:1;min-width:0;min-height:68px;font-size:24px;line-height:34px;padding:8px}
+#phone#phone#phone .pv-ach-hero{height:304px;position:relative;margin-bottom:10px}
+#phone#phone#phone .pv-medal{position:absolute;left:0;top:10px;width:288px;height:284px;object-fit:contain}
+#phone#phone#phone .pv-ach-target{position:absolute;left:300px;right:0;top:18px}
+#phone#phone#phone .pv-kicker{display:inline-block;padding:6px 18px;background:#64794d;border-radius:8px;color:#fff6d9;font-size:24px;line-height:32px}
+#phone#phone#phone .pv-ach-target h3{font-size:30px;line-height:44px;margin:16px 0!important;white-space:nowrap}
+#phone#phone#phone .pv-ach-target progress{width:100%;height:24px;accent-color:#dda42a;display:block}
+#phone#phone#phone .pv-progress-copy{display:block;text-align:center;font-size:22px;line-height:34px}
+#phone#phone#phone .pv-ach-target p{display:flex;gap:6px;align-items:center;justify-content:center;font-size:24px;background:#ead9b0;border-radius:8px;padding:10px 4px;line-height:38px}
+#phone#phone#phone .pv-milestone-heading{height:48px;text-align:center;font-size:28px;line-height:48px;border-bottom:1px solid #c7a577;margin-bottom:8px!important}
+#phone#phone#phone .pv-milestones{height:610px;overflow-y:auto;overflow-x:hidden}
+#phone#phone#phone .pv-milestone{display:flex;align-items:center;gap:16px;padding:18px 12px;min-height:146px;height:146px;border-bottom:1px solid #c7ad7d}
+#phone#phone#phone .pv-milestone{background:linear-gradient(to bottom,transparent calc(100% - 1px),#c7ad7d calc(100% - 1px))}
+#phone#phone#phone .pv-milestone.is-ready{border:2px solid #adb978;border-radius:12px;background:#eeedca}
+#phone#phone#phone .pv-small-medal{width:86px;height:100px;object-fit:contain;flex:none}
+#phone#phone#phone .pv-milestone>div{flex:1;min-width:0}
+#phone#phone#phone .pv-milestone h4{font-size:27px;line-height:38px;margin-bottom:10px!important}
+#phone#phone#phone .pv-milestone p{display:flex;align-items:center;gap:5px;font-size:22px;line-height:32px;white-space:nowrap}
+#phone#phone#phone .pv-milestone>.game-btn{width:134px;flex:none;font-size:23px;min-height:64px;padding:8px 4px}
+#phone#phone#phone .pv-milestone>.pv-claim:disabled{background:none!important;border:0!important;border-image:none!important;box-shadow:none!important;filter:none!important;opacity:1!important;color:#927c59!important;text-shadow:none!important}
+#phone#phone#phone .pv-milestone.is-claimed>.pv-claim:disabled{color:#647e43!important}
+#phone#phone#phone .pv-forge{position:relative;height:424px;margin-bottom:16px}
+#phone#phone#phone .pv-stage{position:absolute;width:100%;height:360px;left:0;top:0;object-fit:fill}
+#phone#phone#phone .pv-tool{position:absolute;width:300px;height:298px;left:194px;top:18px;object-fit:contain}
+#phone#phone#phone .pv-forge h3{position:absolute;left:164px;right:164px;top:320px;text-align:center;color:#fff0cb;background:#344951;border:2px solid #a39763;border-radius:10px;font-size:30px;line-height:48px;height:50px}
+#phone#phone#phone .pv-forge>span{position:absolute;left:234px;right:234px;top:372px;text-align:center;color:#fff2ca;background:#787544;font-size:25px;line-height:40px;border-radius:6px}
+#phone#phone#phone .pv-comparison{display:flex;align-items:center;justify-content:space-between;height:216px;margin-bottom:18px}
+#phone#phone#phone .pv-comparison>div{width:280px;text-align:center;display:flex;flex-direction:column;gap:5px}
+#phone#phone#phone .pv-comparison small{font-size:26px;line-height:34px}
+#phone#phone#phone .pv-comparison b{font-size:36px;line-height:46px}
+#phone#phone#phone .pv-comparison span{font-size:24px;line-height:36px}
+#phone#phone#phone .pv-comparison strong{font-size:46px;line-height:62px}
+#phone#phone#phone .pv-comparison .pv-arrow{font-size:56px;color:#cb973c}
+#phone#phone#phone .pv-after{color:#567b2b}
+#phone#phone#phone .pv-cost{display:flex;justify-content:space-around;align-items:center;background:#f2e5c3;border:1px solid #ceb586;border-radius:12px;height:80px;font-size:25px;gap:12px}
+#phone#phone#phone .pv-cost>span{display:flex;align-items:center;gap:8px}
+#phone#phone#phone .pv-cost b{display:inline-block;min-width:114px;font-size:26px;line-height:36px;text-align:left}
+#phone#phone#phone .pv-ach-target p b{display:inline-block;min-width:86px;text-align:center}
+#phone#phone#phone .pv-materials{height:60px;display:flex;align-items:center;justify-content:space-around;font-size:23px}

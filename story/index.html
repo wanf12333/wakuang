@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>鼹鼠逆袭记 · 漫画剧情原型</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      color-scheme: dark;
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+      background: #191e27;
+      color: #f6ead2;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: start center;
+      padding: 18px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(104, 70, 35, .24), transparent 42%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.018) 0 1px, transparent 1px 7px),
+        #191e27;
+    }
+    button { font: inherit; }
+    .prototype-note {
+      width: min(720px, calc(100vw - 36px));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      color: #bca98b;
+      font-size: 13px;
+    }
+    .prototype-note strong { color: #ead4ac; font-weight: 700; }
+    .story-player {
+      position: relative;
+      width: min(720px, calc(100vw - 36px));
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      background: #17120d;
+      isolation: isolate;
+      box-shadow: 0 28px 80px #000, 0 0 0 1px #4f3c24;
+      user-select: none;
+    }
+    .story-art,
+    .archive-backdrop {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.025);
+    }
+    .story-art.is-changing { animation: panelIn .55s cubic-bezier(.2,.75,.2,1); }
+    @keyframes panelIn {
+      from { opacity: .15; transform: scale(1.09) translate3d(2%, 0, 0); filter: contrast(1.2); }
+      to { opacity: 1; transform: scale(1.025) translate3d(0, 0, 0); filter: contrast(1); }
+    }
+    .comic-ink {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(170deg, transparent 0 44%, rgba(241,218,173,.68) 44.2% 44.55%, rgba(20,14,9,.85) 44.8% 45.25%, transparent 45.5%),
+        radial-gradient(circle at 72% 27%, transparent 0 44%, rgba(0,0,0,.18) 76%, rgba(0,0,0,.64) 100%);
+      mix-blend-mode: multiply;
+      opacity: .46;
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .15;
+      background-image: radial-gradient(rgba(250,226,183,.45) .7px, transparent .8px);
+      background-size: 5px 5px;
+      mix-blend-mode: soft-light;
+    }
+    .shade {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(0,0,0,.55), transparent 16%, transparent 53%, rgba(5,3,2,.96) 91%);
+    }
+    .top-safe {
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      top: 0;
+      min-height: 92px;
+      padding: 26px 22px 12px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 14px;
+      background: linear-gradient(#0d0906e8, #0d090600);
+    }
+    .scene-kicker { font-size: clamp(12px, 2.2vw, 17px); color: #d5b77f; letter-spacing: .12em; }
+    .scene-name { margin-top: 3px; font-family: Georgia, "Songti SC", serif; font-size: clamp(22px, 4.5vw, 34px); font-weight: 800; text-shadow: 0 2px 0 #000; }
+    .top-actions { display: flex; gap: 8px; }
+    .compact-button,
+    .round-button {
+      min-height: 44px;
+      border: 1px solid #8b6b38;
+      color: #f6e4c2;
+      background: linear-gradient(#302316e8, #171009e8);
+      box-shadow: inset 0 0 0 1px #191006, 0 3px 8px #0008;
+      cursor: pointer;
+    }
+    .compact-button { border-radius: 8px; padding: 0 13px; font-weight: 700; }
+    .compact-button:hover { border-color: #d5a74f; background: #3c2b19; }
+    .round-button {
+      width: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+    }
+    .progress-strip {
+      position: absolute;
+      z-index: 6;
+      left: 22px;
+      right: 22px;
+      top: 106px;
+      display: flex;
+      gap: 7px;
+    }
+    .progress-strip button {
+      height: 9px;
+      flex: 1;
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 8px;
+      background: #77675075;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 1px 2px #000;
+    }
+    .progress-strip button::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 100%;
+      background: #e3ad46;
+      transition: width .25s ease;
+    }
+    .progress-strip button.seen::after { width: 100%; background: #b98a39; }
+    .progress-strip button.current::after { width: 100%; background: #ffe09b; }
+    .progress-strip button.locked { background: #2a2520; }
+    .progress-strip button.locked::after { width: 0; }
+    .tap-zone {
+      position: absolute;
+      z-index: 3;
+      top: 135px;
+      bottom: 355px;
+      width: 27%;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: transparent;
+    }
+    .tap-zone.left { left: 0; }
+    .tap-zone.right { right: 0; }
+    .subtitle-panel {
+      position: absolute;
+      z-index: 7;
+      left: 22px;
+      right: 22px;
+      bottom: 92px;
+      min-height: 225px;
+      padding: 25px 28px 21px;
+      border: 2px solid #85643a;
+      border-radius: 14px 4px 14px 4px;
+      background:
+        linear-gradient(100deg, rgba(37,25,15,.96), rgba(15,10,7,.97)),
+        repeating-linear-gradient(0deg, transparent 0 5px, rgba(255,255,255,.02) 5px 6px);
+      box-shadow: inset 0 0 0 3px #171009, 0 10px 32px #000b;
+    }
+    .subtitle-panel::before {
+      content: "";
+      position: absolute;
+      width: 64px;
+      height: 5px;
+      left: 27px;
+      top: -4px;
+      background: #e6b958;
+      transform: skewX(-28deg);
+    }
+    .speaker { color: #e2b85e; font-size: clamp(13px, 2.2vw, 18px); font-weight: 800; letter-spacing: .12em; }
+    .line {
+      margin: 12px 0 0;
+      font-family: Georgia, "Songti SC", serif;
+      font-size: clamp(18px, 3.55vw, 28px);
+      line-height: 1.55;
+      font-weight: 700;
+      text-shadow: 0 2px 0 #000;
+    }
+    .speaker.dialogue-changing,
+    .line.dialogue-changing { animation: dialogueIn .28s ease-out; }
+    @keyframes dialogueIn {
+      from { opacity: .15; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .bottom-controls {
+      position: absolute;
+      z-index: 8;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      display: grid;
+      grid-template-columns: 96px 1fr 96px;
+      gap: 10px;
+      align-items: center;
+    }
+    .nav-button {
+      height: 54px;
+      border: 1px solid #765a33;
+      border-radius: 9px;
+      background: linear-gradient(#312416, #161009);
+      color: #ebd6b1;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .nav-button:disabled { opacity: .35; cursor: default; }
+    .next-button { color: #271607; border-color: #f0b84f; background: linear-gradient(#f0b84f, #ba7621); box-shadow: inset 0 0 0 2px #754516, 0 4px 12px #000a; }
+    .auto-button {
+      height: 48px;
+      justify-self: center;
+      padding: 0 18px;
+      border: 0;
+      color: #cdbb9c;
+      background: transparent;
+      cursor: pointer;
+    }
+    .auto-button.on { color: #ffe099; }
+    .archive-view {
+      position: absolute;
+      z-index: 20;
+      inset: 0;
+      display: none;
+      padding: 28px 22px 24px;
+      background: #100c08;
+    }
+    .archive-view.open { display: block; }
+    .archive-backdrop { filter: blur(12px) brightness(.19) saturate(.65); transform: scale(1.09); }
+    .archive-content { position: relative; height: 100%; display: grid; grid-template-rows: auto 1fr auto; gap: 18px; }
+    .archive-header { display: grid; grid-template-columns: 52px 1fr 52px; align-items: center; text-align: center; }
+    .archive-title { font-family: Georgia, "Songti SC", serif; font-size: clamp(27px, 5vw, 38px); font-weight: 900; }
+    .archive-subtitle { color: #bda884; font-size: 14px; margin-top: 3px; }
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 12px;
+      min-height: 0;
+    }
+    .chapter-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #705531;
+      border-radius: 10px;
+      padding: 0;
+      text-align: left;
+      background: #21180f;
+      color: #f4e2c2;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 2px #130d08;
+    }
+    .chapter-card img { width: 100%; height: 100%; object-fit: cover; object-position: center 31%; filter: brightness(.67) saturate(.8); }
+    .chapter-card:hover { border-color: #d6a651; }
+    .chapter-card:hover img { filter: brightness(.8) saturate(.95); }
+    .chapter-card.locked img { filter: grayscale(.8) brightness(.28); }
+    .chapter-card .card-shade { position: absolute; inset: 0; background: linear-gradient(transparent 40%, #090604f4 100%); }
+    .chapter-card .card-text { position: absolute; left: 13px; right: 13px; bottom: 10px; }
+    .chapter-card .card-index { color: #e0ae50; font-size: 12px; font-weight: 900; }
+    .chapter-card .card-title { margin-top: 2px; font-size: clamp(15px, 2.8vw, 20px); font-weight: 900; }
+    .chapter-card .lock-mark { position: absolute; right: 12px; top: 10px; min-width: 32px; height: 32px; padding: 0 7px; border-radius: 17px; display: grid; place-items: center; background: #0b0806d9; border: 1px solid #685638; font-size: 13px; }
+    .archive-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #b8a383; font-size: 13px; }
+    .preview-toggle { min-height: 44px; padding: 0 14px; border: 1px dashed #7d6542; border-radius: 8px; color: #d7bd8c; background: #19120c; cursor: pointer; }
+    .tutorial-view {
+      position: absolute;
+      z-index: 40;
+      inset: 0;
+      display: none;
+      overflow: hidden;
+      background: #100d09;
+    }
+    .tutorial-view.open { display: block; }
+    .tutorial-game-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .tutorial-top {
+      position: absolute;
+      z-index: 6;
+      left: 18px;
+      right: 18px;
+      top: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 9px;
+      align-items: center;
+    }
+    .tutorial-chip {
+      min-height: 52px;
+      display: grid;
+      place-items: center;
+      padding: 7px 10px;
+      border: 1px solid #8b6938;
+      border-radius: 9px;
+      color: #f2ddb5;
+      background: linear-gradient(#2c2014ee, #15100bed);
+      box-shadow: inset 0 0 0 2px #120c08, 0 3px 12px #000b;
+      text-align: center;
+      font-weight: 900;
+      font-size: clamp(12px, 2.2vw, 17px);
+    }
+    .tutorial-chip:first-child { justify-items: start; }
+    .tutorial-chip:last-child { justify-items: end; }
+    .tutorial-dim {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      pointer-events: none;
+      background: rgba(7,5,3,.08);
+    }
+    .guide-spotlight {
+      position: absolute;
+      z-index: 4;
+      padding: 0;
+      border: 4px solid #ffd66f;
+      border-radius: 12px;
+      color: #fff3bd;
+      background: rgba(255,214,111,.06);
+      box-shadow: 0 0 0 999px rgba(5,3,2,.72), 0 0 24px 7px rgba(255,183,54,.68), inset 0 0 18px rgba(255,213,111,.2);
+      cursor: pointer;
+      transition: left .28s ease, top .28s ease, width .28s ease, height .28s ease;
+    }
+    .guide-spotlight::after {
+      content: "☝";
+      position: absolute;
+      right: -19px;
+      bottom: -36px;
+      font-size: clamp(32px, 7vw, 54px);
+      filter: drop-shadow(0 4px 3px #000);
+      animation: guideTap .85s ease-in-out infinite alternate;
+    }
+    .guide-spotlight.no-finger::after { display: none; }
+    @keyframes guideTap { from { transform: translateY(0) scale(.96); } to { transform: translateY(-11px) scale(1.03); } }
+    .guide-card {
+      position: absolute;
+      z-index: 7;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      padding: 22px;
+      border: 2px solid #966e37;
+      border-radius: 14px 5px 14px 5px;
+      background: linear-gradient(105deg, rgba(49,34,20,.98), rgba(17,12,8,.98));
+      box-shadow: inset 0 0 0 3px #120c08, 0 14px 44px #000d;
+    }
+    .guide-step-label { color: #e8b654; font-size: 13px; font-weight: 900; letter-spacing: .1em; }
+    .guide-card h2 { margin: 7px 0 8px; font-family: Georgia, "Songti SC", serif; font-size: clamp(22px, 4.5vw, 32px); }
+    .guide-card p { min-height: 55px; margin: 0; color: #ddccb0; font-size: clamp(15px, 2.8vw, 21px); line-height: 1.55; }
+    .guide-actions { margin-top: 15px; display: grid; grid-template-columns: 100px 1fr; gap: 10px; }
+    .guide-actions button { min-height: 52px; border-radius: 8px; font-weight: 900; cursor: pointer; }
+    .guide-actions .guide-back { border: 1px solid #715633; color: #d8c3a0; background: #17100a; }
+    .guide-actions .guide-next { border: 1px solid #ffd16d; color: #2d1908; background: linear-gradient(#f0bd58, #ba7622); }
+    .tutorial-toast {
+      position: absolute;
+      z-index: 9;
+      left: 50%;
+      bottom: 40px;
+      width: calc(100% - 80px);
+      transform: translateX(-50%);
+      padding: 18px;
+      border: 2px solid #c28c3b;
+      border-radius: 10px;
+      background: #130d08ed;
+      color: #ffe3a1;
+      text-align: center;
+      font-size: clamp(17px, 3vw, 23px);
+      font-weight: 900;
+      display: none;
+    }
+    .tutorial-view.practice .guide-card,
+    .tutorial-view.practice .guide-spotlight,
+    .tutorial-view.practice .tutorial-dim { display: none; }
+    .tutorial-view.practice .tutorial-toast { display: block; }
+    .modal-layer {
+      position: absolute;
+      z-index: 50;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 36px;
+      background: #060403c7;
+      backdrop-filter: blur(4px);
+    }
+    .modal-layer.open { display: grid; }
+    .dialog {
+      width: min(540px, 100%);
+      padding: 28px;
+      border: 2px solid #896638;
+      border-radius: 14px 5px 14px 5px;
+      background: linear-gradient(#302216, #17100b);
+      box-shadow: inset 0 0 0 3px #110b07, 0 20px 70px #000;
+      text-align: center;
+    }
+    .dialog-symbol { font-size: 42px; }
+    .dialog h2 { margin: 8px 0 10px; color: #f2cf85; font-family: Georgia, "Songti SC", serif; font-size: 28px; }
+    .dialog p { margin: 0; color: #d4c3a6; line-height: 1.65; font-size: 18px; }
+    .dialog-actions { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .dialog-actions button { min-height: 54px; border-radius: 8px; font-weight: 900; cursor: pointer; }
+    .secondary-action { border: 1px solid #705735; color: #dfc9a5; background: #18100a; }
+    .primary-action { border: 1px solid #f0bd5a; color: #2c1808; background: linear-gradient(#efbb54, #ba7523); }
+    .toast {
+      position: absolute;
+      z-index: 80;
+      left: 50%;
+      bottom: 355px;
+      transform: translate(-50%, 16px);
+      width: max-content;
+      max-width: calc(100% - 80px);
+      padding: 12px 18px;
+      border-radius: 7px;
+      color: #f2dfbd;
+      background: #0d0906e8;
+      border: 1px solid #6f5634;
+      opacity: 0;
+      pointer-events: none;
+      transition: .22s ease;
+      text-align: center;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    @media (max-width: 520px) {
+      body { padding: 8px; }
+      .prototype-note { width: calc(100vw - 16px); margin-bottom: 7px; }
+      .prototype-note span:last-child { display: none; }
+      .story-player { width: calc(100vw - 16px); }
+      .subtitle-panel { left: 14px; right: 14px; bottom: 70px; min-height: 184px; padding: 19px 20px 16px; }
+      .bottom-controls { left: 14px; right: 14px; bottom: 10px; grid-template-columns: 80px 1fr 80px; }
+      .nav-button { height: 48px; }
+      .top-safe { padding: 18px 14px 10px; min-height: 76px; }
+      .progress-strip { left: 14px; right: 14px; top: 85px; }
+      .chapter-grid { gap: 8px; }
+      .archive-view { padding: 17px 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="prototype-note">
+    <span><strong>720×1280</strong> 漫画剧情播放器</span>
+    <span>首登序章 + 进度章节 + 中英本地化</span>
+  </div>
+
+  <main class="story-player" id="storyPlayer" aria-label="鼹鼠逆袭记漫画剧情播放器">
+    <img class="story-art" id="storyArt" src="../generated-images/cat-prologue-v2/01-before.png" alt="">
+    <div class="comic-ink"></div>
+    <div class="grain"></div>
+    <div class="shade"></div>
+
+    <header class="top-safe">
+      <div>
+        <div class="scene-kicker" id="sceneKicker">序章 · 1 / 4</div>
+        <div class="scene-name" id="sceneName">风光的我</div>
+      </div>
+      <div class="top-actions">
+        <button class="compact-button" id="archiveButton" type="button">章节</button>
+        <button class="compact-button" id="languageButton" type="button">EN</button>
+        <button class="compact-button" id="skipButton" type="button">跳过</button>
+      </div>
+    </header>
+
+    <div class="progress-strip" id="progressStrip" aria-label="剧情进度"></div>
+    <button class="tap-zone left" id="leftZone" type="button" aria-label="上一幕">上一幕</button>
+    <button class="tap-zone right" id="rightZone" type="button" aria-label="下一幕">下一幕</button>
+
+    <section class="subtitle-panel" aria-live="polite">
+      <div class="speaker" id="speaker">我的回忆</div>
+      <p class="line" id="storyLine"></p>
+    </section>
+
+    <nav class="bottom-controls" aria-label="剧情播放控制">
+      <button class="nav-button" id="previousButton" type="button">上一幕</button>
+      <button class="auto-button on" id="autoButton" type="button">● 自动播放</button>
+      <button class="nav-button next-button" id="nextButton" type="button">下一幕</button>
+    </nav>
+
+    <section class="archive-view" id="archiveView" aria-label="剧情档案">
+      <img class="archive-backdrop" id="archiveBackdrop" src="../generated-images/cat-prologue-v2/04-prison-mine-panda-v3.png" alt="">
+      <div class="archive-content">
+        <header class="archive-header">
+          <button class="round-button" id="closeArchiveButton" type="button" aria-label="关闭剧情档案">←</button>
+          <div>
+            <div class="archive-title" id="archiveTitle">剧情档案</div>
+            <div class="archive-subtitle" id="archiveSubtitle">已解锁 4 / 8 · 点击章节回顾</div>
+          </div>
+          <button class="round-button" id="archiveLanguageButton" type="button" aria-label="切换语言">EN</button>
+        </header>
+        <div class="chapter-grid" id="chapterGrid"></div>
+        <footer class="archive-footer">
+          <span id="archiveHint">里程碑章节在主界面弹出，不打断挖矿。</span>
+          <button class="preview-toggle" id="previewToggle" type="button">策划预览：关</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="tutorial-view" id="tutorialView" aria-label="第一关新手教学">
+      <img class="tutorial-game-art" src="../generated-images/mining-ui-latest/p0-05-gameplay-720x1280.png" alt="6×6 挖宝教学棋盘">
+      <header class="tutorial-top">
+        <div class="tutorial-chip" id="tutorialLevel">教学关 · 第1关</div>
+        <div class="tutorial-chip" id="tutorialEnergy">铲子能量 8/8</div>
+        <div class="tutorial-chip" id="tutorialTreasure">宝物 0/6</div>
+      </header>
+      <div class="tutorial-dim"></div>
+      <button class="guide-spotlight" id="guideSpotlight" type="button" aria-label="当前教学高亮区域"></button>
+      <section class="guide-card" id="guideCard" aria-live="polite">
+        <div class="guide-step-label" id="guideStepLabel">新手教学 1/6</div>
+        <h2 id="guideTitle">先找齐全部宝物</h2>
+        <p id="guideText"></p>
+        <div class="guide-actions">
+          <button class="guide-back" id="guideBack" type="button">上一步</button>
+          <button class="guide-next" id="guideNext" type="button">下一步</button>
+        </div>
+      </section>
+      <div class="tutorial-toast" id="tutorialToast">现在请亲手找齐6个宝物。完成教学关后才会进入主界面。</div>
+    </section>
+
+    <div class="modal-layer" id="modalLayer" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+      <div class="dialog">
+        <div class="dialog-symbol" id="dialogSymbol">⚠</div>
+        <h2 id="dialogTitle">确认跳过序章？</h2>
+        <p id="dialogBody">可在“设置 → 剧情回顾”中重新观看。</p>
+        <div class="dialog-actions">
+          <button class="secondary-action" id="dialogCancel" type="button">继续观看</button>
+          <button class="primary-action" id="dialogConfirm" type="button">跳过序章</button>
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </main>
+
+  <script>
+    const assetRoot = "../generated-images/story-comic-v1/";
+    const chapters = [
+{
+  "image": "../cat-prologue-v2/01-before.png",
+  "title": {
+    "zh": "风光的我",
+    "en": "Before the Fall"
+  },
+  "beats": [
+    {
+      "speaker": {
+        "zh": "我",
+        "en": "ME"
+      },
+      "text": {
+        "zh": "那时的我，是一只爱打扮、也有几分帅气的猫。",
+        "en": "Back then, I was a well-dressed cat with a handsome face."
+      },
+      "duration": 5000
+    },
+    {
+      "speaker": {
+        "zh": "旁白",
+        "en": "NARRATOR"
+      },
+      "text": {
+        "zh": "我以为凭本事，就能把日子过得越来越好。直到那只黄鼠狼找上门。",
+        "en": "I thought honest work would build a better life. Then the weasel came calling."
+      },
+      "duration": 5000
+    }
+  ],
+  "unlock": {
+    "zh": "序章",
+    "en": "Prologue"
+  }
+},
+{
+  "image": "../cat-prologue-v2/02-contract.png",
+  "title": {
+    "zh": "一纸骗局",
+    "en": "The Contract Trap"
+  },
+  "beats": [
+    {
+      "speaker": {
+        "zh": "黄鼠狼",
+        "en": "THE WEASEL"
+      },
+      "text": {
+        "zh": "签个字就行！稳赚的买卖，风险我来担。",
+        "en": "Just sign here! Guaranteed returns. I'll take the risk."
+      },
+      "duration": 5000
+    },
+    {
+      "speaker": {
+        "zh": "我",
+        "en": "ME"
+      },
+      "text": {
+        "zh": "我信了他的花言巧语，签下那份藏满陷阱的无良合同。",
+        "en": "I believed his promises and signed a contract full of hidden traps."
+      },
+      "duration": 5000
+    },
+    {
+      "speaker": {
+        "zh": "旁白",
+        "en": "NARRATOR"
+      },
+      "text": {
+        "zh": "等我看懂那些条款，巨额债务已经全落在了我头上。",
+        "en": "By the time I understood the terms, the entire debt was in my name."
+      },
+      "duration": 5000
+    }
+  ],
+  "unlock": {
+    "zh": "序章",
+    "en": "Prologue"
+  }
+},
+{
+  "image": "../cat-prologue-v2/03-framed-panda-v3.png",
+  "title": {
+    "zh": "维权反遭诬陷",
+    "en": "Silenced and Framed"
+  },
+  "beats": [
+    {
+      "speaker": {
+        "zh": "我",
+        "en": "ME"
+      },
+      "text": {
+        "zh": "你骗我！这合同有问题，我要讨个说法！",
+        "en": "You lied! This contract is a scam. I want answers!"
+      },
+      "duration": 5000
+    },
+    {
+      "speaker": {
+        "zh": "旁白",
+        "en": "NARRATOR"
+      },
+      "text": {
+        "zh": "我拿着合同上门维权，等来的却是一顿毒打。那张曾经引以为傲的脸，也被打得变了样。",
+        "en": "I went to challenge the contract. They beat me instead, leaving my once-proud face disfigured."
+      },
+      "duration": 5000
+    },
+    {
+      "speaker": {
+        "zh": "黄鼠狼",
+        "en": "THE WEASEL"
+      },
+      "text": {
+        "zh": "是他闯进来闹事！把他带走！",
+        "en": "He broke in and caused trouble! Take him away!"
+      },
+      "duration": 5000
+    },
+    {
+      "speaker": {
+        "zh": "旁白",
+        "en": "NARRATOR"
+      },
+      "text": {
+        "zh": "他倒打一耙，诬陷我闹事。我连辩解的机会都没有，就被送进了矿区牢房。",
+        "en": "He framed me as the troublemaker. Before I could defend myself, I was sent to the prison mine."
+      },
+      "duration": 5000
+    }
+  ],
+  "unlock": {
+    "zh": "序章",
+    "en": "Prologue"
+  }
+},
+{
+  "image": "../cat-prologue-v2/04-prison-mine-panda-v3.png",
+  "title": {
+    "zh": "一铲换一天自由",
+    "en": "Digging Toward Freedom"
+  },
+  "beats": [
+    {
+      "speaker": {
+        "zh": "看守",
+        "en": "GUARD"
+      },
+      "text": {
+        "zh": "欠下的债，用矿来还。没还清，别想出去。",
+        "en": "Pay your debt in ore. Until it is cleared, you stay here."
+      },
+      "duration": 5000
+    },
+    {
+      "speaker": {
+        "zh": "旁白",
+        "en": "NARRATOR"
+      },
+      "text": {
+        "zh": "西装换成囚服，镜子里的脸也不再熟悉。现在，我只能靠挖矿还债。",
+        "en": "My suit became prison stripes. My face was no longer familiar. Mining was my only way to repay the debt."
+      },
+      "duration": 5000
+    },
+    {
+      "speaker": {
+        "zh": "我",
+        "en": "ME"
+      },
+      "text": {
+        "zh": "脸被毁了，日子不能也毁了。我要一铲一铲还清债，走出这座牢区！",
+        "en": "They ruined my face, not my future. I'll repay this debt, shovel by shovel, and walk free!"
+      },
+      "duration": 5000
+    }
+  ],
+  "unlock": {
+    "zh": "序章",
+    "en": "Prologue"
+  }
+},
+      {
+        image: "story-05-first-spark-720x1280.png",
+        title: { zh: "第一束光", en: "The First Spark" },
+        beats: [
+          { speaker: { zh: "我", en: "ME" }, text: { zh: "又是石头……再来一铲！", en: "More stone… One more shovel!" }, duration: 2900 },
+          { speaker: { zh: "我", en: "ME" }, text: { zh: "等等，这道光是……宝石？", en: "Wait. That light… Is it a gemstone?" }, duration: 3300 },
+          { speaker: { zh: "旁白", en: "NARRATOR" }, text: { zh: "第一铲没有奇迹。第不知道多少铲后，黑暗里终于亮起了希望。", en: "The first shovel found nothing. Many shovels later, hope finally lit the dark." }, duration: 4300 }
+        ],
+        unlock: { zh: "挖掘深度达到 30 米", en: "Reach a depth of 30 m" }
+      },
+      {
+        image: "story-06-rise-720x1280.png",
+        title: { zh: "一铲一铲", en: "Step by Step" },
+        beats: [
+          { speaker: { zh: "矿工老岩", en: "FOREMAN ROCK" }, text: { zh: "老板，今天的铁、铜、银都装满车了！", en: "Boss, today's iron, copper, and silver carts are full!" }, duration: 3500 },
+          { speaker: { zh: "我", en: "ME" }, text: { zh: "先卖矿还债，剩下的全部用来修轨道。我们继续往深处走。", en: "Sell enough to pay the debt. Use the rest to repair the rails. We keep going deeper." }, duration: 4500 },
+          { speaker: { zh: "旁白", en: "NARRATOR" }, text: { zh: "不是一夜暴富，而是一铲一铲，把破矿洞重新撑了起来。", en: "It was not overnight wealth. Shovel by shovel, we brought the ruined mine back to life." }, duration: 4500 }
+        ],
+        unlock: { zh: "深度 100 米，累计偿还 50% 债务", en: "Reach 100 m and repay 50% of the debt" }
+      },
+      {
+        image: "story-07-truth-720x1280.png",
+        title: { zh: "真相出土", en: "Truth Unearthed" },
+        beats: [
+          { speaker: { zh: "矿务检查员", en: "MINE INSPECTOR" }, text: { zh: "这本账册能证明合同和资金流向都被人篡改过。", en: "This ledger proves that both the contract and the money trail were altered." }, duration: 4200 },
+          { speaker: { zh: "灰鼬·格雷", en: "GREY THE WEASEL" }, text: { zh: "一派胡言！一本旧账册能证明什么？", en: "Nonsense! What can one old ledger possibly prove?" }, duration: 3600 },
+          { speaker: { zh: "我", en: "ME" }, text: { zh: "格雷，真正埋不住的从来不是宝石，而是真相。", en: "Grey, gemstones are not the only things that refuse to stay buried. So does the truth." }, duration: 4400 }
+        ],
+        unlock: { zh: "深度 500 米，剩余债务不高于 25%", en: "Reach 500 m with no more than 25% debt left" }
+      },
+      {
+        image: "story-08-comeback-720x1280.png",
+        title: { zh: "地底逆袭", en: "The Comeback" },
+        beats: [
+          { speaker: { zh: "复审官", en: "REVIEW OFFICER" }, text: { zh: "债务已经结清，案件也已重审。您的名誉正式恢复。", en: "The debt is cleared and the case has been reviewed. Your good name is officially restored." }, duration: 4500 },
+          { speaker: { zh: "我", en: "ME" }, text: { zh: "房子和车可以回来，但我最想留下的，是这座矿和陪我走到这里的人。", en: "The house and car may return, but what I want to keep most is this mine—and those who stood beside me." }, duration: 5000 },
+          { speaker: { zh: "旁白", en: "NARRATOR" }, text: { zh: "我失去的人生，是用一把铲子重新挖回来的。我的逆袭，从地底开始。", en: "I dug my lost life back with a shovel. My comeback began underground." }, duration: 4700 }
+        ],
+        unlock: { zh: "还清全部债务", en: "Repay all debt" }
+      }
+    ];
+
+    const ui = {
+      zh: {
+        memory: "我的回忆", archive: "章节", skip: "跳过", previous: "上一幕", previousLine: "上一句", next: "下一幕", continueLine: "继续",
+        enter: "进入游戏", autoOn: "● 自动播放", autoOff: "○ 手动播放", prologue: "序章",
+        archiveTitle: "剧情档案", archiveHint: "里程碑章节在主界面弹出，不打断挖矿。",
+        unlocked: n => `已解锁 ${n} / 8 · 点击章节回顾`,
+        previewOff: "策划预览：关", previewOn: "策划预览：开",
+        lockTitle: "章节尚未解锁", lockBody: text => `解锁条件：${text}`,
+        continue: "继续观看", close: "知道了", skipTitle: "确认跳过剧情？",
+        skipBody: "跳过后将直接进入第一关新手教学；新手教学不可跳过。", skipConfirm: "跳过并进入教学",
+        endTitle: "序章结束", endBody: "从今天起，我要靠这把铲子，把失去的一切一点一点挖回来。",
+        replay: "重新播放", enterConfirm: "进入游戏",
+        scene: (current, total, scope) => `${scope} · ${current} / ${total}`,
+        dialogue: (current, total) => `台词 ${current} / ${total}`
+      },
+      en: {
+        memory: "MY MEMORY", archive: "Chapters", skip: "Skip", previous: "Previous Scene", previousLine: "Previous Line", next: "Next Scene", continueLine: "Continue",
+        enter: "Enter Game", autoOn: "● Auto Play", autoOff: "○ Manual", prologue: "PROLOGUE",
+        archiveTitle: "Story Archive", archiveHint: "Milestone chapters appear on the main screen, never during mining.",
+        unlocked: n => `${n} / 8 unlocked · Select a chapter to replay`,
+        previewOff: "Design preview: Off", previewOn: "Design preview: On",
+        lockTitle: "Chapter Locked", lockBody: text => `Unlock condition: ${text}`,
+        continue: "Keep Watching", close: "Got It", skipTitle: "Skip the story?",
+        skipBody: "You will enter the first-level tutorial immediately. The tutorial cannot be skipped.", skipConfirm: "Skip to Tutorial",
+        endTitle: "Prologue Complete", endBody: "From today on, I will use this shovel to dig back everything I lost.",
+        replay: "Replay", enterConfirm: "Enter Game",
+        scene: (current, total, scope) => `${scope} · ${current} / ${total}`,
+        dialogue: (current, total) => `LINE ${current} / ${total}`
+      }
+    };
+
+    const tutorialSteps = [
+      {
+        title: { zh: "找齐全部宝物", en: "Find Every Treasure" },
+        text: { zh: "教学关是6×6棋盘，共藏有6个宝物。找到全部宝物，才能带走本局收获。", en: "The tutorial uses a 6×6 board with six treasures. Find every treasure to keep the haul." },
+        action: { zh: "下一步", en: "Next" }, rect: [7, 20, 90, 64], finger: false
+      },
+      {
+        title: { zh: "先看三条规律", en: "Learn the Three Rules" },
+        text: { zh: "每行、每列、每个材质区域恰好1个宝物；任意两个宝物在八个方向都不能相邻。", en: "Each row, column, and material region contains exactly one treasure. No two treasures may touch, even diagonally." },
+        action: { zh: "我记住了", en: "Got It" }, rect: [7, 12, 86, 8], finger: false
+      },
+      {
+        title: { zh: "单击插旗", en: "Tap to Place a Flag" },
+        text: { zh: "判断某格可能藏有宝物时，单击插旗；再次单击可以取消。插旗不消耗铲子能量。", en: "When you think a cell hides treasure, tap once to place a flag. Tap again to remove it. Flags cost no shovel energy." },
+        action: { zh: "模拟单击", en: "Try a Tap" }, rect: [68, 53, 15, 10], finger: true
+      },
+      {
+        title: { zh: "双击挖掘", en: "Double-tap to Dig" },
+        text: { zh: "确认目标后双击格子进行挖掘。挖到宝物或挖空，都会消耗1点铲子能量。", en: "Once you are sure, double-tap the cell to dig. Treasure or empty soil, every dig costs one shovel energy." },
+        action: { zh: "模拟双击", en: "Try a Double-tap" }, rect: [53, 43, 15, 10], finger: true
+      },
+      {
+        title: { zh: "本关有8点铲能", en: "Eight Shovel Energy" },
+        text: { zh: "铲子能量＝棋盘边长＋2。6×6棋盘提供8点能量，刚好允许最多挖空2次。", en: "Shovel energy equals board width plus two. A 6×6 board gives eight energy, allowing at most two empty digs." },
+        action: { zh: "下一步", en: "Next" }, rect: [35, 1, 30, 6], finger: false
+      },
+      {
+        title: { zh: "没找齐，就一无所有", en: "All Treasures or Nothing" },
+        text: { zh: "能量耗尽或主动退出前没有找齐6个宝物，本局临时收获全部作废。现在开始第一关。", en: "If energy runs out or you quit before finding all six treasures, the temporary haul is lost. Now begin level one." },
+        action: { zh: "开始第一关", en: "Start Level One" }, rect: [7, 20, 90, 64], finger: false
+      }
+    ];
+
+    const state = { index: 0, beat: 0, tutorialStep: 0, lang: "zh", auto: true, archive: false, previewAll: false, scope: "intro", actualUnlocked: 4, timer: null, modalAction: null, modalCancelAction: null };
+    const $ = id => document.getElementById(id);
+
+    function isUnlocked(index) { return state.previewAll || index < state.actualUnlocked; }
+    function visibleIndices() { return state.scope === "intro" ? [0, 1, 2, 3] : chapters.map((_, i) => i); }
+    function unlockedCount() { return state.previewAll ? chapters.length : state.actualUnlocked; }
+
+    function animateArt() {
+      const art = $("storyArt");
+      art.classList.remove("is-changing");
+      void art.offsetWidth;
+      art.classList.add("is-changing");
+    }
+
+    function animateDialogue() {
+      const speaker = $("speaker");
+      const line = $("storyLine");
+      speaker.classList.remove("dialogue-changing");
+      line.classList.remove("dialogue-changing");
+      void line.offsetWidth;
+      speaker.classList.add("dialogue-changing");
+      line.classList.add("dialogue-changing");
+    }
+
+    function renderProgress() {
+      const strip = $("progressStrip");
+      const indices = visibleIndices();
+      strip.innerHTML = "";
+      indices.forEach(index => {
+        const button = document.createElement("button");
+        const locked = !isUnlocked(index);
+        button.type = "button";
+        button.className = `${index < state.index ? "seen" : ""} ${index === state.index ? "current" : ""} ${locked ? "locked" : ""}`;
+        button.setAttribute("aria-label", `${index + 1}. ${chapters[index].title[state.lang]}${locked ? "，锁定" : ""}`);
+        button.addEventListener("click", () => locked ? showLocked(index) : goTo(index, state.scope));
+        strip.appendChild(button);
+      });
+    }
+
+    function renderPlayer(animate = false, animateText = true) {
+      const t = ui[state.lang];
+      const chapter = chapters[state.index];
+      const beat = chapter.beats[state.beat];
+      $("storyArt").src = assetRoot + chapter.image;
+      $("storyArt").alt = `${state.index + 1}. ${chapter.title[state.lang]}`;
+      $("sceneName").textContent = chapter.title[state.lang];
+      const scopeName = state.scope === "intro" ? t.prologue : t.archiveTitle;
+      const position = state.scope === "intro" ? state.index + 1 : state.index + 1;
+      const total = state.scope === "intro" ? 4 : 8;
+      $("sceneKicker").textContent = `${t.scene(position, total, scopeName)} · ${t.dialogue(state.beat + 1, chapter.beats.length)}`;
+      $("speaker").textContent = beat.speaker[state.lang];
+      $("storyLine").textContent = beat.text[state.lang];
+      $("archiveButton").textContent = t.archive;
+      $("languageButton").textContent = state.lang === "zh" ? "EN" : "中";
+      $("skipButton").textContent = t.skip;
+      $("previousButton").textContent = state.beat > 0 ? t.previousLine : t.previous;
+      $("autoButton").textContent = state.auto ? t.autoOn : t.autoOff;
+      $("autoButton").classList.toggle("on", state.auto);
+      const indices = visibleIndices();
+      const last = indices[indices.length - 1];
+      const isLastBeat = state.beat === chapter.beats.length - 1;
+      $("nextButton").textContent = !isLastBeat ? t.continueLine : state.scope === "intro" && state.index === last ? t.enter : t.next;
+      $("previousButton").disabled = state.index === indices[0] && state.beat === 0;
+      renderProgress();
+      if (animate) animateArt();
+      if (animateText) animateDialogue();
+      resetAutoTimer();
+    }
+
+    function goTo(index, scope = state.scope, beat = 0) {
+      if (!isUnlocked(index)) return showLocked(index);
+      state.scope = scope;
+      state.index = index;
+      state.beat = Math.max(0, Math.min(beat, chapters[index].beats.length - 1));
+      state.archive = false;
+      $("archiveView").classList.remove("open");
+      renderPlayer(true);
+    }
+
+    function previous() {
+      if (state.beat > 0) {
+        state.beat -= 1;
+        renderPlayer(false, true);
+        return;
+      }
+      const indices = visibleIndices();
+      const pos = indices.indexOf(state.index);
+      if (pos > 0) {
+        const target = indices[pos - 1];
+        goTo(target, state.scope, chapters[target].beats.length - 1);
+      }
+    }
+
+    function next() {
+      const chapter = chapters[state.index];
+      if (state.beat < chapter.beats.length - 1) {
+        state.beat += 1;
+        renderPlayer(false, true);
+        return;
+      }
+      const indices = visibleIndices();
+      const pos = indices.indexOf(state.index);
+      if (pos < indices.length - 1) {
+        const target = indices[pos + 1];
+        if (isUnlocked(target)) goTo(target);
+        else showLocked(target);
+      } else if (state.scope === "intro") {
+        showEndDialog();
+      } else {
+        openArchive();
+      }
+    }
+
+    function resetAutoTimer() {
+      clearTimeout(state.timer);
+      if (!state.auto || state.archive || $("tutorialView").classList.contains("open") || $("modalLayer").classList.contains("open")) return;
+      state.timer = setTimeout(next, chapters[state.index].beats[state.beat].duration);
+    }
+
+    function renderArchive() {
+      const t = ui[state.lang];
+      $("archiveTitle").textContent = t.archiveTitle;
+      $("archiveSubtitle").textContent = t.unlocked(unlockedCount());
+      $("archiveHint").textContent = t.archiveHint;
+      $("archiveLanguageButton").textContent = state.lang === "zh" ? "EN" : "中";
+      $("previewToggle").textContent = state.previewAll ? t.previewOn : t.previewOff;
+      const grid = $("chapterGrid");
+      grid.innerHTML = "";
+      chapters.forEach((chapter, index) => {
+        const locked = !isUnlocked(index);
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = `chapter-card${locked ? " locked" : ""}`;
+        card.setAttribute("aria-label", `${index + 1}. ${chapter.title[state.lang]}${locked ? `，${chapter.unlock[state.lang]}` : ""}`);
+        card.innerHTML = `
+          <img src="${assetRoot + chapter.image}" alt="">
+          <span class="card-shade"></span>
+          ${locked ? `<span class="lock-mark">🔒</span>` : ""}
+          <span class="card-text"><span class="card-index">${state.lang === "zh" ? `第 ${String(index + 1).padStart(2, "0")} 幕` : `CHAPTER ${String(index + 1).padStart(2, "0")}`}</span><br><span class="card-title">${chapter.title[state.lang]}</span></span>`;
+        card.addEventListener("click", () => locked ? showLocked(index) : goTo(index, "archive"));
+        grid.appendChild(card);
+      });
+    }
+
+    function openArchive() {
+      clearTimeout(state.timer);
+      state.archive = true;
+      $("archiveBackdrop").src = assetRoot + chapters[state.index].image;
+      $("archiveView").classList.add("open");
+      renderArchive();
+    }
+
+    function closeArchive() {
+      state.archive = false;
+      $("archiveView").classList.remove("open");
+      resetAutoTimer();
+    }
+
+    function switchLanguage() {
+      state.lang = state.lang === "zh" ? "en" : "zh";
+      renderPlayer(false);
+      if (state.archive) renderArchive();
+      if ($("tutorialView").classList.contains("open")) renderTutorial();
+    }
+
+    function showModal({ symbol, title, body, cancelText, confirmText, confirmAction, cancelAction = closeModal, single = false }) {
+      clearTimeout(state.timer);
+      $("dialogSymbol").textContent = symbol;
+      $("dialogTitle").textContent = title;
+      $("dialogBody").textContent = body;
+      $("dialogCancel").textContent = cancelText;
+      $("dialogConfirm").textContent = confirmText;
+      $("dialogCancel").style.display = single ? "none" : "block";
+      $("dialogConfirm").style.gridColumn = single ? "1 / -1" : "auto";
+      state.modalAction = confirmAction;
+      state.modalCancelAction = cancelAction;
+      $("modalLayer").classList.add("open");
+    }
+
+    function closeModal() {
+      $("modalLayer").classList.remove("open");
+      state.modalAction = null;
+      state.modalCancelAction = null;
+      resetAutoTimer();
+    }
+
+    function showLocked(index) {
+      const t = ui[state.lang];
+      showModal({ symbol: "🔒", title: t.lockTitle, body: t.lockBody(chapters[index].unlock[state.lang]), cancelText: "", confirmText: t.close, single: true, confirmAction: closeModal });
+    }
+
+    function showSkipDialog() {
+      const t = ui[state.lang];
+      showModal({ symbol: "⚠", title: t.skipTitle, body: t.skipBody, cancelText: t.continue, confirmText: t.skipConfirm, confirmAction: enterTutorial });
+    }
+
+    function showEndDialog() {
+      const t = ui[state.lang];
+      showModal({ symbol: "⛏", title: t.endTitle, body: t.endBody, cancelText: t.replay, confirmText: t.enterConfirm, confirmAction: enterTutorial, cancelAction: () => { closeModal(); goTo(0, "intro"); } });
+    }
+
+    function renderTutorial() {
+      const step = tutorialSteps[state.tutorialStep];
+      const isEnglish = state.lang === "en";
+      const spotlight = $("guideSpotlight");
+      const [left, top, width, height] = step.rect;
+      spotlight.style.left = `${left}%`;
+      spotlight.style.top = `${top}%`;
+      spotlight.style.width = `${width}%`;
+      spotlight.style.height = `${height}%`;
+      spotlight.classList.toggle("no-finger", !step.finger);
+      $("guideStepLabel").textContent = isEnglish ? `TUTORIAL ${state.tutorialStep + 1} / ${tutorialSteps.length}` : `新手教学 ${state.tutorialStep + 1} / ${tutorialSteps.length}`;
+      $("guideTitle").textContent = step.title[state.lang];
+      $("guideText").textContent = step.text[state.lang];
+      $("guideBack").textContent = isEnglish ? "Previous" : "上一步";
+      $("guideBack").disabled = state.tutorialStep === 0;
+      $("guideNext").textContent = step.action[state.lang];
+      $("tutorialLevel").textContent = isEnglish ? "Tutorial · Level 1" : "教学关 · 第1关";
+      $("tutorialEnergy").textContent = isEnglish ? `Shovel ${state.tutorialStep >= 4 ? "7/8" : "8/8"}` : `铲子能量 ${state.tutorialStep >= 4 ? "7/8" : "8/8"}`;
+      $("tutorialTreasure").textContent = isEnglish ? `Treasure ${state.tutorialStep >= 4 ? "1/6" : "0/6"}` : `宝物 ${state.tutorialStep >= 4 ? "1/6" : "0/6"}`;
+      $("tutorialToast").textContent = isEnglish ? "Now find all six treasures yourself. The main screen unlocks after the tutorial level." : "现在请亲手找齐6个宝物。完成教学关后才会进入主界面。";
+    }
+
+    function enterTutorial() {
+      closeModal();
+      clearTimeout(state.timer);
+      state.auto = false;
+      state.tutorialStep = 0;
+      $("tutorialView").classList.remove("practice");
+      $("tutorialView").classList.add("open");
+      renderTutorial();
+    }
+
+    function advanceTutorial() {
+      if (state.tutorialStep >= tutorialSteps.length - 1) {
+        $("tutorialView").classList.add("practice");
+        return;
+      }
+      state.tutorialStep += 1;
+      renderTutorial();
+    }
+
+    function previousTutorial() {
+      if (state.tutorialStep === 0) return;
+      state.tutorialStep -= 1;
+      renderTutorial();
+    }
+
+    let toastTimer;
+    function showToast(text) {
+      clearTimeout(toastTimer);
+      $("toast").textContent = text;
+      $("toast").classList.add("show");
+      toastTimer = setTimeout(() => $("toast").classList.remove("show"), 2600);
+    }
+
+    $("previousButton").addEventListener("click", previous);
+    $("leftZone").addEventListener("click", previous);
+    $("nextButton").addEventListener("click", next);
+    $("rightZone").addEventListener("click", next);
+    $("autoButton").addEventListener("click", () => { state.auto = !state.auto; renderPlayer(false); });
+    $("languageButton").addEventListener("click", switchLanguage);
+    $("archiveLanguageButton").addEventListener("click", switchLanguage);
+    $("skipButton").addEventListener("click", showSkipDialog);
+    $("archiveButton").addEventListener("click", openArchive);
+    $("closeArchiveButton").addEventListener("click", closeArchive);
+    $("previewToggle").addEventListener("click", () => { state.previewAll = !state.previewAll; renderArchive(); });
+    $("dialogCancel").addEventListener("click", () => state.modalCancelAction ? state.modalCancelAction() : closeModal());
+    $("dialogConfirm").addEventListener("click", () => state.modalAction ? state.modalAction() : closeModal());
+    $("modalLayer").addEventListener("click", event => { if (event.target === $("modalLayer")) closeModal(); });
+    $("guideNext").addEventListener("click", advanceTutorial);
+    $("guideSpotlight").addEventListener("click", advanceTutorial);
+    $("guideBack").addEventListener("click", previousTutorial);
+    document.addEventListener("keydown", event => {
+      if ($("tutorialView").classList.contains("open")) {
+        if (event.key === "ArrowLeft") previousTutorial();
+        if (event.key === "ArrowRight" || event.key === " ") advanceTutorial();
+        return;
+      }
+      if (event.key === "ArrowLeft") previous();
+      if (event.key === "ArrowRight" || event.key === " ") next();
+      if (event.key === "Escape") state.archive ? closeArchive() : closeModal();
+    });
+
+    renderPlayer(false);
+  </script>
+</body>
+</html>

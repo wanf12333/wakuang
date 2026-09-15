@@ -1,0 +1,201 @@
+/* System families: same mine materials, distinct decision hierarchies. No HUD selectors. */
+#phone .game-result-copy{text-align:center;padding:16px 12px 24px;color:#68421f}
+#phone .game-result-copy .game-result-art{width:150px;height:150px;object-fit:contain;display:block;margin:0 auto 22px}
+#phone .game-result-copy h3{font-size:32px;line-height:44px;margin:0 0 14px}
+#phone .game-result-copy p{font-size:26px;line-height:38px;margin:0 0 24px}
+#phone .game-result-copy .paper{font-size:24px;line-height:36px;padding:22px}
+/* Shared type comfort pass: badges, compact actions and summary panels. */
+#phone#phone#phone#phone#phone :is(.pv-kicker,.quality-chip,.president-review h3 b){text-align:center!important;box-sizing:border-box!important}
+#phone#phone#phone#phone#phone .quality-chip{padding:5px 12px!important;min-width:68px!important;line-height:28px!important}
+#phone#phone#phone#phone#phone .president-review h3 b{min-width:44px!important;padding:4px 10px!important;line-height:34px!important}
+#phone#phone#phone#phone#phone .pv-milestones{display:flex!important;flex-direction:column!important;gap:14px!important}
+#phone#phone#phone#phone#phone .pv-milestone{flex-shrink:0!important}
+#phone#phone#phone#phone#phone .aid-own-grid .aid-concept-request>.game-btn{height:52px!important;font-size:23px!important;line-height:30px!important;padding:8px 16px!important;bottom:12px!important}
+#phone#phone#phone#phone#phone .aid-own-grid .aid-concept-status{bottom:70px!important;font-size:18px!important;line-height:24px!important;min-height:24px!important}
+#phone#phone#phone#phone#phone .aid-own-grid .aid-concept-request>progress{top:140px!important;height:15px!important}
+#phone#phone#phone#phone#phone .aid-concept-orders .game-btn{height:52px!important;left:16px!important;right:16px!important;width:calc(100% - 32px)!important;bottom:12px!important;font-size:22px!important;line-height:30px!important;padding:8px 12px!important}
+#phone#phone#phone#phone#phone .aid-concept-orders .aid-order-reward{top:281px!important;height:32px!important;line-height:30px!important}
+#phone#phone#phone#phone#phone .podium-label output{top:81%!important;height:40px!important;line-height:40px!important;font-size:23px!important;text-align:center!important;padding:0 8px!important;box-sizing:border-box!important}
+#phone#phone#phone#phone#phone .podium-label strong{top:70%!important;line-height:30px!important;font-size:25px!important}
+#phone#phone#phone#phone#phone .mine-exact-yield{height:132px!important;padding:14px 16px!important}
+#phone#phone#phone#phone#phone .mine-exact-yield h4{font-size:20px!important;line-height:28px!important;margin:0 0 12px!important}
+#phone#phone#phone#phone#phone .mine-exact-yield article{gap:10px!important}
+#phone#phone#phone#phone#phone .mine-exact-yield span{font-size:22px!important;line-height:28px!important}
+#phone#phone#phone#phone#phone .mine-exact-yield b{font-size:23px!important;line-height:28px!important;margin-top:4px!important}
+#phone#phone#phone#phone#phone .drop-quality-tag{text-align:center!important;justify-items:center!important}
+/* Variable-size rarity collections, never truncate mineral entries. */
+#phone#phone#phone#phone#phone .is-designed .depth-output-title{display:flex!important;justify-content:space-between!important;font-size:22px!important}
+#phone#phone#phone#phone#phone .is-designed .depth-output-title span:last-child{font-size:20px!important;font-weight:400!important}
+#phone#phone#phone#phone#phone .is-designed .drop-quality-list{max-height:640px!important;overflow-y:auto!important;overflow-x:hidden!important;gap:12px!important;padding-right:8px!important;scrollbar-gutter:stable!important}
+#phone#phone#phone#phone#phone .is-designed .drop-quality-row{display:grid!important;grid-template-columns:58px minmax(0,1fr) 152px!important;grid-template-rows:auto auto!important;flex:0 0 auto!important;min-height:0!important;padding:16px!important;gap:12px!important}
+#phone#phone#phone#phone#phone .is-designed .drop-quality-tag{grid-column:1!important;grid-row:1!important}
+#phone#phone#phone#phone#phone .is-designed .drop-bonus{grid-column:2!important;grid-row:1!important;text-align:left!important;font-size:20px!important}
+#phone#phone#phone#phone#phone .is-designed .drop-rate{grid-column:3!important;grid-row:1!important;font-size:24px!important}
+#phone#phone#phone#phone#phone .is-designed .drop-items{grid-column:1 / -1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px 12px!important;padding-top:8px!important}
+#phone#phone#phone#phone#phone .is-designed .drop-item{font-size:22px!important;min-width:0!important;line-height:30px!important;align-items:center!important}
+#phone#phone#phone#phone#phone .is-designed .drop-item span{white-space:normal!important;overflow-wrap:anywhere!important}
+/* Output tables: one column per meaning, enough inset for two mineral lines. */
+#phone#phone#phone#phone .is-designed :is(.drop-quality-row,.depth-output-title){grid-template-columns:52px 100px minmax(0,1fr) 136px!important;gap:12px!important;padding-left:16px!important;padding-right:16px!important;box-sizing:border-box!important}
+#phone#phone#phone#phone .is-designed .depth-output-title{font-size:22px!important;line-height:30px!important;margin-bottom:12px!important}
+#phone#phone#phone#phone .is-designed .drop-quality-row{flex-basis:88px!important;min-height:88px!important;padding-top:10px!important;padding-bottom:10px!important}
+#phone#phone#phone#phone .is-designed .drop-quality-list{gap:8px!important}
+#phone#phone#phone#phone .is-designed .drop-items{display:flex!important;flex-direction:column!important;gap:4px!important;min-width:0!important}
+#phone#phone#phone#phone .is-designed .drop-item{display:flex!important;align-items:center!important;gap:8px!important;font-size:23px!important;line-height:30px!important;min-height:30px!important}
+#phone#phone#phone#phone .is-designed .drop-item img{width:28px!important;height:28px!important;flex:0 0 28px!important}
+#phone#phone#phone#phone .is-designed .drop-quality-tag{font-size:20px!important;line-height:30px!important;min-height:34px!important}
+#phone#phone#phone#phone .is-designed .drop-bonus{font-size:22px!important;text-align:center!important}
+#phone#phone#phone#phone .is-designed .drop-rate{font-size:24px!important;line-height:30px!important;text-align:right!important;white-space:normal!important}
+#phone#phone#phone#phone .is-designed .drop-rate-change{display:block!important;font-size:19px!important;line-height:24px!important;white-space:nowrap!important}
+/* Titles belong to the parchment itself; retain layout anchors but remove the separate plaque. */
+#phone#phone#phone#phone [data-ui-skin="title"]{border:0!important;border-image:none!important;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2092%2044%22%3E%3Cg%20%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M88%2023%20C78%2023%2072%2019%2062%2022%20C47%2029%2023%2030%205%2015%20M62%2022%20C46%2023%2029%2019%2025%2010%20C20%20-1%2043%201%2042%2011%20C42%2017%2032%2017%2033%2010%20M57%2025%20C42%2042%2013%2039%208%2029%20C2%2018%2019%2017%2021%2025%20C23%2031%2014%2032%2013%2026%20M72%2022%20C71%2014%2079%2012%2083%2016%20C87%2020%2081%2023%2078%2020%22%20stroke%3D%22%23805027%22%20stroke-width%3D%223.4%22%2F%3E%3Cpath%20d%3D%22M88%2023%20C78%2023%2072%2019%2062%2022%20C47%2029%2023%2030%205%2015%20M62%2022%20C46%2023%2029%2019%2025%2010%20C20%20-1%2043%201%2042%2011%20C42%2017%2032%2017%2033%2010%20M57%2025%20C42%2042%2013%2039%208%2029%20C2%2018%2019%2017%2021%2025%20C23%2031%2014%2032%2013%2026%20M72%2022%20C71%2014%2079%2012%2083%2016%20C87%2020%2081%2023%2078%2020%22%20stroke%3D%22%23d2a454%22%20stroke-width%3D%221.2%22%20transform%3D%22translate(0%20-0.7)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") left 0 center/18% 44px no-repeat,url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2092%2044%22%3E%3Cg%20transform%3D%22translate(92%200)%20scale(-1%201)%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M88%2023%20C78%2023%2072%2019%2062%2022%20C47%2029%2023%2030%205%2015%20M62%2022%20C46%2023%2029%2019%2025%2010%20C20%20-1%2043%201%2042%2011%20C42%2017%2032%2017%2033%2010%20M57%2025%20C42%2042%2013%2039%208%2029%20C2%2018%2019%2017%2021%2025%20C23%2031%2014%2032%2013%2026%20M72%2022%20C71%2014%2079%2012%2083%2016%20C87%2020%2081%2023%2078%2020%22%20stroke%3D%22%23805027%22%20stroke-width%3D%223.4%22%2F%3E%3Cpath%20d%3D%22M88%2023%20C78%2023%2072%2019%2062%2022%20C47%2029%2023%2030%205%2015%20M62%2022%20C46%2023%2029%2019%2025%2010%20C20%20-1%2043%201%2042%2011%20C42%2017%2032%2017%2033%2010%20M57%2025%20C42%2042%2013%2039%208%2029%20C2%2018%2019%2017%2021%2025%20C23%2031%2014%2032%2013%2026%20M72%2022%20C71%2014%2079%2012%2083%2016%20C87%2020%2081%2023%2078%2020%22%20stroke%3D%22%23d2a454%22%20stroke-width%3D%221.2%22%20transform%3D%22translate(0%20-0.7)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") right 0 center/18% 44px no-repeat!important;box-shadow:none!important;border-radius:0!important;color:#68421f!important;text-shadow:none!important;-webkit-text-stroke:0!important;letter-spacing:2px!important}
+#phone#phone#phone#phone [data-ui-skin="title"] *{color:#68421f!important;text-shadow:none!important;-webkit-text-stroke:0!important}
+#phone#phone#phone#phone .ui-close{display:none!important;pointer-events:none!important}
+#phone#phone#phone .modal:not(:has(.pv-layout))>h2{font-size:38px!important;line-height:52px!important;letter-spacing:2px!important}
+#phone#phone#phone #game:not([data-page=home]):not([data-page=gameplay]) :is(.page-title,.guild-module-title){font-size:38px!important;line-height:52px!important}
+/* Open compositions inside the shared outer parchment, rather than nested wooden boxes. */
+#phone#phone#phone :is(.dialog-info,.dialog-hero,.credit-loan-hero,.debt-dialog-hero){border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;padding:20px 12px!important;gap:26px!important;min-height:186px!important}
+#phone#phone#phone :is(.dialog-info h3,.dialog-hero h3){font-size:34px!important;line-height:46px!important;margin:6px 0 12px!important}
+#phone#phone#phone :is(.dialog-info p,.dialog-hero p){font-size:24px!important;line-height:36px!important}
+#phone#phone#phone :is(.dialog-info-icon,.dialog-art){width:136px!important;height:136px!important;flex:none;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;object-fit:contain}
+#phone#phone#phone :is(.detail-group,.dialog-rule-list){background:none!important;border:0!important;box-shadow:none!important;padding:8px 4px!important}
+#phone#phone#phone .detail-stat{min-height:80px!important;padding:14px 12px!important;gap:16px!important;border:0!important;border-bottom:1px solid #cbb285!important;background:linear-gradient(to bottom,transparent calc(100% - 1px),#cbb285 calc(100% - 1px))!important;box-shadow:none!important;font-size:26px!important;line-height:38px!important}
+#phone#phone#phone .detail-stat strong{font-size:29px!important;line-height:40px!important}
+#phone#phone#phone .modal:not(:has(.pv-layout)) :is(.actions,.dialog-actions){gap:18px!important;margin-top:24px!important}
+#phone#phone#phone .modal:not(:has(.pv-layout)) :is(.actions,.dialog-actions)>.game-btn{min-height:78px!important;font-size:27px!important;line-height:38px!important;padding:12px 18px!important}
+#phone#phone#phone :is(.dialog-total,.debt-dialog-summary){padding:22px!important;border-radius:12px!important}
+#phone#phone#phone .debt-dialog-summary>div{min-height:68px!important;align-items:center;gap:18px!important;font-size:26px!important;line-height:38px!important;border-bottom:1px solid #cbb285}
+#phone#phone#phone .debt-dialog-summary b{font-size:30px!important}
+#phone#phone#phone :is(.dialog-caption,.journey-zone-note,.profile-panel-note){font-size:23px!important;line-height:36px!important;color:#826741}
+#phone#phone#phone :is(.dialog-field,.profile-nickname-label){display:flex;flex-direction:column;gap:14px!important;padding:18px!important;font-size:27px!important}
+#phone#phone#phone .permission-grid{gap:18px!important;margin:22px 0!important}
+#phone#phone#phone .check-row{min-height:68px!important;gap:16px!important}
+/* Salon: selected portrait has a real hero area; catalogue has separate name and grade slots. */
+#phone#phone#phone[data-modal=beauty] .modal{height:1330px!important;max-height:none!important}
+#phone#phone#phone[data-modal=beauty] .modal-content{max-height:1160px!important}
+#phone#phone#phone .beauty-salon:not(.workshop-panel){display:flex;flex-direction:column;gap:18px!important}
+#phone#phone#phone .beauty-current{height:64px!important;padding:12px 20px!important;font-size:24px!important}
+#phone#phone#phone .beauty-detail{order:-1;min-height:232px!important;height:232px!important;padding:20px!important;gap:24px!important;background:radial-gradient(ellipse at 20% 50%,#eed29580,transparent 70%)!important;border:0!important;box-shadow:none!important}
+#phone#phone#phone .beauty-detail .beauty-preview{width:192px!important;height:192px!important;flex:none}
+#phone#phone#phone .beauty-detail h3{font-size:31px!important;line-height:44px!important;margin:0 0 18px!important}
+#phone#phone#phone .beauty-detail p{font-size:23px!important;line-height:35px!important;margin:8px 0!important}
+#phone#phone#phone .beauty-grid{gap:12px!important;grid-template-columns:repeat(4,minmax(0,1fr))!important}
+#phone#phone#phone .beauty-choice{height:176px!important;min-height:176px!important;padding:8px!important;position:relative}
+#phone#phone#phone .beauty-choice .beauty-face{width:106px!important;height:106px!important;margin:0 auto!important}
+#phone#phone#phone .beauty-choice>span:last-child{font-size:22px!important;line-height:32px!important;margin-top:8px!important}
+#phone#phone#phone .beauty-buy{min-height:82px!important;font-size:30px!important}
+/* Permanent wardrobe: stage above a lighter catalogue, keeping all original clothes and hats. */
+#phone#phone#phone .wardrobe-preview{min-height:304px!important;padding:12px 20px!important;background:radial-gradient(ellipse at 50% 35%,#edd09299,transparent 70%)!important;border:0!important;box-shadow:none!important;gap:8px!important}
+#phone#phone#phone .wardrobe-preview>img{width:192px!important;height:184px!important;object-fit:contain}
+#phone#phone#phone .wardrobe-preview h3{font-size:32px!important;line-height:44px!important;margin:0!important}
+#phone#phone#phone .wardrobe-preview>b{font-size:24px!important;line-height:34px!important}
+#phone#phone#phone .wardrobe-item{height:198px!important;min-height:198px!important;position:relative!important;padding:8px!important}
+#phone#phone#phone .wardrobe-item>img{width:104px!important;height:104px!important;margin:4px auto!important;object-fit:contain}
+#phone#phone#phone .wardrobe-item-name{font-size:21px!important;line-height:30px!important;font-style:normal!important}
+#phone#phone#phone .wardrobe-item>span{font-size:23px!important;line-height:32px!important}
+#phone#phone#phone .wardrobe-total{font-size:24px!important;line-height:36px!important;margin:8px 0!important}
+/* Profile: identity, four/six statistics, and progress are separate reading bands. */
+#phone#phone#phone .profile-identity{border:0!important;background:none!important;box-shadow:none!important;padding:16px 10px!important}
+#phone#phone#phone .profile-stat-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+#phone#phone#phone .profile-stat{padding:18px!important;gap:16px!important}
+#phone#phone#phone .profile-stat strong{display:block!important;min-width:184px;max-width:100%;font-size:30px!important;line-height:42px!important}
+#phone#phone#phone .profile-achievement-badge :is(strong,small){color:#71512e!important;text-shadow:none!important}
+#phone#phone#phone .profile-achievements{border:0!important;background:none!important;box-shadow:none!important;padding:16px 4px!important}
+#phone#phone#phone .profile-achievement-row{border-bottom:1px solid #c7ad7d;padding:16px 8px!important}
+#phone#phone#phone .profile-avatar-choice{min-height:196px!important;gap:10px!important}
+#phone#phone#phone .profile-identity-copy :is(h3,p,small),#phone#phone#phone .profile-name-edit{color:#654526!important;text-shadow:none!important;-webkit-text-stroke:0!important}
+#phone#phone#phone .profile-identity-copy h3{font-size:30px!important;line-height:44px!important}
+#phone#phone#phone .profile-stat{min-height:138px!important}
+#phone#phone#phone .profile-stat>img{width:52px!important;height:52px!important;flex:none}
+#phone#phone#phone .profile-stat>span{font-size:22px!important;line-height:32px!important;min-width:0}
+/* Growth: unobstructed original building artwork and explicit material / rank bands. */
+#phone#phone#phone .building-evolution-pair{background:radial-gradient(ellipse at 50% 50%,#e8c78066,transparent 75%);border:0!important;border-radius:14px}
+#phone#phone#phone .building-path{gap:8px!important;margin-bottom:20px!important}
+#phone#phone#phone .building-path small{font-size:20px!important;line-height:28px!important}
+#phone#phone#phone .building-unlock-card{padding:18px 24px!important;gap:24px!important}
+#phone#phone#phone .building-materials{gap:14px!important;padding:18px 10px!important}
+#phone#phone#phone .building-rank{margin:20px 0!important}
+/* Finance lists: portrait stays, numeric columns gain room; risks never disappear. */
+#phone#phone#phone .credit-offer{min-height:172px!important;padding:14px 18px!important;border-radius:12px!important}
+#phone#phone#phone .credit-name strong{font-size:29px!important;line-height:40px!important}
+#phone#phone#phone .credit-number small{font-size:20px!important;line-height:30px!important}
+#phone#phone#phone .credit-number b{font-size:25px!important;line-height:36px!important}
+#phone#phone#phone .credit-selection{padding:20px!important;gap:12px!important}
+#phone#phone#phone .credit-selection span{font-size:21px!important;line-height:32px!important}
+#phone#phone#phone .credit-selection b{font-size:28px!important;line-height:40px!important}
+#phone#phone#phone .credit-note{border-radius:12px!important}
+#phone#phone#phone :is(.debt-milestones,.debt-final-goal){border:0!important;box-shadow:none!important;background:none!important}
+#phone#phone#phone .debt-totals b{font-size:42px!important;line-height:58px!important}
+/* Ranking: medal podium is the hero; ordinary places are quiet divided rows. */
+#phone#phone#phone .exact-cream{border:0!important;background:none!important;box-shadow:none!important}
+#phone#phone#phone .exact-rank-row{background:linear-gradient(to bottom,transparent calc(100% - 1px),#c7ad7d calc(100% - 1px))!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+#phone#phone#phone .exact-rank-row :is(span,strong,b){font-size:25px!important;line-height:36px!important}
+/* Guild surfaces: illustration remains shared, each section has an independent hierarchy. */
+#phone#phone#phone :is(.guild-browser-card,.president-review,.president-notice){padding:18px!important;gap:18px!important;border-radius:12px!important}
+#phone#phone#phone .guild-browser-info strong{font-size:29px!important;line-height:40px!important}
+#phone#phone#phone .guild-browser-info>span{font-size:23px!important;line-height:34px!important}
+#phone#phone#phone .president-identity{border:0!important;background:none!important;box-shadow:none!important}
+#phone#phone#phone .president-tools{gap:20px!important}
+#phone#phone#phone .growth-meter{background:#f5e8c5!important;border:1px solid #c8ab73!important;padding:26px!important;color:#624426!important}
+#phone#phone#phone .growth-meter>div{font-size:28px!important;line-height:40px!important}
+#phone#phone#phone .growth-meter p{font-size:23px!important;line-height:34px!important}
+#phone#phone#phone .growth-meter .growth-needed b{font-size:52px!important;line-height:66px!important}
+#phone#phone#phone .detail-stat .bad{color:#a94f32!important}
+#phone#phone#phone .president-review .game-btn{min-width:122px!important;font-size:25px!important}
+#phone#phone#phone .mine-exact-panel{border:0!important;background:none!important;box-shadow:none!important}
+#phone#phone#phone .mine-exact-yield{padding:14px!important;gap:20px!important}
+#phone#phone#phone .aid-concept-request{border-radius:12px!important}
+#phone#phone#phone .shop-exact-products{border:0!important;background:none!important;box-shadow:none!important;padding:12px!important;grid-template-rows:repeat(3,258px)!important;grid-auto-rows:258px!important;gap:16px!important;overflow-y:auto!important}
+#phone#phone#phone .shop-exact-product{height:258px!important;min-height:258px!important;position:relative!important}
+#phone#phone#phone .shop-exact-product h3{top:12px!important;line-height:36px!important;font-size:27px!important}
+#phone#phone#phone .shop-exact-product .shop-concept-icon{top:55px!important;width:130px!important;height:128px!important}
+#phone#phone#phone .shop-exact-product .shop-exact-price{top:66px!important;font-size:24px!important;line-height:34px!important}
+#phone#phone#phone .shop-exact-product>.game-btn{top:auto!important;bottom:14px!important;left:18px!important;right:18px!important;width:calc(100% - 36px)!important;height:56px!important;min-height:56px!important;font-size:25px!important;line-height:34px!important}
+/* VIP: preserve carousel and benefits, remove three redundant frames. */
+#phone#phone#phone :is(.vip-composite,.vip-slide,.vip-benefits-section){border:0!important;background:none!important;box-shadow:none!important}
+#phone#phone#phone .vip-benefit-grid{gap:16px!important}
+#phone#phone#phone .vip-benefit{padding:16px!important;gap:12px!important;border-radius:12px!important}
+#phone#phone#phone .vip-benefit strong{font-size:31px!important;line-height:42px!important}
+/* Main mission: illustration and target first, progress second, one clear action. */
+#phone#phone#phone .sv-mission{position:relative;font-size:26px;line-height:38px}
+#phone#phone#phone .sv-mission-hero{display:flex;align-items:center;gap:24px;min-height:238px;margin-bottom:22px}
+#phone#phone#phone .sv-mission-hero>img{width:214px;height:214px;object-fit:contain}
+#phone#phone#phone .sv-mission-hero>div{flex:1;min-width:0}
+#phone#phone#phone .sv-mission-hero small{color:#8c6d3e;font-size:22px;line-height:32px}
+#phone#phone#phone .sv-mission-hero h3{font-size:36px;line-height:50px;margin:8px 0 12px}
+#phone#phone#phone .sv-mission-hero p{font-size:25px;line-height:38px;margin:0}
+#phone#phone#phone .sv-mission .mission-progress{padding:22px!important;line-height:44px!important;font-size:25px!important;border-radius:12px}
+#phone#phone#phone .sv-mission .mission-materials{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+#phone#phone#phone .sv-mission-reward{display:flex;align-items:center;justify-content:space-between;margin:24px 0;font-size:27px;line-height:48px}
+#phone#phone#phone .sv-mission-reward b{font-size:38px;color:#b4771e}
+#phone#phone#phone .sv-mission>.game-btn{width:100%;min-height:82px;font-size:30px!important}
+/* Enhancement is a before/after composition, not the upgrade page with a different label. */
+#phone#phone#phone .pv-forge.pv-evolution{height:424px}
+#phone#phone#phone .pv-evolution-pair{position:absolute;inset:12px 12px 0;display:flex;align-items:flex-start;justify-content:space-between}
+#phone#phone#phone .pv-evolution-pair>div{position:relative;width:282px;height:400px;text-align:center}
+#phone#phone#phone .pv-evolution-pair .pv-tool{left:12px;top:38px;width:258px;height:270px}
+#phone#phone#phone .pv-evolution-pair small{display:block;font-size:23px;line-height:36px;color:#fff1c8;background:#45555b;border-radius:8px}
+#phone#phone#phone .pv-evolution-pair h3{left:0;right:0;top:316px;font-size:26px;line-height:46px;height:48px}
+#phone#phone#phone .pv-evolution-pair b{position:absolute;top:370px;left:0;right:0;color:#5b703c;font-size:25px;line-height:34px}
+#phone#phone#phone .pv-evolution-pair>.pv-arrow{margin-top:155px;color:#edbc4b;font-size:54px;line-height:70px}
+#phone#phone#phone .pv-materials{height:104px;gap:18px;margin:14px 0}
+#phone#phone#phone .pv-materials>span{flex:1;display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 8px;background:#eee2bf;border:1px solid #cab37e;border-radius:10px;font-size:24px;line-height:36px}
+#phone#phone#phone .pv-materials .icon{width:54px;height:54px}
+#phone#phone#phone .pv-materials .is-short{color:#a54d2d}
+/* Explicit text slots prevent stock prices and selected totals from sharing baselines. */
+#phone#phone#phone .wardrobe-item{display:block!important}
+#phone#phone#phone .wardrobe-item>img{position:absolute!important;left:50%!important;top:4px!important;transform:translateX(-50%);margin:0!important}
+#phone#phone#phone .wardrobe-item-name{position:absolute!important;left:4px!important;right:4px!important;top:116px!important;height:30px!important;margin:0!important;text-align:center}
+#phone#phone#phone .wardrobe-item>span{position:absolute!important;left:4px!important;right:4px!important;top:155px!important;height:32px!important;margin:0!important;text-align:center}
+#phone#phone#phone .credit-selection{top:978px!important;height:126px!important;padding:14px 8px!important;grid-template-columns:1fr 1.4fr 1fr!important}
+#phone#phone#phone #game .credit-offers{height:742px!important;top:238px!important;bottom:auto!important}
+#phone#phone#phone .credit-selection span{font-size:20px!important;line-height:30px!important;white-space:nowrap}
+#phone#phone#phone .credit-confirm{top:1122px!important;height:72px!important;left:90px!important;right:90px!important}
+#phone#phone#phone .credit-confirm .game-btn{height:72px!important;min-height:72px!important;font-size:32px!important}
+#phone#phone#phone .shop-exact-donation>.game-btn{font-size:23px!important;padding:6px!important}
+#phone#phone#phone .sv-rewards{text-align:center;padding:12px}
+#phone#phone#phone .sv-reward-hero{width:250px;height:198px;object-fit:contain;display:block;margin:0 auto}
+#phone#phone#phone .sv-rewards>p{font-size:30px;line-height:44px;margin:6px 0 22px;color:#916529}
+#phone#phone#phone .sv-rewards .reward-list{display:flex!important;flex-wrap:wrap!important;justify-content:center;gap:18px!important;max-height:650px!important;overflow-y:auto!important;padding:8px!important}
+#phone#phone#phone .sv-rewards .reward-item{width:182px!important;height:212px!important;min-height:212px!important;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px!important;padding:12px!important;font-size:24px!important;line-height:34px!important}
+#phone#phone#phone .sv-rewards .reward-item>img{width:88px!important;height:88px!important;object-fit:contain}
+#phone#phone#phone .sv-rewards .reward-item b{font-size:28px!important;line-height:38px!important}

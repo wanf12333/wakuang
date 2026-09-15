@@ -1,0 +1,293 @@
+/* Reusable casual-game dialog polish. Uses existing art plus CSS/vector detail only. */
+#phone{
+ --dialog-ink:#5b391c;
+ --dialog-muted:#8f724c;
+ --dialog-line:#dcc18a;
+ --dialog-gold:#c88a22;
+ --dialog-green:#4f7d2d;
+ --dialog-paper:#fff7df;
+ --dialog-paper-deep:#f3dfad;
+}
+
+#phone[data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal-shade{
+ background:radial-gradient(circle at 50% 44%,#24382a66 0 24%,#101b14b8 78%)!important;
+}
+#phone[data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal{
+ filter:drop-shadow(0 18px 20px #0f1b146b);
+}
+#phone[data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal>h2{
+ position:relative;
+ gap:15px;
+ color:#fff7dc;
+ text-shadow:0 2px 0 #593616,0 4px 7px #3b210b77;
+}
+#phone[data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal>h2::before,
+#phone[data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal>h2::after{
+ content:'';
+ width:9px;
+ height:9px;
+ flex:none;
+ border:2px solid #8c581e;
+ background:linear-gradient(135deg,#fff2a0,#c7831b);
+ box-shadow:0 1px #fff1a0;
+ transform:rotate(45deg);
+}
+#phone[data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal-content{
+ padding:4px 18px 18px!important;
+ color:var(--dialog-ink);
+ scrollbar-color:#bd9250 transparent;
+}
+
+/* Shared hero surface: one component for item, member, loan and confirmation dialogs. */
+#phone .modal-content :is(.dialog-hero,.credit-loan-hero,.debt-dialog-hero){
+ position:relative;
+ min-height:150px;
+ margin:0 0 17px;
+ padding:14px 22px;
+ border:2px solid #d5b56f;
+ border-radius:17px;
+ background:radial-gradient(circle at 24% 25%,#fffef4 0 16%,transparent 42%),linear-gradient(145deg,#fff8e4,#f2dca8);
+ box-shadow:inset 0 0 0 3px #fff9e7,0 4px 0 #a8783038;
+ overflow:hidden;
+}
+#phone .modal-content :is(.dialog-hero,.credit-loan-hero,.debt-dialog-hero)::after{
+ content:'';
+ position:absolute;
+ right:-25px;
+ bottom:-35px;
+ width:150px;
+ height:95px;
+ border:18px solid #d5ad6040;
+ border-radius:50%;
+ transform:rotate(-18deg);
+ pointer-events:none;
+}
+#phone .dialog-hero>.dialog-art,
+#phone .credit-loan-hero>img,
+#phone .debt-dialog-hero>img{
+ box-sizing:border-box;
+ padding:8px;
+ border:2px solid #d0a64f;
+ border-radius:22px;
+ background:radial-gradient(circle,#fff9dd 0 44%,#e3bd64 72%,#9d6725 100%);
+ box-shadow:inset 0 0 0 3px #fff1ae,0 4px 8px #6a421f45;
+ filter:drop-shadow(0 4px 3px #76502855);
+}
+#phone .dialog-hero h3,
+#phone .credit-loan-hero strong{
+ color:var(--dialog-ink);
+ text-shadow:0 1px #fff5d6;
+}
+
+/* Shared information card for rules, tutorials, locks and onboarding. */
+#phone .dialog-info{
+ position:relative;
+ min-height:148px;
+ margin-bottom:16px;
+ padding:17px 20px;
+ display:grid;
+ grid-template-columns:104px minmax(0,1fr);
+ align-items:center;
+ gap:18px;
+ border:2px solid #d3b16b;
+ border-radius:17px;
+ background:radial-gradient(circle at 18% 30%,#fffbe8 0 15%,transparent 36%),linear-gradient(145deg,#fff8e3,#efdaa6);
+ box-shadow:inset 0 0 0 3px #fff9e7,0 4px 0 #95632635;
+ overflow:hidden;
+}
+#phone .dialog-info::after{
+ content:'';
+ position:absolute;
+ right:-30px;
+ bottom:-48px;
+ width:165px;
+ height:105px;
+ border:20px solid #c89b4a2b;
+ border-radius:50%;
+ transform:rotate(-15deg);
+}
+#phone .dialog-info-icon{
+ position:relative;
+ z-index:1;
+ width:96px;
+ height:96px;
+ display:grid;
+ place-items:center;
+ border:2px solid #c9973d;
+ border-radius:24px;
+ background:radial-gradient(circle,#fff9d8 0 43%,#e0b85e 72%,#9a6222 100%);
+ box-shadow:inset 0 0 0 3px #fff0a4,0 5px 8px #70451f55;
+}
+#phone .dialog-info-icon .icon,
+#phone .dialog-info-icon>img{width:76px;height:76px;object-fit:contain;filter:drop-shadow(0 4px 3px #70441f66)}
+#phone .dialog-info>div{position:relative;z-index:1}
+#phone .dialog-info small{display:block;color:#a37b3b;font-size:17px;font-weight:900;letter-spacing:1.3px}
+#phone .dialog-info h3{margin:3px 0 7px;color:#5a371a;font-size:29px;line-height:1.15;text-shadow:0 1px #fff}
+#phone .dialog-info p{margin:0!important;color:#806445;font-size:20px;line-height:1.45!important}
+#phone .dialog-rule-list{padding:5px 16px;border:2px solid #cfad69;border-radius:15px;background:#fff7e1;box-shadow:inset 0 0 0 3px #fffdf5}
+#phone .dialog-rule-list p{min-height:53px;margin:0!important;display:flex;align-items:center;gap:13px;border-bottom:1px solid #dfc89a;color:#705234;font-size:21px}
+#phone .dialog-rule-list p:last-child{border-bottom:0}
+#phone .dialog-rule-list b{width:34px;height:28px;display:grid;place-items:center;border-radius:8px;background:#e7c56f;color:#724716;font-size:16px}
+
+/* Shared form and permission controls. */
+#phone .dialog-field{display:block;margin:14px 0;padding:14px 16px;border:2px solid #d1b273;border-radius:15px;background:#fff7e3;box-shadow:inset 0 0 0 3px #fffdf5;color:#6f4d2d;font-weight:800}
+#phone .dialog-field>span{display:block;margin-bottom:8px;font-size:21px}
+#phone .dialog-field>.game-input{min-height:59px;border:2px solid #b98a43;border-radius:11px;background:linear-gradient(#fffdf6,#f2dfb6);box-shadow:inset 0 2px 4px #7f5a2530;color:#533317;font-size:24px}
+#phone .dialog-field>small{display:block;margin-top:7px;color:#9b805a;font-size:16px;text-align:right}
+#phone .permission-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:13px 0}
+#phone .permission-grid .check-row{min-height:58px;margin:0;padding:10px 13px;border:2px solid #d3b779;border-radius:12px;background:#fff8e6;color:#654628;font-size:20px;font-weight:700;cursor:pointer}
+#phone .permission-grid .check-row:has(input:checked){border-color:#9db266;background:#edf3cf;color:#4e722f;box-shadow:inset 0 0 0 2px #fbffe5}
+#phone .permission-grid input{width:26px;height:26px;accent-color:#6d9635}
+
+/* Reusable ledger-style detail card and rows. */
+#phone .modal-content :is(.detail-group,.debt-dialog-summary){
+ position:relative;
+ padding:5px 16px!important;
+ border:2px solid #cdaa68!important;
+ border-radius:15px!important;
+ background:linear-gradient(155deg,#fffaf0e8,#f7e8c5e8)!important;
+ box-shadow:inset 0 0 0 3px #fffdf4,0 3px 0 #9c6c2630!important;
+ overflow:hidden;
+}
+#phone .modal-content :is(.detail-group,.debt-dialog-summary)::before{
+ content:'';
+ position:absolute;
+ top:8px;
+ bottom:8px;
+ left:7px;
+ width:3px;
+ border-radius:3px;
+ background:linear-gradient(#e8bc5d,#9d6826);
+ opacity:.7;
+}
+#phone .modal-content :is(.detail-stat,.debt-dialog-summary>div){
+ position:relative;
+ min-height:62px;
+ padding:10px 4px 10px 9px;
+ border-color:var(--dialog-line)!important;
+}
+#phone .modal-content :is(.detail-stat,.debt-dialog-summary>div):nth-child(even){
+ background:#f4e4bc3f;
+}
+#phone .detail-stat .icon{
+ box-sizing:border-box;
+ width:38px!important;
+ height:38px!important;
+ padding:4px;
+ border:1px solid #d3b16f;
+ border-radius:11px;
+ background:#fff4d4;
+ box-shadow:inset 0 1px #fff;
+}
+#phone .modal-content :is(.detail-stat,.debt-dialog-summary>div)>span{
+ color:#735435;
+ font-weight:700;
+}
+#phone .modal-content :is(.detail-stat,.debt-dialog-summary>div)>b,
+#phone .modal-content .detail-stat>strong{
+ color:var(--dialog-green);
+ font-size:28px;
+ font-variant-numeric:tabular-nums;
+ text-shadow:0 1px #fff;
+}
+
+#phone .dialog-total{
+ position:relative;
+ min-height:67px;
+ margin-top:17px;
+ border:2px solid #9eae57;
+ border-radius:15px;
+ background:linear-gradient(#eef5c8,#d5e69b);
+ box-shadow:inset 0 0 0 3px #faffdf,0 3px 0 #72883c42;
+ color:#5f4a2e;
+}
+#phone .dialog-total::before,
+#phone .dialog-total::after{
+ content:'◆';
+ position:absolute;
+ color:#9eb654;
+ font-size:12px;
+}
+#phone .dialog-total::before{left:14px}
+#phone .dialog-total::after{right:14px}
+#phone .dialog-total b{font-size:34px!important;text-shadow:0 1px #fff}
+
+/* Quantity and action controls share one deeper, tactile treatment. */
+#phone .modal-content .quantity{
+ margin:18px 0;
+ padding:10px;
+ border:2px solid #d3b777;
+ border-radius:16px;
+ background:#edddb8b5;
+ box-shadow:inset 0 2px 4px #9d78352c;
+}
+#phone .modal-content .quantity output{
+ min-height:62px;
+ display:grid;
+ place-items:center;
+ padding:8px 12px;
+ border:2px solid #bb8b42;
+ border-radius:12px;
+ background:linear-gradient(#fffaf0,#f3deb0);
+ box-shadow:inset 0 2px 4px #8c622733;
+ color:#603b19;
+ font-weight:900;
+ font-variant-numeric:tabular-nums;
+}
+#phone[data-modal]:not([data-modal=pass]) .modal-content>.actions:last-child{
+ margin-top:20px;
+ padding-top:15px;
+ border-top:1px solid #ddc28d;
+}
+#phone[data-modal]:not([data-modal=pass]) .modal-content .actions .game-btn{
+ min-height:70px;
+ border:3px solid #a86c1d!important;
+ border-image:none!important;
+ border-radius:14px;
+ background:linear-gradient(#ffe66a 0%,#ffc72e 54%,#ed9c0b 100%)!important;
+ box-shadow:inset 0 0 0 3px #fff3a7,inset 0 -5px 6px #c4781535,0 4px 0 #87551d!important;
+ color:#65401b!important;
+ text-shadow:0 1px #fff2b4!important;
+}
+#phone[data-modal]:not([data-modal=pass]) .modal-content .actions .game-btn.secondary{
+ border-color:#9e8257!important;
+ background:linear-gradient(#f4e8c9,#d9c39a)!important;
+ box-shadow:inset 0 0 0 3px #fff7e1,0 4px 0 #806943!important;
+ color:#745d3d!important;
+}
+#phone[data-modal]:not([data-modal=pass]) .modal-content .actions .game-btn.danger{
+ border-color:#99462e!important;
+ background:linear-gradient(#f2a06f,#d75e3f)!important;
+ box-shadow:inset 0 0 0 3px #ffd5b6,0 4px 0 #7b3424!important;
+ color:#fff6df!important;
+ text-shadow:0 2px #843922!important;
+}
+
+/* Reward overlay keeps no heavy shell but gains reusable prize pedestals. */
+#phone[data-modal=reward] .reward-list{gap:20px!important;padding:12px 4px 28px!important}
+#phone[data-modal=reward] .reward-item{
+ position:relative;
+ min-height:174px;
+ padding:18px 9px 13px;
+ border:2px solid transparent;
+ border-radius:0;
+ background:none;
+ box-shadow:none;
+}
+#phone[data-modal=reward] .reward-item::before{
+ content:none;
+ position:absolute;
+ left:18px;
+ right:18px;
+ bottom:44px;
+ height:13px;
+ border-radius:50%;
+ background:#f4bd4a88;
+ filter:blur(4px);
+}
+#phone[data-modal=reward] .reward-item img{position:relative;z-index:1;width:94px!important;height:94px!important;filter:drop-shadow(0 5px 4px #0008)!important}
+#phone[data-modal=reward] .reward-item b{position:relative;z-index:1;color:#ffe07b!important;text-shadow:0 2px #6c3811!important}
+
+@media(prefers-reduced-motion:reduce){
+ #phone[data-modal] .modal{filter:none}
+}

@@ -1,0 +1,82 @@
+#phone[data-modal=buildingUpgrade] .modal-content{overflow:hidden;padding:0 4px}
+.building-rank{display:grid;gap:8px;padding:4px 8px}
+.building-rank>div{display:flex;justify-content:space-between;font-size:23px;color:#7b5831}
+.building-rank strong{color:#527732}
+.building-rank .building-rank-segments{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;height:22px;margin-top:5px}
+.building-rank-segments>span{border:1px solid #c9b27d;border-radius:4px;background:#e7d6ad;box-shadow:inset 0 2px 3px #9c79351a}
+.building-rank-segments>span.is-filled{border-color:#718b3d;background:linear-gradient(#a6b962,#728f3d);box-shadow:inset 0 2px #d6e597}
+#phone .building-upgrade .building-tier{border:0!important;border-image:none!important;background:none!important;box-shadow:none!important;border-radius:0;padding:22px 20px;gap:20px}
+#phone .building-tier.is-maxed{justify-content:center}
+#phone .building-tier.is-maxed .building-tier-art{width:330px;height:330px}
+.building-materials{padding:0 8px;display:grid;gap:8px;font-size:22px}
+.building-materials>span{font-size:20px;color:#917550}
+.building-materials>div{display:flex;align-items:center;gap:8px}
+.building-materials .icon{width:32px;height:32px;object-fit:contain}
+.building-materials b{margin-left:auto;color:#527732;font-size:22px}
+.building-materials .is-short b{color:#b3442d}
+.building-growth-note{font-size:20px;color:#8b714d;text-align:center;padding:8px 0}
+#phone .building-tier-art{width:250px;height:250px}
+#phone[data-modal=buildingUpgrade] .modal{width:860px!important;max-width:none!important;flex-shrink:0}
+.building-evolution{display:flex;flex-direction:column;gap:24px;padding:20px 24px;color:#76502a}
+.building-path{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px}.building-path>span{position:relative;flex:1;text-align:center;color:#a59a7c}.building-path>span:not(:last-child):after{content:'→';position:absolute;right:-15px;top:0;font-size:28px;color:#c4a76c}.building-path i{display:block;margin:auto auto 8px;width:36px;line-height:36px;border-radius:50%;background:#e5d8b7;font-style:normal;font-size:23px}.building-path small{font-size:19px;white-space:nowrap}.building-path .is-current{color:#85501e;font-weight:bold}.building-path .is-current i{background:#ffc74b;box-shadow:0 0 0 3px #fff0ba}.building-path .is-complete i{background:#a6b96e;color:#fff}
+.building-evolution-pair{display:flex;align-items:center;justify-content:center;gap:12px}.building-evolution-pair>div{flex:1;min-width:0;text-align:center}.building-evolution-pair small{font-size:22px;color:#9b784d}.building-evolution-pair h3{font-size:29px;margin:4px 0}.building-evolution-art{display:block;position:relative;width:100%;aspect-ratio:1}.building-future .building-evolution-art{filter:grayscale(.8);opacity:.65}.building-evolution-arrow{font-size:44px;color:#d3982d}.building-evolution-note{text-align:center;font-size:23px;line-height:1.5;margin:0;color:#91744b}
+#phone .building-evolution .building-upgrade-button{display:flex;flex-direction:column;align-items:center;gap:5px;min-height:88px;font-size:27px}
+.building-upgrade{display:flex;flex-direction:column;gap:12px;color:#65401d}
+.building-path>button{position:relative;flex:1;text-align:center;color:#a59a7c;background:none;border:0;padding:0;cursor:pointer;font:inherit}.building-path>button:not(:last-child):after{content:'→';position:absolute;right:-15px;top:0;font-size:28px;color:#c4a76c}
+.building-evolution{touch-action:pan-y}.building-stage-preview{text-align:center;animation:building-stage-in .2s ease-out}.building-stage-preview .building-evolution-art{width:300px;margin:auto}.building-stage-preview h3{font-size:29px}.building-stage-preview p,.building-feature-note{font-size:23px;text-align:center;color:#718044}.building-stage-preview .game-btn{font-size:25px;padding:15px}.building-feature-note{margin:0}@keyframes building-stage-in{from{opacity:.4;transform:translateX(15px)}to{opacity:1;transform:none}}
+.building-library{padding:18px 12px 24px;color:#76502a}
+.building-library-caption{text-align:center;font-size:26px;margin-bottom:22px}
+.building-library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.building-library-item{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 6px 16px;border:2px solid #cfb781;border-radius:14px;background:linear-gradient(135deg,#fff8e6,#f7e8c4);box-shadow:inset 0 0 0 2px #fff5db;color:#69451e;cursor:pointer;font:inherit}
+.building-library-item b{font-size:24px;white-space:nowrap}.building-library-item small{font-size:21px;color:#927954}
+.building-library-art{position:relative;display:block;width:100%;aspect-ratio:1}
+.building-library-item.is-locked{background:#e1dcc8;border-color:#bdb59c;color:#918b78}.building-library-item.is-locked .building-library-art{filter:grayscale(1);opacity:.42}
+.building-library-item:focus-visible{outline:3px solid #d19836;outline-offset:2px}
+#phone .building-detail .building-tier{width:100%;min-height:580px;padding:20px 36px}
+.building-upgrade-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:24px;padding:4px 6px}
+.building-upgrade-summary strong{display:flex;align-items:center;gap:6px;white-space:nowrap;font-size:25px}
+.building-upgrade-summary .icon{width:30px;height:30px}
+.building-list-nav{display:flex;align-items:center;justify-content:space-between;font-size:21px;color:#8b693e}
+.building-list-nav button{width:52px;height:44px;border:0;border-image:url('assets/visual/guild-button-gold.svg') 14 fill / 10px / 0 stretch;background:none;color:#80501a;font-size:35px;line-height:1;cursor:pointer}
+.building-upgrade-track{position:relative;display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;padding:5px 9px 15px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;touch-action:pan-x;scrollbar-width:thin;scrollbar-color:#b58a44 #f3deb0}
+.building-upgrade-track:focus-visible{outline:3px solid #39bdd6;outline-offset:-3px;border-radius:12px}
+.building-tier{box-sizing:border-box;flex:0 0 78%;min-width:0;scroll-snap-align:center;display:flex;flex-direction:column;align-items:stretch;gap:12px;border:3px solid #c8a46b;border-radius:18px;background:linear-gradient(135deg,#fff8df,#fae6bd);padding:15px 14px;box-shadow:inset 0 0 0 3px #fffaf0}
+.building-tier.is-current{border-color:#8f9c46}.building-tier.is-next{border-color:#d99c26;box-shadow:inset 0 0 0 3px #fff9c4,0 0 0 2px #efc24f}
+.building-tier header{text-align:center}.building-tier h3{margin:0;font-size:29px;line-height:1.3;white-space:nowrap}
+.building-tier-state{display:inline-block;font-size:20px;margin-top:5px;padding:3px 14px;border-radius:7px;background:#e5d4aa;color:#80643b}
+.is-current .building-tier-state{background:#e2e9ab;color:#657428}.is-next .building-tier-state{background:#ffe296;color:#98651f}
+.building-tier-art{position:relative;width:300px;height:300px;align-self:center;overflow:hidden}
+.building-tier-art .prison-scene{width:680px;height:680px;transform:scale(.4411764706);transform-origin:top left}
+.building-tier-art .prison-patrol,.building-tier-art .prison-facing,.building-tier-art .prison-mole{animation:none!important;will-change:auto}
+.building-tier-art .prison-patrol{transform:translateX(28.125%)}
+.building-tier-benefit{display:flex;flex-direction:column;gap:7px;padding:12px 6px;text-align:center;border-top:1px solid #d5b887;border-bottom:1px solid #d5b887}
+.building-tier-benefit strong{font-size:28px;color:#587226}.building-tier-benefit span{font-size:23px}
+#phone .building-upgrade .building-upgrade-button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:91px;width:100%;padding:7px 5px;font-size:27px;line-height:1.15;border:0;border-image:url('assets/visual/guild-button-gold.svg') 14 fill / 14px / 0 stretch;background:none;box-shadow:none;color:#fff5d5;-webkit-text-stroke:2px #97601f;paint-order:stroke fill}
+#phone .building-upgrade .building-upgrade-button:before{display:none}
+#phone .building-upgrade .building-upgrade-button:disabled{filter:grayscale(.85);opacity:.67;cursor:default}
+.building-upgrade-cost{display:flex;gap:6px;align-items:center;font-size:25px}.building-upgrade-cost .icon{width:28px;height:28px}
+#phone .building-upgrade-notice{margin:0;padding:2px 5px;font-size:22px;line-height:1.35;text-align:center;color:#74812f}
+/* Upgrade tiers share the same raster; reinforcement layers distinguish levels. */
+.building-evolution{gap:16px;padding:12px 24px}
+.building-path{margin-bottom:0;gap:12px}
+.building-path-icon{display:block;width:66px;height:66px;margin:0 auto 5px;position:relative}
+.building-path-icon img{width:100%;height:100%;object-fit:contain}
+.building-path-icon.is-locked{filter:grayscale(1);opacity:.5}
+.building-path-house{display:block;width:100%;height:100%;background:url('assets/visual/residences-v1.png') 50% 100%/300% 200% no-repeat}
+.building-path small{font-size:19px;color:#76502a}
+.building-path>button{min-width:0}
+.building-evolution-pair .building-evolution-art{width:230px;max-width:100%;margin:auto}
+.building-evolution-pair h3{font-size:26px}
+.building-unlock-card{display:flex;align-items:center;justify-content:center;gap:20px;padding:16px 20px;border:2px solid #d6a746;border-radius:12px;background:linear-gradient(110deg,#ffedba,#fff7dc);box-shadow:inset 0 0 0 3px #fff8e1;text-align:left}
+.building-unlock-card>img{width:94px;height:94px;object-fit:contain}
+.building-unlock-copy{display:flex;flex-direction:column;gap:6px}
+.building-unlock-copy small{font-size:22px;color:#89652c}
+.building-unlock-copy strong{font-size:34px;color:#8a4b17}
+.building-unlock-copy>span{font-size:22px;color:#7e6944}
+.building-evolution-note{font-size:21px}
+.building-stage-preview .building-unlock-card{margin:16px 0}
+.prison-scene[data-building-level="3"]{--prison-bar-width:7px}
+.prison-scene[data-building-level="4"]{--prison-bar-width:8px;--prison-metal:linear-gradient(90deg,#374858,#8297aa,#dce4e9,#63768a,#283b4a)}
+.prison-scene[data-building-level="5"]{--prison-bar-width:9px;--prison-metal:linear-gradient(90deg,#66562f,#c9ae6c,#eee0ac,#9e874f,#4d462f)}
+.prison-scene[data-building-level="3"] .prison-reinforcement,.prison-scene[data-building-level="4"] .prison-reinforcement,.prison-scene[data-building-level="5"] .prison-reinforcement{top:48%;height:39%;width:2.8%}
+.prison-scene[data-building-level="5"] .prison-crossbar{background:linear-gradient(#f1dfa6,#b7a165,#6c634a)}

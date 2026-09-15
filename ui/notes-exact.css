@@ -1,0 +1,28 @@
+#phone #game[data-page=notes]{display:block;padding:0}
+#phone .credit-notes .credit-tabs .game-btn:first-child{background:linear-gradient(#55d5ed,#139ed2);border-color:#087aa4;box-shadow:inset 0 0 0 3px #cbf5ff}
+#phone .credit-notes .credit-tabs .game-btn:last-child{background:linear-gradient(#ffe968,#ffbd14);border-color:#c98920;box-shadow:inset 0 0 0 3px #fff8bd}
+.credit-note-list{position:absolute;left:39px;right:39px;top:358px;padding:2px;display:flex;flex-direction:column;gap:9px}
+.credit-note{position:relative;width:100%;height:116px;flex:none;display:flex;align-items:center;padding:4px;font:inherit;text-align:center;overflow:hidden}
+.note-miner{width:107px;height:107px;background-size:300% 200%;flex:none;border:0}
+.note-info{flex:1;min-width:0;padding-left:12px;align-self:stretch}.note-info>strong{font-size:25px;display:block;line-height:32px}.note-index{display:inline-block;background:#895021;border:2px solid #cda449;border-radius:7px;color:#fff7d8;padding:0 7px;font-size:23px;line-height:27px}
+.note-status{display:table;background:#59912c;color:#fff9d7;border-radius:5px;padding:2px 10px;font-size:19px;margin:4px 0}.note-status.lost{background:#d5593e}
+.note-values{display:flex;gap:0;font-size:23px;line-height:26px;text-align:center;margin-top:7px}.note-values>span{white-space:nowrap;padding:0 5px}.note-values>span:has(small){font-weight:bold}
+.note-inspect{position:absolute;inset:0;background:transparent;border:0;border-radius:14px;cursor:pointer}.note-inspect:focus-visible{outline:4px solid #edab00}
+#phone .note-claim{align-self:flex-end;min-height:44px;height:44px;padding:3px 12px;font-size:23px;margin-bottom:4px;border-image:none;border:2px solid #b47920;border-radius:8px;background:linear-gradient(#ffe96e,#ffb614);box-shadow:inset 0 0 0 2px #fff1bc;white-space:nowrap}
+#phone .note-claim.danger{background:linear-gradient(#ff9c76,#ed6245);border-color:#a25432}
+#phone .note-claim:before{display:none!important}
+.empty-note{justify-content:center;gap:25px;border-style:dashed;height:116px}.empty-note .note-index{position:absolute;left:42px;top:40px}.empty-note small{display:block;margin-top:9px;font-size:23px}.note-locked{background:#e4e3df;color:#756d60;border-color:#aba9a2}.note-lock{font-size:41px}
+.filled-note .credit-number b{font-size:21px}.filled-note .credit-number small{font-size:18px}.filled-note .note-status{margin-top:7px;font-size:20px;padding:2px 4px}.filled-note .note-action{display:flex;justify-content:center}
+#phone .filled-note .note-claim{font-size:18px;padding:3px 4px;margin:0;height:43px;min-height:43px}
+
+/* Shared guild material treatment for both credit tabs; geometry stays unchanged. */
+.credit-stats>div{background:linear-gradient(#7fa53d,#436c24);border:3px solid #f5db92;box-shadow:inset 0 0 0 2px #b6c878,0 3px 0 #785121;border-radius:17px;color:#fff4cf}
+.credit-stats span{color:#fff4d9}.credit-stats b{text-shadow:0 2px #355019}
+#phone .credit-hall .credit-tabs .game-btn{background:linear-gradient(#9b784c,#6c4b2c);border:3px solid #b38a51;border-image:none;border-radius:13px 13px 4px 4px;box-shadow:inset 0 0 0 2px #dfc494;color:#fff3d0;-webkit-text-stroke-color:#62421f}
+#phone .credit-hall:not(.credit-notes) .credit-tabs .game-btn:first-child,#phone .credit-hall.credit-notes .credit-tabs .game-btn:last-child{background:none;border:3px solid transparent;border-image:url('assets/visual/button-gold-v2.png') 220 240 fill / 16px / 0 stretch;box-shadow:none;color:#fff9dd}
+.credit-offer,.credit-note:not(.note-locked){background:#fff0ca;border:2px solid #d3af70;border-image:url('assets/visual/aid-panel-skin.png') 160 fill / 22px / 0 stretch;box-shadow:none;clip-path:inset(1px round 13px)}
+.credit-offer.chosen{border-image:none;border:3px solid #e5a521;background:linear-gradient(110deg,#fff5d7,#ffe5a0);box-shadow:inset 0 0 0 2px #fffacb}
+.credit-selection{background:#fff0ca;border:3px solid #d0a369;border-image:url('assets/visual/aid-panel-skin.png') 160 fill / 24px / 0 stretch;box-shadow:none;clip-path:inset(1px round 13px)}
+.credit-selection section+section{border-left:1px solid #cbaa6d}
+#phone .credit-confirm .game-btn,#phone .credit-refresh .game-btn{background:none;border:3px solid transparent;border-image:url('assets/visual/button-gold-v2.png') 220 240 fill / 17px / 0 stretch;box-shadow:none;border-radius:14px}
+.credit-refresh{background:linear-gradient(#f6e5ba,#e7c992);border-color:#b48c4a;box-shadow:inset 0 0 0 2px #fff2ca;color:#62401d}

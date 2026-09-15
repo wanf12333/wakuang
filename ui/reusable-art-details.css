@@ -1,0 +1,41 @@
+#phone{
+ --art-brass-corners:linear-gradient(#cda45f,#cda45f) left top/20px 2px no-repeat,linear-gradient(#cda45f,#cda45f) left top/2px 20px no-repeat,linear-gradient(#cda45f,#cda45f) right bottom/20px 2px no-repeat,linear-gradient(#cda45f,#cda45f) right bottom/2px 20px no-repeat;
+ --art-ribbon:linear-gradient(90deg,#283e52,#51768b 46%,#23394d);
+}
+#phone[data-ui-kit] .guild-module-scene{
+ background-image:linear-gradient(90deg,#142938a6,transparent 33% 70%,#162d3980),linear-gradient(0deg,transparent 0 66%,#171f29 67% 69%,#cc9557 70% 72%,transparent 73%),var(--kit-timber)!important;
+ background-size:auto,auto,auto,256px 256px!important;
+ box-shadow:inset 0 0 0 3px #b88d50,inset 0 0 0 7px #172c36,inset 0 -22px 22px #1b140e80,0 4px 0 #28272b!important;
+}
+#phone[data-ui-kit] .guild-module-scene::before{
+ content:'';left:38px;top:17px;width:84px;height:122px;border:0;border-radius:0;color:transparent;
+ background:url('assets/icons/guild_shield.png') center 7px/66px 66px no-repeat,var(--art-ribbon);
+ clip-path:polygon(0 0,100% 0,100% 100%,50% 83%,0 100%);box-shadow:inset 3px 0 #d7ae69,inset -3px 0 #d7ae69;
+}
+#phone[data-ui-kit] .guild-module-scene::after{
+ background:linear-gradient(90deg,#26313d 0 10px,transparent 11px calc(100% - 11px),#26313d calc(100% - 10px)),var(--kit-timber);
+ background-size:auto,auto,128px 128px;border-top-color:#d7a767;box-shadow:inset 0 4px #543b2b,inset 0 -5px #2d2020;
+}
+#phone[data-ui-kit] .guild-counter-sign::before{content:'';position:absolute;left:24px;right:24px;top:-24px;height:24px;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,#c7a978 4px 7px,transparent 8px 10px) left top/5px 100% no-repeat,repeating-linear-gradient(0deg,transparent 0 3px,#c7a978 4px 7px,transparent 8px 10px) right top/5px 100% no-repeat}
+#phone[data-ui-kit] .guild-counter-gems{width:190px;right:16px;padding-left:8px;padding-right:8px;gap:2px;background:linear-gradient(#182930,#593c26);border-color:#bf8b4a;box-shadow:inset 0 0 0 3px #26323b,inset 0 -9px #49301f,0 4px #211b18}
+#phone[data-ui-kit] .guild-counter-gems i{flex:0 0 24px;clip-path:none;filter:drop-shadow(0 2px 1px #141b24);height:36px;background:center/140% auto no-repeat}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(1){background-image:url('assets/icons/sapphire.png')}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(2){background-image:url('assets/icons/amethyst.png');filter:drop-shadow(0 2px 1px #141b24)}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(3){background-image:url('assets/icons/citrine.png');filter:drop-shadow(0 2px 1px #141b24)}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(4){background-image:url('assets/icons/ruby.png');filter:drop-shadow(0 2px 1px #141b24)}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(5){background-image:url('assets/icons/emerald.png');filter:drop-shadow(0 2px 1px #141b24)}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(6){background-image:url('assets/icons/diamond.png')}
+#phone[data-ui-kit] .guild-counter-mole{filter:drop-shadow(0 4px 3px #12212ccc) drop-shadow(0 0 12px #ffd18730)}
+#phone[data-ui-kit] .shop-exact-product{background:linear-gradient(120deg,#fff9e6,#f5e6c1)!important;box-shadow:inset 0 0 0 2px #fbe7b7,inset 0 -5px #c6a77944,0 3px #5e4835!important}
+#phone[data-ui-kit] .shop-exact-product::before{content:'';position:absolute;inset:8px;pointer-events:none;background:var(--art-brass-corners);border-radius:6px;opacity:.85}
+#phone[data-ui-kit] .shop-concept-icon{background:radial-gradient(ellipse at 50% 38%,#fffdf1 0 30%,#f6e4b5 65%,#c1a06a 100%);box-shadow:inset 0 0 0 2px #fff7d8,inset 0 -7px 8px #a47c4026,0 2px 2px #73562d33}
+#phone[data-ui-kit] .shop-exact-product h3{color:#604227;text-shadow:0 1px #fff9e6}
+#phone[data-ui-kit] .shop-exact-price{background:linear-gradient(#eaf0d6,#d4dfba)!important;box-shadow:inset 0 0 0 1px #fff8df,inset 0 -3px #b3bf9633}
+#phone[data-ui-kit] .shop-exact-donation{background:radial-gradient(ellipse at 8% 45%,#ffda7066,transparent 30%),linear-gradient(110deg,#fff4d0,#f5e2b4);box-shadow:inset 0 0 0 3px #fff6db,inset 0 -5px #d7b56b33}
+#phone[data-ui-kit] .guild-growth-entry{background:linear-gradient(110deg,#587b43,#8ba84e 48%,#425e37)!important;box-shadow:inset 0 0 0 2px #f1e2a2,inset 0 -4px #2f4c3566,0 2px #344230!important}
+#phone[data-ui-kit] .guild-growth-entry .guild-growth-name{filter:drop-shadow(0 1px 1px #2d402a)}
+#phone[data-ui-kit] :is(.workshop-detail,.online-milestones,.wardrobe-preview,.beauty-detail){position:relative;isolation:isolate}
+#phone[data-ui-kit] :is(.workshop-detail,.online-milestones,.wardrobe-preview,.beauty-detail)::after{content:'';position:absolute;inset:7px;pointer-events:none;z-index:-1;background:var(--art-brass-corners);border:0;border-radius:0;transform:none}
+#phone[data-ui-kit] .online-milestones{box-shadow:inset 0 0 0 4px #fff8e1,inset 0 -7px #d7c19a26,0 3px #c1a37933}
+#phone[data-ui-kit] .mine-kit-gear{border-color:#84909a;box-shadow:inset 0 0 0 3px #334452,0 4px #14202b;filter:drop-shadow(0 2px 1px #0c1a21)}
+#phone[data-ui-kit] .mine-kit-lamp{border-radius:6px;background:linear-gradient(90deg,#39434b 0 20%,#ffdc6d 22% 45%,#fff4c2 48% 60%,#f7aa32 64% 78%,#39434b 80%);box-shadow:0 0 24px #ffd06555,inset 0 -8px #e28b2044}

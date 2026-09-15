@@ -1,0 +1,33 @@
+/* One cream/blue shared frame; one approved gold nine-slice CTA for every state. */
+/* Compact ledger entry replaces the home status panel; details remain in dialogs. */
+#phone .home-concept-scene .home-ledger-entry,.scene .home-status-card.home-ledger-entry{left:733px;top:40px;width:180px;height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0;border:0;border-image:none;background:none;box-shadow:none;color:#fff8e8}
+.home-ledger-entry .ledger-icon{width:82px;height:82px;object-fit:contain;filter:drop-shadow(0 3px 2px #25170ccc)}
+.home-ledger-entry .ledger-label{font-size:25px;line-height:30px;white-space:nowrap;-webkit-text-stroke:4px #35271b;paint-order:stroke fill;text-shadow:0 2px 2px #17110e}
+.home-ledger-entry .ledger-dot{position:absolute;right:23px;top:10px;width:17px;height:17px;border-radius:50%;background:#e64a32;border:2px solid #ffe5a1}
+.home-status-card.hc-control{position:absolute;left:689px;top:22px;width:252px;height:344px;display:flex;flex-direction:column;gap:6px;padding:22px 23px 20px;border:0;background:none;color:#573717;font-family:'Microsoft YaHei',sans-serif;font-weight:bold;line-height:1.2;text-align:center;text-decoration:none;pointer-events:auto;cursor:pointer;isolation:isolate}
+.home-status-card>.smooth-frame{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:visible}
+.home-status-card .status-heading{height:37px;display:flex;align-items:center;justify-content:center;gap:5px;flex:none}
+.home-status-card .status-heading img{width:33px;height:36px;object-fit:contain;flex:none}
+.home-status-card .status-heading strong{font-size:27px;white-space:nowrap}
+.home-status-card .status-caption{display:block;flex:none;font-size:20px;line-height:25px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.home-status-card .status-body{min-height:0;flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.home-status-card .status-main-value{font-size:49px;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-1px}
+.home-status-card .status-help{display:block;font-size:22px;line-height:1.4}
+.home-status-card .status-row{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:7px 0;border-bottom:1px solid #d2b581;font-size:21px;white-space:nowrap}
+.home-status-card .status-row b{font-size:25px;font-variant-numeric:tabular-nums}
+.home-status-card .status-row .status-time{font-size:24px}
+.home-status-card .status-total{display:flex;flex-direction:column;gap:2px}
+.home-status-card .status-total small{font-size:20px}
+.home-status-card .status-total b{font-size:38px;font-variant-numeric:tabular-nums}
+.home-status-card .status-gain{color:#477b25}
+.home-status-card .status-loss{color:#a44320}
+.home-status-card .status-check{align-self:center;width:63px;height:63px;border:3px solid #799a39;border-radius:50%;background:#e5edbb;color:#588529;font-size:46px;line-height:57px}
+.home-status-card .status-cta{display:grid;place-items:center;height:61px;min-height:61px;flex:none;margin-top:4px;border:0;border-image:url('assets/visual/guild-button-gold.svg') 14 fill / 12px / 0 stretch;font-size:29px;line-height:1;color:#fff8df;-webkit-text-stroke:2px #8c5b19;paint-order:stroke fill;text-shadow:0 1px #764918}
+.home-status-card:focus-visible{outline:4px solid #16b9ed;outline-offset:2px}
+/* Main canvas has strong crop-control defaults; preserve this shared layout. */
+#phone .home-status-card{display:flex;padding:22px 23px 20px;color:#573717;line-height:1.2}
+#phone .home-status-card>.smooth-frame{position:absolute}
+/* Reuse the game's parchment frame and gold button; keep state content intact. */
+#phone .home-status-card,.scene .home-status-card{background:none;border-image:url('assets/native-ui/parchment-panel.png') 32 fill / 16px / 0 stretch}
+#phone .home-status-card>.smooth-frame,.scene .home-status-card>.smooth-frame{display:none}
+.home-status-card .status-cta{border-image:url('assets/native-ui/gold-button.png') 30 fill / 20px / 0 stretch;background:none}

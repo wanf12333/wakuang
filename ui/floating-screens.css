@@ -1,0 +1,29 @@
+/* 720 × 1280 review coordinates. Uniform 70% scale preserves painted details
+   while exposing a live home screen around every functional dialog. */
+#phone #home-underlay{position:absolute;inset:0;z-index:0;overflow:hidden}
+#phone #home-underlay,#phone #home-underlay *{pointer-events:none!important}
+#phone #screen-shade{position:absolute;inset:0;z-index:1;background:rgba(19,35,26,.38)}
+#phone #home-underlay[hidden],#phone #screen-shade[hidden]{display:none}
+#phone[data-presentation=popup] #game{inset:0!important;width:720px;height:1280px;transform:translate(108px,192px) scale(.7);transform-origin:top left;z-index:2}
+#phone[data-presentation=popup] #game>.smooth-frame{filter:drop-shadow(0 14px 20px #10241770)}
+/* Preserve the close button's visible size and hit area after scaling. */
+#phone[data-presentation=popup] #game>.ui-close{width:126px;height:126px;min-width:126px;min-height:126px;top:14px;right:0}
+#phone[data-presentation=popup] #game>.ui-close::before{inset:20px}
+#phone[data-presentation=popup] #game>.ui-close>svg{width:60px;height:60px}
+/* A nested confirmation should remain smaller than its parent screen. Use
+   scale independently of transform so the shared frame can keep its reset. */
+#phone[data-presentation] .modal{scale:.7;transform-origin:center}
+#phone[data-presentation] .modal>.ui-close{width:126px;height:126px;min-width:126px;min-height:126px;top:10px;right:0}
+#phone[data-presentation] .modal>.ui-close::before{inset:20px}
+#phone[data-presentation] .modal>.ui-close>svg{width:60px;height:60px}
+#phone[data-presentation] .modal-shade{backdrop-filter:none;-webkit-backdrop-filter:none;background:#17251c66}
+#phone[data-presentation=popup] .modal-shade{background:#17251c45}
+/* Shared dismissal affordance lives below the panel on the shaded backdrop. */
+#phone[data-modal] .modal{overflow:visible!important}
+#phone .popup-dismiss-hint{display:block;position:absolute;top:calc(100% + 24px);left:50%;transform:translateX(-50%);width:max-content;max-width:100%;padding:10px 18px;border:0;background:none;box-shadow:none;color:#fff8e7;font:500 30px/1.4 'Microsoft YaHei',sans-serif;text-shadow:0 2px 4px #000b;white-space:nowrap;cursor:pointer}
+#phone .popup-dismiss-hint:focus-visible{outline:2px solid #ffe19c;outline-offset:3px;border-radius:8px}
+#phone .popup-dismiss-hint:disabled{opacity:.5;cursor:wait}
+#phone #screen-dismiss-hint{position:absolute;left:0;right:0;top:1104px;height:65px;z-index:3}
+#phone #screen-dismiss-hint[hidden]{display:none}
+#phone #screen-dismiss-hint .popup-dismiss-hint{top:0;font-size:24px}
+#phone[data-presentation=popup] #game>.ui-close,#phone .modal>.ui-close{display:none!important}

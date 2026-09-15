@@ -1,0 +1,17 @@
+{
+  "mode": "built-in imagegen edit",
+  "jobs": [
+    {
+      "scene": 3,
+      "target": "03-framed.png",
+      "reference": "C:/Users/Administrator/AppData/Local/Temp/codex-clipboard-11d4514d-4d3a-4cae-8863-f85e6b2ed1c7.png",
+      "prompt": "Edit the central protagonist in image 1 ONLY. Image 2 is the exact requested Chinese meme PANDA head and CRYING expression reference, not a layout reference. Replace the injured gray cat head with a ROUND WHITE PANDA meme head, small black ROUND ears, black and white comical human-like crying face with closed squeezed eyes, furrowed brow, downturned open mouth, clear blue tears streaming down BOTH cheeks. Must closely resemble the crying meme face in image 2, not a realistic panda, not cute feline. This is a surreal comic transformation after being beaten, NO gore. Remove cat triangular ears, cat muzzle, whiskers, forelock and face bandages. No miner helmet yet in this scene (he is still being escorted from office). Keep protagonist torn navy suit, pose, contract, guards, weasel villain, light, background, portrait composition. Convert any visible protagonist paws to black mitten-like panda paws and remove visible cat tail to match transformed character. Meme head expressive black ink drawing with white face, integrate into otherwise painterly scene. Do NOT alter other characters. No text or watermark."
+    },
+    {
+      "scene": 4,
+      "target": "04-prison-mine.png",
+      "reference": "C:/Users/Administrator/AppData/Local/Temp/codex-clipboard-0ab9eda5-8f9c-467a-b7e3-a5ae4e55008b.png",
+      "prompt": "Edit the protagonist in image 1 ONLY. Image 2 is the exact requested Chinese meme PANDA head with HELPLESS WRY expression reference. Replace gray cat head with ROUND WHITE PANDA meme head, two small black ROUND ears, human-like black-and-white meme facial features, narrow squinting half-closed eyes, slightly raised eyebrows, crooked resigned wry smile, exhausted helpless look matching image 2. NOT crying, NO tears, not angry, not a cute cartoon cat or realistic panda. Keep yellow lamp miner helmet seated on the ROUND panda head. Remove all cat ears, cat muzzle, whiskers, forelock, facial bandages, gray fur and CAT TAIL. Protagonist visible hands should be black mitten-like panda paws. Keep striped black-and-cream prisoner clothes, same body pose pushing cart, mine cart and ores, prison bars, lighting, environment and portrait framing. Meme head has expressive black ink drawing on white face integrated in painterly game art. No text, no watermark, no blood or wounds."
+    }
+  ]
+}

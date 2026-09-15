@@ -1,0 +1,23 @@
+/* Concept-derived reusable raster skins; corner widths stay fixed. */
+.aid-concept-request,.aid-concept-orders article{background:none;border:25px solid transparent;border-image-source:url('assets/visual/aid-panel-skin.png');border-image-slice:160 fill;border-image-width:25px;border-image-repeat:stretch;box-shadow:none}
+.aid-concept-request{padding:0;border-width:0;border-image-outset:0}
+.aid-concept-orders article{border-width:0}
+.aid-concept-request h3{padding-top:17px}
+#phone .aid-concept-request>.game-btn,#phone .aid-concept-orders .game-btn{background-image:url('assets/visual/aid-button-skins.png')!important;background-size:100% 200%!important;background-position:center top!important;background-color:transparent!important;border:0;border-image:none;box-shadow:none;border-radius:0;color:#fffde9;font-weight:900;-webkit-text-stroke:3px #4b6c20;paint-order:stroke fill;text-shadow:0 2px 1px #496c23}
+#phone .aid-concept-orders .game-btn{background-position:center bottom!important;-webkit-text-stroke-color:#986019;text-shadow:0 2px 1px #8d621b}
+#phone .aid-concept-request>.game-btn{height:58px;bottom:17px;font-size:29px}
+#phone .aid-concept-orders .game-btn{height:58px;bottom:17px;font-size:28px}
+.aid-concept-request h3:before{content:'⟶❯';font-size:23px;margin-right:12px}.aid-concept-request h3:after{content:'⟶❯';font-size:23px;margin-left:12px}
+.aid-concept-request,.aid-concept-orders article{clip-path:inset(2px round 19px)}
+.aid-concept-request,.aid-concept-orders article{border-image-width:40px}
+#phone .aid-concept-request>.game-btn,#phone .aid-concept-orders .game-btn{clip-path:polygon(9% 0,91% 0,100% 17%,100% 83%,91% 100%,9% 100%,0 83%,0 17%)}
+/* Paint opaque paper under border-image to eliminate transparent slicing seams. */
+.aid-concept-request,.aid-concept-orders article{background:#fff1c9;border-image-repeat:stretch;isolation:isolate}
+.aid-concept-request:after{content:'';position:absolute;inset:33px;background:#fff1c9;z-index:-1;pointer-events:none}
+.aid-concept-status{top:206px;font-size:19px;line-height:1.25}
+.aid-material-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-height:420px;overflow-y:auto;padding:5px}
+.aid-material-picker>button{display:flex;flex-direction:column;align-items:center;gap:5px;padding:9px 4px;background:#fff0cd;border:2px solid #d0ac6c;border-radius:12px;color:#5f4020;font:inherit;min-width:0}
+.aid-material-picker>button.selected{border:3px solid #eab900;box-shadow:inset 0 0 0 2px #fff278;background:#ffefae}.aid-material-picker .icon{width:66px;height:66px;object-fit:contain}.aid-material-picker strong{font-size:20px}.aid-material-picker small{font-size:16px}.aid-request-estimate{text-align:center;font-size:21px;color:#587e29}
+.aid-concept-request,.aid-concept-orders article{border-image-slice:160;background:linear-gradient(115deg,#fff8df,#fff0c5)}
+.aid-concept-request:after{content:none}
+.aid-concept-request,.aid-concept-orders article{border-image-slice:160 fill;background:#fff1c9;background-size:auto;background-position:0 0}

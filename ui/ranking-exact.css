@@ -1,0 +1,150 @@
+/* Reference coordinates normalized from 941x1672 to 720x1280. */
+#phone #game[data-page=ranking]{display:block;inset:0;border:0;padding:0;background:#25b5ea url('assets/visual/rank-shell-depth.png') center/100% 100% no-repeat}
+#phone #game[data-page=ranking]:before{display:none}
+#phone #game[data-page=ranking]>.hud{display:none}
+#phone #game[data-page=ranking]>.page-title{position:absolute;left:235px;right:175px;top:55px;height:60px;margin:0;padding:0;background:none!important;font-size:48px;letter-spacing:3px;color:white;-webkit-text-stroke:5px #482810;paint-order:stroke fill;text-shadow:0 4px #7b411c;z-index:2}
+.exact-rank-surface{position:absolute;inset:0;font-weight:bold;color:#492a14}
+.exact-tabs{position:absolute;left:72px;right:62px;top:154px;height:80px;display:flex;gap:12px}
+#phone .exact-tabs .game-btn{flex:1;min-height:0;padding:4px 5px;font-size:34px;border:3px solid #795321;border-image:none;background:linear-gradient(#ffe564,#ffc614 55%,#efa616);border-radius:20px 20px 8px 8px;box-shadow:inset 0 0 0 3px #fff0a4,0 3px #684016;color:white;-webkit-text-stroke:4px #533010;paint-order:stroke fill;text-shadow:0 3px #633817}
+#phone .exact-tabs .game-btn.secondary{background:linear-gradient(#35d8ef,#1899c9);border-color:#075777;box-shadow:inset 0 0 0 3px #91edff,0 3px #064769;-webkit-text-stroke-color:#0c405d}
+#phone .exact-tabs .game-btn.secondary:before{display:none}
+#phone .exact-tabs .icon{width:48px;height:48px;object-fit:contain;vertical-align:middle}
+.exact-cream{position:absolute;left:64px;right:52px;top:237px;height:371px;background:radial-gradient(ellipse at 50% 42%,#fff9de,#fae9be);border:6px solid #e3c890;border-radius:28px 28px 8px 8px;box-shadow:0 0 0 5px #1699c6}
+.exact-rule{position:absolute;left:72px;right:60px;top:246px;height:36px;border:0;background:none;color:#5d321b;font-size:22px;padding:0;text-align:center}
+.exact-podium{position:absolute;left:67px;right:52px;top:283px;height:315px}
+.exact-podium .podium-art{width:100%;height:100%;object-fit:fill;display:block}
+.podium-data{position:absolute;inset:0;display:grid;grid-template-columns:32% 36% 32%;gap:0}
+.podium-label{position:relative;text-align:center;color:white;min-width:0}
+.podium-label .podium-number{position:absolute;top:34%;left:0;right:0;font-size:62px;line-height:1;-webkit-text-stroke:4px #3f2919;paint-order:stroke fill;text-shadow:0 3px #452819;color:#fff2a9}
+.podium-label.label-1 .podium-number{top:25%;font-size:75px}
+.podium-label.label-0 .podium-number{color:#e5f4ff}.podium-label.label-2 .podium-number{top:38%;color:#ffe0ba}
+.podium-label strong{position:absolute;left:2%;right:2%;top:70%;font-size:29px;-webkit-text-stroke:4px #302129;paint-order:stroke fill;text-shadow:0 3px #482a15;line-height:1.1}
+.podium-label output{position:absolute;left:0;right:0;top:81%;font-size:30px;line-height:1;-webkit-text-stroke:4px #233149;paint-order:stroke fill;text-shadow:0 2px #483721}
+.podium-label.label-1 output{font-size:38px;color:#ffe53f;-webkit-text-stroke-color:#643208}.podium-label.label-2 output{color:#ffe2a7;-webkit-text-stroke-color:#66311b}
+.exact-list-head{position:absolute;left:66px;right:52px;top:609px;height:54px;display:grid;grid-template-columns:23% 41% 36%;align-items:center;text-align:center;border:3px solid #065779;border-radius:13px;background:linear-gradient(#55c9f2,#1b8ece);box-shadow:inset 0 0 0 3px #a6eeff;color:white;font-size:27px;-webkit-text-stroke:3px #123f58;paint-order:stroke fill}
+#game .exact-rank-list{position:absolute;left:70px;right:54px;top:668px;height:363px;padding:0;scrollbar-width:none;display:block;overflow:auto}
+.exact-rank-list::-webkit-scrollbar{display:none}
+.exact-rank-row{height:69px;margin:0 0 4px;display:grid;grid-template-columns:23% 41% 36%;align-items:center;text-align:center;background:linear-gradient(110deg,#fff9de,#faeac3);border:2px solid #deb775;box-shadow:inset 0 0 0 2px #fffbed;border-radius:15px;font-size:26px}
+.exact-rank-row>b{justify-self:center;width:55px;height:55px;display:grid;place-items:center;background:linear-gradient(120deg,#a4cf38,#4a8b11);border:3px solid #537214;box-shadow:inset 0 0 0 2px #dcf296,0 0 0 2px #f9edb5;border-radius:50%;font-size:37px;color:white;-webkit-text-stroke:3px #264d0b;paint-order:stroke fill}
+.exact-rank-row strong{font-size:24px;font-weight:500}
+.exact-range{position:absolute;left:70px;right:54px;top:1035px;height:35px;text-align:center;font-size:26px;color:#fff;-webkit-text-stroke:3px #164663;paint-order:stroke fill}
+.exact-self{position:absolute;left:66px;right:52px;top:1074px;height:118px;display:grid;grid-template-columns:27% 45% 28%;align-items:center;text-align:center;border:4px solid #325d0a;border-radius:18px;background:linear-gradient(105deg,#72bd17,#4c920d 50%,#8fcf20);box-shadow:inset 0 0 0 4px #bce96d;color:#fff}
+.exact-self section{min-width:0}.exact-self section span{font-size:25px;-webkit-text-stroke:3px #573116;paint-order:stroke fill}.exact-self section b{display:block;font-size:38px;color:#ffed34;-webkit-text-stroke:4px #3f370b;paint-order:stroke fill;line-height:1.2;margin-top:5px}.exact-self>strong{font-size:36px;-webkit-text-stroke:4px #653c26;paint-order:stroke fill}
+.exact-empty{position:absolute;top:400px;left:60px;right:60px;text-align:center;font-size:30px}
+.is-wealth .exact-cream{background:linear-gradient(#bff5ff,#7adaf4);border-color:#6cd4ee}
+.is-wealth .exact-list-head{background:linear-gradient(#b5d940,#6ca918);border-color:#527b17;box-shadow:inset 0 0 0 3px #e5f5a7}
+.is-wealth .exact-self{background:linear-gradient(#ffdf50,#ffd022);border-color:#cd9817;box-shadow:inset 0 0 0 4px #fff19c}
+.is-wealth .podium-label strong{color:#472710;-webkit-text-stroke:3px #fffae4;paint-order:stroke fill;text-shadow:none;font-size:26px;top:73%}
+.is-wealth .podium-label output{font-size:28px;color:#163352;-webkit-text-stroke:3px #fff8dd;text-shadow:none;top:85%}
+.is-wealth .podium-label.label-1 output{font-size:30px;color:#f2b900;-webkit-text-stroke:3px #382211}
+.is-wealth .podium-label.label-2 output{color:#b95125}
+#phone #game[data-page=ranking]>.page-title{left:225px;right:225px}
+.is-depth .podium-label.label-0{transform:translateX(-10px)}
+.is-depth .podium-label.label-2{transform:none}
+/* Overlay comparison: original podium fills the cream region almost edge to edge. */
+.is-depth .exact-podium .podium-art{position:absolute;left:-6%;top:-12.5%;width:112%;height:125%}
+.is-depth .podium-label .podium-number{top:27%}
+.is-depth .podium-label.label-1 .podium-number{top:22%}
+.is-depth .podium-label.label-2 .podium-number{top:31%}
+.is-depth .podium-label strong{top:74%}
+.is-depth .podium-label output{top:87%}
+#phone #game[data-page=ranking]>.page-title{font-size:54px}
+.exact-rank-row{font-size:28px}.exact-rank-row strong{font-size:28px;font-weight:bold}
+.is-depth .exact-tabs .game-btn:first-child .icon{filter:grayscale(1)}
+/* Warm wood palette, isolated to the backdrop so medals and live text retain contrast. */
+#phone #game[data-page=ranking]{background:#986334}
+#phone #game[data-page=ranking]:before{content:'';display:block;position:absolute;inset:0;border:0;border-radius:0;opacity:1;background:url('assets/visual/rank-shell-depth.png') center/100% 100% no-repeat;filter:sepia(1) saturate(1.65) brightness(.83);pointer-events:none}
+#phone .exact-tabs .game-btn.secondary{background:linear-gradient(#ab8152,#735030);border-color:#6d4827;box-shadow:inset 0 0 0 3px #dabc89,0 3px #55331a;-webkit-text-stroke-color:#56391e}
+.exact-cream,.is-wealth .exact-cream{background:radial-gradient(ellipse at 50% 42%,#fff9de,#f4dfb0);border-color:#d5b179;box-shadow:0 0 0 5px #8c5d32}
+.exact-list-head,.is-wealth .exact-list-head{background:linear-gradient(#b88950,#80552d);border-color:#65401f;box-shadow:inset 0 0 0 3px #dec18c;color:#fff4d6;-webkit-text-stroke-color:#603d21}
+.exact-range{-webkit-text-stroke-color:#644022;color:#fff2d2}
+.exact-self,.is-wealth .exact-self{background:linear-gradient(105deg,#b8894e,#8c5e32 50%,#bc9056);border-color:#6c4524;box-shadow:inset 0 0 0 4px #e5c990}
+.exact-rank-row>b{background:linear-gradient(120deg,#cba266,#996b39);border-color:#825829;box-shadow:inset 0 0 0 2px #f3dbaa,0 0 0 2px #f9edb5;-webkit-text-stroke-color:#62401f}
+.is-wealth .podium-label output{color:#654322}.podium-label output{-webkit-text-stroke-color:#50351f}
+/* Latest reference palette: blue headers, green ranking markers and self row. */
+#phone .exact-tabs .game-btn.secondary{background:linear-gradient(#36d4ed,#1198cd);border-color:#087398;box-shadow:inset 0 0 0 3px #95edff,0 3px #075371;-webkit-text-stroke-color:#12516b}
+.exact-list-head,.is-wealth .exact-list-head{background:linear-gradient(#43c8ef,#0c8ecb);border-color:#08739a;box-shadow:inset 0 0 0 3px #85e3fb;color:#fff7dd;-webkit-text-stroke-color:#14516b}
+.exact-rank-row>b{background:linear-gradient(120deg,#a4cf38,#4a8b11);border-color:#537214;box-shadow:inset 0 0 0 2px #dcf296,0 0 0 2px #f9edb5;-webkit-text-stroke-color:#264d0b}
+.exact-self,.is-wealth .exact-self{background:linear-gradient(105deg,#91ca28,#57a016 50%,#8dc82c);border-color:#42791c;box-shadow:inset 0 0 0 4px #c6eb83}
+/* Both rankings share the same art and medal-centre anchors (2 / 1 / 3). */
+.exact-rank-surface .exact-podium .podium-art{position:absolute;left:-6%;top:-12.5%;width:112%;height:125%}
+.exact-rank-surface .podium-data{display:block}
+.exact-rank-surface .podium-label{position:absolute;top:0;bottom:0;width:32%;transform:translateX(-50%)}
+.exact-rank-surface .podium-label.label-0{left:14.2%}
+.exact-rank-surface .podium-label.label-1{left:50.2%;width:36%}
+.exact-rank-surface .podium-label.label-2{left:85.5%}
+.exact-rank-surface .podium-label .podium-number{left:0;right:0;height:90px;display:flex;align-items:center;justify-content:center;line-height:1;transform:translateY(-50%);font-size:68px}
+.exact-rank-surface .podium-label.label-0 .podium-number{top:39%}
+.exact-rank-surface .podium-label.label-1 .podium-number{top:32%;font-size:78px}
+.exact-rank-surface .podium-label.label-2 .podium-number{top:43%}
+.exact-rank-surface .podium-label strong{top:74%;font-size:27px;line-height:1.1;color:#fff7df;-webkit-text-stroke:4px #50321b;text-shadow:0 2px #50321b}
+.exact-rank-surface .podium-label output{top:87%;font-size:29px;line-height:1;color:#fff5dd;-webkit-text-stroke:4px #50321b;text-shadow:0 2px #50321b}
+.exact-rank-surface .podium-label.label-1 output{color:#ffe53f;font-size:34px}
+.exact-rank-surface.is-wealth .podium-label output{font-size:24px}
+.exact-rank-surface.is-wealth .podium-label.label-1 output{font-size:27px}
+.exact-rank-surface .podium-label.label-0,.exact-rank-surface .podium-label.label-1,.exact-rank-surface .podium-label.label-2{transform:translateX(-50%)}
+.exact-rank-surface.is-wealth .podium-label.label-2 output{color:#fff5dd}
+/* Crown podium stays inside the cream frame; no oversized negative image offsets. */
+.exact-rank-surface .exact-cream{background:#faecc6}
+.exact-rank-surface .exact-podium{left:76px;right:64px;top:246px;height:356px;overflow:hidden}
+.exact-rank-surface .exact-podium .podium-art{left:0;top:0;width:100%;height:100%}
+.exact-rank-surface .podium-label.label-0{left:18.2%}
+.exact-rank-surface .podium-label.label-1{left:50.7%}
+.exact-rank-surface .podium-label.label-2{left:81.8%}
+.exact-rank-surface .podium-label.label-0 .podium-number{top:41%;font-size:60px}
+.exact-rank-surface .podium-label.label-1 .podium-number{top:36%;font-size:70px}
+.exact-rank-surface .podium-label.label-2 .podium-number{top:44%;font-size:60px}
+.exact-rank-surface .podium-label strong{top:73%;font-size:25px}
+.exact-rank-surface .podium-label output{top:82%;font-size:27px}
+.exact-rank-surface .podium-label.label-1 output{font-size:31px}
+.exact-rank-surface.is-wealth .podium-label output{font-size:22px}
+.exact-rank-surface.is-wealth .podium-label.label-1 output{font-size:25px}
+/* Independently window the shared sprite into three equal columns, with a fixed gap. */
+.exact-rank-surface .exact-podium .podium-art{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.podium-sprite{display:block;min-width:0;height:100%;background-image:url('assets/visual/rank-podium-diamond-v4.png');background-repeat:no-repeat}
+.podium-sprite.silver{background-size:354.2373% 100%;background-position:6% 0}
+.podium-sprite.gold{background-size:313.1086% 100%;background-position:51.3181% 0}
+.podium-sprite.bronze{background-size:379.1383% 100%;background-position:91.5516% 0}
+.exact-rank-surface .podium-label{width:calc((100% - 28px)/3)}
+.exact-rank-surface .podium-label.label-0{left:calc((100% - 28px)/6)}
+.exact-rank-surface .podium-label.label-1{left:50%;width:calc((100% - 28px)/3)}
+.exact-rank-surface .podium-label.label-2{left:calc(100% - (100% - 28px)/6)}
+/* v5 visible base edges measured at y=650, not inferred from equal container widths. */
+.podium-sprite{background-image:url('assets/visual/rank-podium-equal-gap-v5.png')}
+.podium-sprite.silver{background-size:354.7771% 100%;background-position:5.9167% 0}
+.podium-sprite.gold{background-size:315.2830% 100%;background-position:50.2191% 0}
+.podium-sprite.bronze{background-size:374.6637% 100%;background-position:92.0816% 0}
+/* Remove the rectangular cream backdrops around each independently positioned trophy. */
+.podium-sprite.silver{clip-path:polygon(50% 20%,60% 24%,60% 28%,76% 30%,83% 35%,86% 39%,84% 44%,91% 50%,94% 56%,97% 62%,100% 64%,100% 90%,97% 93%,3% 93%,0 90%,0 64%,4% 61%,4% 56%,8% 52%,15% 49%,16% 44%,13% 40%,15% 36%,24% 30%,41% 28%,40% 24%)}
+.podium-sprite.gold{clip-path:polygon(49% 7%,53% 8%,54% 11%,56% 15%,64% 13%,65% 11%,68% 11%,71% 13%,69% 16%,67% 21%,85% 21%,83% 26%,87% 30%,89% 36%,88% 40%,84% 44%,97% 48%,98% 55%,99% 59%,100% 62%,100% 91%,96% 93%,4% 93%,0 91%,0 62%,3% 58%,5% 53%,7% 48%,16% 44%,12% 39%,11% 34%,14% 29%,17% 26%,14% 21%,32% 23%,32% 17%,28% 14%,28% 12%,31% 11%,34% 12%,35% 15%,44% 19%,47% 12%,46% 9%)}
+.podium-sprite.bronze{clip-path:polygon(49% 25%,62% 29%,67% 30%,67% 33%,80% 36%,85% 41%,85% 45%,89% 50%,96% 51%,98% 58%,97% 62%,100% 65%,100% 91%,97% 93%,3% 93%,0 91%,0 65%,4% 62%,5% 57%,10% 53%,18% 50%,15% 46%,15% 42%,21% 37%,33% 33%,34% 30%)}
+/* Old list bottom 1031, self top 1074: reduce the 43px gap to 22px. */
+.exact-self{top:1053px}
+/* Ranking-only polish: plain column labels and readable painted rims at popup scale. */
+#phone #game[data-page=ranking] .exact-list-head{
+  background:none!important;
+  border:0;
+  border-image:none;
+  border-radius:0;
+  box-shadow:none;
+  color:#563617;
+  font-size:28px;
+  font-weight:800;
+  -webkit-text-stroke:0;
+  text-shadow:none;
+}
+#phone #game[data-page=ranking]:not([data-page=home]):not([data-page=gameplay])::before{
+  border-image:url('assets/native-ui/parchment-panel.png') 32 fill / 28px / 0 stretch!important;
+  border-radius:28px;
+  box-shadow:inset 0 0 0 3px #a57536,inset 0 0 0 7px #edca83;
+}
+#phone #game[data-page=ranking] .exact-cream,
+#phone #game[data-page=ranking] .exact-rank-row{
+  border-image:url('assets/native-ui/parchment-panel.png') 32 fill / 16px / 0 stretch;
+  border-radius:15px;
+  box-shadow:inset 0 0 0 2px #b58b48,inset 0 0 0 4px #fff0c8;
+}
+#phone #game[data-page=ranking] .exact-self{
+  border-color:#899b5c;
+  box-shadow:inset 0 0 0 2px #f5f4d7;
+}

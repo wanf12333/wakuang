@@ -1,0 +1,184 @@
+/* Presentation only. Existing state, action targets and home artwork are untouched.
+   720×1280 reference canvas: larger panels, shared material vocabulary, flowing interiors. */
+/* Tip titles stay text-only; preserve all item icons inside the content. */
+#phone[data-ui-kit][data-modal] .modal.modal>h2::before,
+#phone[data-ui-kit][data-modal] .modal.modal>h2>img,
+#phone[data-ui-kit][data-modal] .modal.modal>h2>.icon,
+#phone[data-ui-kit] #game[data-page] .guild-module-title::before{
+ display:none!important;
+}
+#phone[data-ui-kit][data-modal][data-modal][data-modal]:is([data-modal=workshop],[data-modal=checkin],[data-modal=achievements],[data-modal=beauty],[data-modal=wardrobe]) .modal.modal::after{
+ display:none!important;
+}
+#phone[data-presentation=popup] #game:not([data-page=home]){
+ transform:translate(57.6px,89.6px) scale(.84)!important;
+}
+#phone[data-presentation=popup] #screen-dismiss-hint{top:1180px}
+#phone[data-ui-kit][data-modal] .modal.modal{
+ width:760px!important;max-width:none!important;max-height:1280px!important;
+ scale:.82!important;flex-shrink:0;padding:12px 30px 28px!important;
+ font-size:28px;line-height:1.5;
+}
+#phone[data-ui-kit][data-modal=pass] .modal.modal{width:760px!important}
+#phone[data-ui-kit][data-modal] .modal.modal>.modal-content{
+ min-height:0;max-height:1090px!important;overflow-y:auto!important;
+ overscroll-behavior:contain;scrollbar-width:thin;
+ scrollbar-color:#a68b59 #e8deca;scroll-padding:18px;
+}
+#phone[data-ui-kit][data-modal] .modal.modal>h2{
+ font-size:36px!important;letter-spacing:3px!important;margin-bottom:24px!important;
+}
+#phone[data-ui-kit][data-modal] .modal .popup-dismiss-hint{font-size:27px;top:calc(100% + 16px)}
+#phone[data-ui-kit] :is(.modal,#game:not([data-page=home])){
+ --layout-ink:#553d29;--layout-muted:#776450;--layout-rule:#c9b58b;
+ font-variant-numeric:tabular-nums;
+}
+#phone[data-ui-kit] :is(.modal,#game:not([data-page=home])) :is(button,input,select,textarea){font-family:inherit}
+#phone[data-ui-kit] :is(.modal,#game:not([data-page=home])) button:focus-visible{
+ outline:4px solid #46c3d8!important;outline-offset:4px;
+}
+#phone[data-ui-kit] :is(.modal,#game:not([data-page=home])) :is(.tabs,.activity-tabs){gap:14px}
+#phone[data-ui-kit] .modal :is(.tabs,.activity-tabs) button{
+ min-height:64px;font-size:28px!important;letter-spacing:1px;
+}
+#phone[data-ui-kit] .modal :is(.dialog-description,.dialog-info,.dialog-text){
+ font-size:28px!important;line-height:1.65;
+}
+#phone[data-ui-kit] .modal :is(.dialog-hero,.credit-loan-hero,.debt-dialog-hero){
+ padding:24px!important;min-height:164px;
+ border-radius:12px!important;
+ background-image:radial-gradient(ellipse at 80% 0,#e9c67c70,transparent 60%),linear-gradient(125deg,#fffbed,#edddb9)!important;
+}
+#phone[data-ui-kit] .modal :is(.dialog-info-grid,.dialog-stats){gap:14px}
+#phone[data-ui-kit] .modal :is(.dialog-actions,.online-confirm-actions){gap:18px;margin-top:22px}
+#phone[data-ui-kit] .modal :is(.dialog-actions,.online-confirm-actions) .game-btn{
+ min-height:78px;font-size:28px!important;
+}
+/* Workshop: a tool display above an engraved specification plate. */
+#phone[data-ui-kit][data-modal=workshop] .workshop-panel{gap:22px}
+#phone[data-ui-kit][data-modal=workshop] :is(.pickaxe-preview,.workshop-morph){
+ border-radius:14px!important;min-height:220px;
+ box-shadow:inset 0 0 0 4px #f2d79555,inset 0 -16px 28px #281d1840,0 5px 0 #5b4334!important;
+}
+#phone[data-ui-kit][data-modal=workshop] .workshop-detail{padding:22px!important;line-height:1.6}
+#phone[data-ui-kit][data-modal=workshop] .equipment-actions{gap:18px}
+#phone[data-ui-kit][data-modal=workshop] .equipment-actions .game-btn{min-height:78px;font-size:28px!important}
+/* Calendar: larger dated tickets; the seventh reward reads as a featured spread. */
+#phone[data-ui-kit][data-modal=checkin] .activity-panel{gap:22px;padding:6px}
+#phone[data-ui-kit][data-modal=checkin] .checkin-days{gap:14px}
+#phone[data-ui-kit][data-modal=checkin] .checkin-day{display:grid;grid-template-rows:52px 64px 34px 32px;justify-items:center;align-items:center;padding:0 6px 16px;gap:10px;font-size:27px;min-height:0}
+#phone[data-ui-kit][data-modal=checkin] .checkin-day>span{position:static;align-self:stretch;display:grid;place-items:center;width:100%;margin:0;padding:0;line-height:1;font-size:27px;transform:none;color:#fff5dd;text-shadow:0 1px 1px #753b24}
+#phone[data-ui-kit][data-modal=checkin] .checkin-day small{font-size:23px;color:#76603f}
+#phone[data-ui-kit][data-modal=checkin] .checkin-day.is-current:not(:disabled) small{color:#35751f;font-weight:900;font-size:26px;text-shadow:0 1px #fff9e8}
+#phone[data-ui-kit][data-modal=checkin] .checkin-day:last-child{
+ background-image:linear-gradient(#ae5835 0 52px,transparent 52px),radial-gradient(ellipse at 85% 50%,#edc26670,transparent 65%),linear-gradient(#fff9e8,#f3dfb6)!important;
+}
+#phone[data-ui-kit] .modal .online-summary{font-size:26px;gap:12px}
+#phone[data-ui-kit] .modal .online-node>span{font-size:24px}
+#phone[data-ui-kit] .modal .online-node>b{font-size:27px}
+#phone[data-ui-kit] .modal .online-milestones{padding:22px 12px;border-top:3px double #bda477}
+#phone[data-ui-kit][data-modal=checkin] .online-track-line{background:#cbb994;height:5px;top:70px}
+#phone[data-ui-kit][data-modal=checkin] .online-track-line i{background:#ac8147}
+#phone[data-ui-kit][data-modal=checkin] .online-node.is-claimed button{
+ opacity:1!important;filter:none!important;clip-path:none;border-radius:50%;border:2px solid #936b3c;
+ background:linear-gradient(145deg,#f4dfad,#c79a5b);box-shadow:inset 0 0 0 3px #fff0cc,0 3px 0 #775332;
+}
+#phone[data-ui-kit][data-modal=checkin] .online-node.is-claimed button::before{
+ inset:7px;border-radius:50%;border:1px solid #ad834b;background:linear-gradient(145deg,#f8ebcd,#dcb77c);box-shadow:inset 0 1px 3px #79552d30;
+}
+#phone[data-ui-kit][data-modal=checkin] .online-node.is-claimed .online-check{color:#79512d;font-size:38px;text-shadow:0 1px #fff5dc}
+#phone[data-ui-kit][data-modal=achievements] .activity-list{gap:16px;max-height:850px}
+#phone[data-ui-kit][data-modal=achievements] .activity-row{
+ padding:22px 18px;border-left:6px solid #7f9255;
+ background-image:linear-gradient(100deg,#edf0d5,#fff9eb 55%);border-radius:10px;
+}
+#phone[data-ui-kit][data-modal=achievements] .activity-row strong{font-size:29px}
+#phone[data-ui-kit][data-modal=achievements] .activity-row small{font-size:24px;color:#706044}
+/* Wardrobe / salon: roomy display area, coherent product trays, no new images. */
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-panel{gap:22px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-preview{padding:22px 14px!important;gap:14px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-preview>img{width:208px;height:208px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-preview>small{font-size:24px;color:#6e6270}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-grid{gap:14px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-item{padding:14px 8px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-item>span{font-size:24px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-buy{min-height:82px;font-size:30px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-total{color:#75502a}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-preview{padding:12px!important;gap:8px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-preview>img{width:170px;height:170px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-theme{font-size:22px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-item{min-width:0;padding:10px 4px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-item img{height:88px}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-item-name{display:block;font-style:normal;font-size:22px;font-weight:700;line-height:1.5;color:#624a32;white-space:nowrap}
+#phone[data-ui-kit][data-modal=wardrobe] .wardrobe-item>span{font-size:22px}
+#phone[data-ui-kit][data-modal=beauty] .beauty-salon{gap:22px}
+#phone[data-ui-kit][data-modal=beauty] .beauty-current{font-size:27px;padding:14px 10px}
+#phone[data-ui-kit][data-modal=beauty] .beauty-grid{gap:14px}
+#phone[data-ui-kit][data-modal=beauty] .beauty-choice{padding:12px 8px}
+#phone[data-ui-kit][data-modal=beauty] :is(.beauty-rule,.beauty-replace){display:none}
+/* Guild, store and mining share the same shell; detail is kept inside it. */
+#phone[data-ui-kit] #game:not([data-page=home]) .guild-module-title span{font-size:36px!important;letter-spacing:3px!important}
+#phone[data-ui-kit] #game:not([data-page=home]) .guild-module-scene{
+ border-radius:12px!important;box-shadow:inset 0 0 0 3px #e6c781,0 5px 0 #4a3627!important;
+ background-image:url('references/shop.png')!important;background-size:640px 1138px!important;
+ background-position:center -150px!important;background-repeat:no-repeat!important;
+}
+#phone[data-ui-kit] #game:not([data-page=home]) .guild-module-scene::before,
+#phone[data-ui-kit] #game:not([data-page=home]) .guild-module-scene::after,
+#phone[data-ui-kit] #game:not([data-page=home]) .guild-module-scene :is(.guild-counter-sign,.guild-counter-mole,.guild-counter-gems){display:none!important}
+#phone[data-ui-kit] #game:not([data-page=home]) .shop-exact-main-tabs button{font-size:28px!important}
+#phone[data-ui-kit] #game:not([data-page=home]) .shop-exact-products{gap:16px!important}
+#phone[data-ui-kit] #game:not([data-page=home]) .shop-exact-products :is(h3,strong){letter-spacing:1px}
+/* Shared interior trim for list-driven systems and secondary dialogs. */
+#phone[data-ui-kit] :is(.modal,#game:not([data-page=home])) :is(.item-card,.member-card,.guild-card,.loan-card,.warehouse-item){
+ border-radius:12px;box-shadow:inset 0 0 0 2px #fff5dc,0 3px 0 #67503735;
+}
+#phone[data-ui-kit] #game:not([data-page=home]) :is(.scroll,.exact-scroll){scrollbar-width:thin;scrollbar-color:#ae8b51 transparent}
+#phone[data-ui-kit][data-modal=pass] .vip-slide{padding:24px;gap:4px}
+#phone[data-ui-kit][data-modal=pass] .vip-hero{border-radius:12px;min-height:160px}
+#phone[data-ui-kit][data-modal=pass] .vip-benefits{padding:20px}
+/* Ledger systems: restrained ruled paper, explicit columns, larger amounts. */
+#phone[data-ui-kit] #game:is([data-page=lending],[data-page=notes]) :is(.credit-offer,.credit-note){
+ border-radius:10px!important;border-left:6px solid #9b7843!important;
+ background:linear-gradient(90deg,#e9ddbd 0 4px,#fff8e6 4px 74%,#f1e5c7)!important;
+ box-shadow:inset 0 0 0 2px #fffdf0,0 3px 0 #6c503544!important;
+}
+#phone[data-ui-kit] #game:is([data-page=lending],[data-page=notes]) :is(.credit-offers,.credit-note-list){gap:14px!important}
+#phone[data-ui-kit] #game:is([data-page=lending],[data-page=notes]) .credit-number b{font-size:27px}
+#phone[data-ui-kit] #game:is([data-page=lending],[data-page=notes]) .credit-number small{font-size:22px}
+#phone[data-ui-kit] #game[data-page=ranking] .exact-rank-row{
+ border-radius:8px!important;border-width:0 0 2px!important;
+ background:linear-gradient(90deg,#eadcb5,#fff8e6 30%,#f5ebd3)!important;
+}
+#phone[data-ui-kit] #game[data-page=ranking] .exact-rank-row strong{font-size:27px;font-weight:700}
+#phone[data-ui-kit] #game[data-page=ranking] .exact-list-head{letter-spacing:2px}
+#phone[data-ui-kit] #game[data-page=warehouse] .item-grid{gap:12px!important}
+#phone[data-ui-kit] #game[data-page=warehouse] .item-card{
+ border-radius:10px!important;background-image:radial-gradient(ellipse at 50% 35%,#fffef3,transparent 65%),linear-gradient(#eee4cf,#daceb1)!important;
+}
+#phone[data-ui-kit] #game[data-page=warehouse] .item-card strong{font-size:27px}
+#phone[data-ui-kit] #game[data-page=warehouse] .item-card span{font-size:24px}
+#phone[data-ui-kit] #game[data-page=debt] .debt-final-goal{
+ border-radius:12px!important;background:linear-gradient(115deg,#fff8e8,#ebdab6)!important;
+ box-shadow:inset 0 0 0 2px #fff9e9,0 4px 0 #8d6d4033;
+}
+#phone[data-ui-kit] #game[data-page=debt] .debt-final-goal small{font-size:24px}
+#phone[data-ui-kit] #game[data-page=gameplay] .play-instruction{
+ padding:12px 18px;border-block:2px solid #b9996266;background:#fff9e880;font-size:28px;
+}
+#phone[data-ui-kit] .modal :is(.growth-meter,.growth-perks article,.building-materials){
+ border-radius:12px;padding:20px;border:2px solid #c7b48e;
+ background:linear-gradient(115deg,#fffbed,#eee3c9);
+}
+#phone[data-ui-kit] .modal .growth-perks{gap:14px}
+#phone[data-ui-kit] .modal .guild-growth-panel footer p{font-size:24px}
+#phone[data-ui-kit] .modal .building-materials{font-size:26px;gap:12px}
+#phone[data-ui-kit] .modal .building-materials>span{font-size:24px}
+#phone[data-ui-kit] .modal .building-rank>div{font-size:27px}
+#phone[data-ui-kit] .modal .depth-explore-layout{grid-template-columns:170px minmax(0,1fr);gap:24px}
+#phone[data-ui-kit] .modal .depth-output-title{font-size:28px!important;margin-bottom:12px!important}
+#phone[data-ui-kit] .modal .depth-column-title{font-size:27px}
+#phone[data-ui-kit] .modal :is(input.game-input,textarea.game-input){font-size:28px;min-height:64px;padding:12px 16px}
+@media(prefers-reduced-motion:reduce){
+ #phone[data-ui-kit] :is(.modal,#game:not([data-page=home])) *{scroll-behavior:auto!important}
+}

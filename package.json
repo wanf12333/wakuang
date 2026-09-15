@@ -1,0 +1,1 @@
+{"name":"mining-frontend-design","version":"1.0.0","private":true,"scripts":{"start":"node tools/serve.cjs","check":"node tools/check.cjs"},"engines":{"node":">=18"}}

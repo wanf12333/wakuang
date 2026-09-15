@@ -1,0 +1,123 @@
+/* Visual hierarchy only: shared palette, rhythmic spacing, no action changes. */
+#phone #game[data-page]:not([data-page=home]):not([data-page=gameplay])>.page-title,#phone[data-modal] .modal>h2,#phone #game .guild-module-title{background:none!important;border-image:url('assets/visual/title-wood-clean-v3.png') 150 140 fill / 19px 22px / 0 stretch!important}
+/* Warehouse dock: shared right action column and centered revenue line. */
+#phone #game[data-page=warehouse]>.warehouse-dock{height:246px;padding:16px 18px}
+#phone #game[data-page=warehouse] .warehouse-dock .selected-preview{gap:16px}
+#phone #game[data-page=warehouse] .warehouse-dock .selected-preview>img{width:135px;height:135px;flex:none}
+#phone #game[data-page=warehouse] .warehouse-dock .selected-preview>div{row-gap:10px;column-gap:18px}
+#phone #game[data-page=warehouse] .warehouse-dock .dock-quantity{left:173px;right:18px;top:110px;height:52px;display:grid;grid-template-columns:48px minmax(0,1fr) 48px 88px;gap:10px;align-items:center}
+#phone #game[data-page=warehouse] .warehouse-dock .dock-quantity .game-btn{width:100%;padding:0!important}
+#phone #game[data-page=warehouse] .warehouse-dock .dock-total{left:18px;right:18px;bottom:12px;height:54px;padding:0;display:grid;grid-template-columns:minmax(0,1fr) 88px;gap:10px;align-items:center}
+#phone #game[data-page=warehouse] .warehouse-dock .dock-total>.game-btn{width:88px;padding:0!important}
+#phone #game[data-page=warehouse] .warehouse-dock .dock-total>span{display:flex;align-items:center;justify-content:center;gap:8px;line-height:34px;min-width:0}
+#phone #game[data-page=warehouse] .warehouse-dock .dock-total .icon{display:block;width:30px;height:30px;object-fit:contain;flex:none;margin:0;vertical-align:middle}
+#phone #game[data-page=warehouse] .warehouse-dock .dock-total b{display:block;line-height:34px;margin:0}
+#phone #game[data-page=warehouse] .selected-preview:not(.is-unowned)>div>span{font-size:29px;font-weight:800;line-height:34px;color:#8b4f18;text-shadow:0 1px #fff6dc}
+/* Ledger overview removed: tabs and content move up into the freed space. */
+#phone #game:is([data-page=notes],[data-page=lending]) .credit-stats{display:none}
+#phone #game:is([data-page=notes],[data-page=lending]) .credit-tabs{top:155px}
+#phone #game[data-page=notes] .credit-note-list{top:236px}
+#phone #game[data-page=lending] .credit-offers{top:236px;height:736px}
+/* Larger ledger actions and stronger ready/loss badges. */
+#phone #game[data-page=notes] .filled-note:has(.note-action){grid-template-columns:80px repeat(3,minmax(0,1fr)) 148px}
+#phone #game[data-page=notes] .filled-note .note-action{width:100%;padding:0 3px;align-self:stretch;align-items:center}
+#phone #game[data-page=notes] .filled-note .note-claim{width:100%;height:66px;min-height:66px;margin:0;padding:6px 8px;font-size:27px;line-height:1.15;align-self:center}
+#phone #game[data-page=notes] .filled-note .note-status.ready{background:#416d2b;color:#fff9df;font-size:21px;padding:5px 12px}
+#phone #game[data-page=notes] .filled-note .note-status.lost{background:#a04431;color:#fff6e5;font-size:21px;padding:5px 12px}
+#phone{--ink:#543c28;--muted:#967b56;--positive:#527d38;--risk:#b55d40;--line:#d9bf8d;--paper:#fff3d6}
+#phone #game[data-page]:not([data-page=home]):not([data-page=gameplay])>.page-title{font-size:45px;letter-spacing:2px;-webkit-text-stroke-width:3px}
+#phone[data-modal] .modal>h2{font-size:32px;letter-spacing:1px}
+#phone #game[data-page] .game-btn.game-btn{color:#664119;-webkit-text-stroke:0;text-shadow:0 1px #fff5d7;font-weight:700}
+#phone #game[data-page] .game-btn.game-btn.secondary{border-image:url('assets/native-ui/parchment-panel.png') 32 fill / 12px / 0 stretch!important;color:#806342;-webkit-text-stroke:0;text-shadow:none}
+#phone[data-modal] .modal .game-btn{color:#664119;-webkit-text-stroke:0;text-shadow:none}
+#phone #game[data-page] :is(.credit-tabs,.exact-tabs){gap:14px}
+#phone #game[data-page] :is(.credit-tabs,.exact-tabs) .game-btn{font-size:27px;letter-spacing:1px}
+/* Ledger: neutral overview, restrained semantic color, spacious two-row cards. */
+#phone .credit-hall{color:var(--ink)}
+#phone .credit-stats{top:154px;height:96px;left:42px;right:42px;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+#phone .credit-stats>div{background:none;border:0;border-image:url('assets/native-ui/parchment-panel.png') 32 fill / 12px / 0 stretch;box-shadow:none;color:var(--ink);gap:10px}
+#phone .credit-stats span{font-size:21px;line-height:28px;color:var(--muted)}
+#phone .credit-stats b{font-size:30px;line-height:36px;text-shadow:none;color:var(--ink);font-variant-numeric:tabular-nums}
+#phone .credit-stats .icon{width:38px;height:38px}
+#phone .credit-tabs{top:269px;height:62px}
+#phone #game[data-page=notes] .credit-tabs .game-btn:first-child{border-image:url('assets/native-ui/parchment-panel.png') 32 fill / 12px / 0 stretch!important;color:#806342}
+#phone #game[data-page=notes] .credit-tabs .game-btn:last-child{border-image:url('assets/native-ui/gold-button.png') 30 fill / 15px / 0 stretch!important;color:#664119}
+#phone .credit-note-list{top:350px;bottom:65px;left:42px;right:42px;overflow-y:auto;gap:14px;padding:3px;scrollbar-width:thin;scrollbar-color:#c2a477 transparent}
+#phone .credit-note.filled-note,#phone .credit-offer{display:grid;grid-template-columns:90px repeat(4,minmax(0,1fr));grid-template-rows:49px 72px;gap:0;height:150px;padding:12px 10px;border:0;border-image:url('assets/native-ui/parchment-panel.png') 32 fill / 12px / 0 stretch;background:none;clip-path:none;box-shadow:none;align-items:center}
+#phone .credit-offer.chosen{background:#fce4a650;outline:2px solid #cda154;outline-offset:-3px;border-radius:13px}
+#phone :is(.filled-note,.credit-offer)>.borrower-portrait{grid-column:1;grid-row:1/3;width:88px;height:100px;align-self:center}
+#phone :is(.filled-note,.credit-offer)>.credit-name{grid-column:2/-1;grid-row:1;width:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 8px 10px;border-bottom:1px solid var(--line)}
+#phone :is(.filled-note,.credit-offer)>.credit-name strong{font-size:26px;color:var(--ink);line-height:32px}
+#phone :is(.filled-note,.credit-offer) .credit-number{grid-row:2;align-self:center;border-left:0;text-align:center;padding:5px 2px 0}
+#phone :is(.filled-note,.credit-offer) .credit-number small{font-size:19px;color:var(--muted);margin-bottom:7px;line-height:24px}
+#phone :is(.filled-note,.credit-offer) .credit-number b{font-size:23px;color:var(--ink);font-variant-numeric:tabular-nums;line-height:29px}
+#phone .filled-note .note-status{font-size:19px;margin:0;padding:4px 10px;border-radius:7px;background:#e4edd4;color:var(--positive);white-space:nowrap}
+#phone .filled-note .note-status.lost{background:#f4dfd1;color:var(--risk)}
+#phone .credit-grade{font-size:20px;margin:0;color:var(--positive)}
+#phone .filled-note .note-claim{height:49px;min-height:49px;font-size:21px;padding:4px 8px}
+#phone .filled-note .note-claim.danger{filter:saturate(.55);color:var(--risk)}
+#phone .empty-note{height:96px;border:1px dashed #c9b68f;border-image:none;background:#eadfc34d;border-radius:12px;gap:14px;color:#99896f;font-size:23px}
+#phone .empty-note .note-index{left:22px;top:32px;background:#d9c9a7;border:0;color:#897553;font-size:20px}
+#phone .empty-note small{margin-top:5px;font-size:20px;color:#9b8b73}
+#phone .note-locked{background:#e9e2d480;color:#a19885}
+#phone .note-lock{font-size:27px;filter:grayscale(1);opacity:.6}
+#phone #game .credit-offers{top:350px;height:622px;gap:14px;padding:3px 6px}
+#phone .credit-selection{top:990px;height:96px;color:var(--ink)}
+#phone .credit-selection b{color:var(--positive);font-size:27px}
+#phone .credit-confirm{top:1104px;height:65px}
+#phone .credit-refresh{font-size:18px;border:0;background:#ead7b45c;box-shadow:none}
+/* Rank, warehouse, debt and guild share quieter internal surfaces and type. */
+#phone .exact-rank-row{height:69px;color:var(--ink)}
+#phone .exact-rank-row>b{background:#e6d5ac;border-color:#c0a16c;color:#725534;box-shadow:none;-webkit-text-stroke:0;font-size:29px}
+#phone .exact-self{background:#e7edcf!important;border:2px solid #aebc83;border-image:none!important;border-radius:14px}
+#phone .exact-self section b{color:#537532;-webkit-text-stroke:0;font-size:32px}
+#phone .exact-self>strong{font-size:30px}
+#phone .exact-list-head{color:#fff4db;font-size:25px;-webkit-text-stroke:0}
+#phone .debt-final-goal{background:#58763b;border-color:#d8b76d;box-shadow:0 0 0 2px #91a06e,inset 0 0 0 2px #e8d6a4}
+#phone .debt-final-goal h3{font-size:40px;-webkit-text-stroke-width:2px;color:#fff4c5}
+#phone .debt-near,#phone .debt-stage-captions span{background:#f2e7c5;border-color:#cbb783;color:#725839}
+#phone .shop-exact-product{border-color:#d5bf91;box-shadow:none}
+#phone .president-identity,#phone .president-review,#phone .president-notice{border-color:#d5bf91;background:#fff4d980;box-shadow:none}
+#phone .president-home{gap:16px;color:var(--ink)}
+#phone .guild-browser-card{border-color:#d5bf91;box-shadow:none}
+#phone .building-tier-benefit strong{color:var(--positive)}
+#phone .debt-dialog-summary{border-color:#d5bf91;box-shadow:none;background:#fff5df80}
+#phone .debt-dialog-summary b{color:var(--positive)}
+#phone .game-btn:focus-visible{outline:3px solid #b17c35;outline-offset:3px}
+#phone #game[data-page=warehouse] .item-card.unowned{background:#e5ddc9!important;border-color:#c6bca4;color:#887d67;box-shadow:none}
+#phone #game[data-page=warehouse] .item-card.unowned strong,#phone #game[data-page=warehouse] .item-card.unowned span{color:#887d67;text-shadow:none;-webkit-text-stroke:0}
+#phone #game[data-page=warehouse] .item-card.unowned img{opacity:.4}
+#phone #game[data-page=warehouse] .item-card{border-color:#d1b883;box-shadow:none}
+#phone #game[data-page=warehouse] .warehouse-dock{background:#f4e7c7;border-color:#d1b883;box-shadow:none}
+#phone #game[data-page=warehouse] .warehouse-dock .game-btn{color:#664119;-webkit-text-stroke:0;text-shadow:none}
+#phone #game[data-page=warehouse] .dock-total{background:#e7d6ae;color:#654c2d;border-radius:10px}
+#phone #game[data-page=warehouse] .dock-total b{color:#537532;font-size:30px}
+#phone .shop-exact-price{background:#edf0dc;color:#58723b;border:1px solid #cbd4ad;border-radius:10px}
+#phone .shop-exact-price span{color:#86906e;border-top:1px solid #cbd4ad}
+#phone .shop-exact-stats>span{background:#e4ebce;color:#5c713c;border:1px solid #c3cf9e;box-shadow:none}
+/* Rewards float directly over the scene: title plate, items and dimming only. */
+#phone[data-modal=reward] .modal-shade{background:rgba(10,13,18,.72)!important;backdrop-filter:none!important}
+#phone[data-modal=reward] .modal{background:none!important;border:0!important;border-image:none!important;box-shadow:none!important;min-height:0!important;padding:0 20px 16px!important;width:660px!important;max-width:660px!important;overflow:visible!important}
+#phone[data-modal=reward] .modal::before,#phone[data-modal=reward] .modal::after,#phone[data-modal=reward] .modal>.smooth-frame{display:none!important;content:none!important}
+#phone[data-modal=reward] .modal>h2{width:470px!important;max-width:100%;margin:0 auto 38px!important;height:104px!important;min-height:104px!important;display:flex;justify-content:center;align-items:center;padding:0 30px 8px!important;font-size:40px!important;border-image:url('assets/visual/reward-title-red.svg') 24 60 24 60 fill / 28px 70px 28px 70px / 0 stretch!important;color:#fff7e7!important;-webkit-text-stroke:0!important;text-shadow:0 2px 2px #7c1639!important}
+#phone[data-modal=reward] .modal-content{background:none!important;border:0!important;box-shadow:none!important;overflow-y:auto!important;max-height:620px!important;padding:0!important}
+#phone[data-modal=reward] .reward-list{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;padding:10px 0 24px;background:none!important}
+#phone[data-modal=reward] .reward-item{width:128px;display:flex;flex-direction:column;align-items:center;gap:9px;color:#fff3d6;font-size:24px;text-align:center;text-shadow:0 2px 3px #000}
+#phone[data-modal=reward] .reward-item img{width:88px;height:88px;object-fit:contain;filter:drop-shadow(0 3px 4px #0006)}
+#phone[data-modal=reward] .reward-item b{font-size:30px;color:#ffda72}
+#phone .credit-note.empty-note{border-image:none!important;box-shadow:none;clip-path:none}
+#phone .credit-offer>.credit-name{display:flex!important;flex-direction:row!important;justify-content:space-between!important;text-align:left!important}
+
+/* Association modules share one double-layer wooden header board. */
+#phone #game:is([data-page=shop],[data-page=mine],[data-page=aid])>.page-title{display:none!important}
+#phone #game:is([data-page=shop],[data-page=mine],[data-page=aid]) .guild-module-title{
+ left:40px!important;right:40px!important;top:20px!important;width:auto!important;height:78px!important;
+ margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;
+ border:0 solid transparent!important;border-image:url('assets/visual/title-wood-clean-v3.png') 150 140 fill / 18px 24px / 0 stretch!important;
+ background:none!important;box-shadow:none!important;z-index:4!important;font-size:0!important;
+}
+#phone .guild-module-title>span{
+ width:286px;height:72px;display:flex;align-items:center;justify-content:center;padding:0 24px 3px;
+ border:0 solid transparent;border-image:url('assets/visual/title-wood-clean-v3.png') 150 140 fill / 17px 22px / 0 stretch;
+ color:#fff7df;font-size:39px;line-height:1;letter-spacing:2px;-webkit-text-stroke:4px #59300c;paint-order:stroke fill;text-shadow:0 2px #6e3b13;
+}

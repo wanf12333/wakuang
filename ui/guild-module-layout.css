@@ -1,0 +1,107 @@
+/* Guild module header adapted to the shared bright shell, with ranking tab components. */
+#phone .guild-module-title{position:absolute;left:180px;right:180px;top:20px;height:92px;margin:0;display:flex;align-items:center;justify-content:center;font-size:51px;line-height:1.15;letter-spacing:2px;color:#fff7df;-webkit-text-stroke:6px #59300c;paint-order:stroke fill;white-space:nowrap}
+#phone .shop-exact-stats{top:132px;left:40px;right:40px;height:58px;gap:10px}
+#phone .shop-exact-stats>span{font-size:22px;border-radius:15px;white-space:nowrap}
+#phone .shop-exact-stats .icon{width:31px;height:35px}
+#phone .guild-module-scene{top:205px;left:40px;right:40px;height:225px;border:4px solid #d4b37a;border-radius:19px;box-shadow:inset 0 0 0 2px #fff7dd;background-image:var(--guild-module-background);background-size:640px 1138px;background-position:center -150px;background-repeat:no-repeat;overflow:hidden}
+#phone .shop-exact-main-tabs.exact-tabs{top:445px;left:40px;right:40px;height:64px;gap:10px;margin:0}
+/* Same gold/blue palette, bevel and text alignment as leaderboard tabs. */
+#phone .shop-exact .shop-exact-main-tabs.exact-tabs .game-btn{min-height:0;height:64px;padding:4px 5px;font-size:28px;line-height:1.2;border:3px solid #087398!important;border-image:none;box-shadow:inset 0 0 0 3px #95edff,0 3px #075371!important;border-radius:17px 17px 8px 8px;background:linear-gradient(#36d4ed,#1198cd)!important;color:#fff;-webkit-text-stroke:3px #12516b;paint-order:stroke fill;text-shadow:0 2px #12516b;filter:none}
+#phone .shop-exact:not(.aid-exact):not(.mine-exact) .shop-exact-main-tabs.exact-tabs .game-btn:nth-child(3),#phone .aid-exact .shop-exact-main-tabs.exact-tabs .game-btn:nth-child(1),#phone .mine-exact .shop-exact-main-tabs.exact-tabs .game-btn:nth-child(2){background:linear-gradient(#ffe564,#ffc614 55%,#efa616)!important;border-color:#795321!important;box-shadow:inset 0 0 0 3px #fff0a4,0 3px #684016!important;-webkit-text-stroke-color:#533010;text-shadow:0 2px #633817}
+#phone .shop-exact-main-tabs.exact-tabs .game-btn:before{display:none!important}
+#phone .aid-content-scroll{top:525px;left:27px;right:27px;bottom:21px;border:0;background:none}
+#phone .aid-content-height{height:735px}
+#phone .aid-concept{border:0;box-shadow:none;height:735px}
+#phone .aid-concept-request{left:8px;top:0;width:414px;height:258px}
+#phone .aid-concept-resource{left:24px;top:52px}
+#phone .aid-concept-status{top:201px;font-size:20px}
+#phone .aid-concept-request>progress{bottom:75px}
+#phone .aid-concept-request>.game-btn{bottom:16px;font-size:25px;width:184px;right:20px}
+#phone .aid-daily{top:8px;right:8px;width:218px;height:85px;font-size:18px}
+#phone .aid-concept .aid-concept-publish{top:105px;right:8px;width:218px;height:145px;font-size:30px}
+#phone .aid-concept-orders-title{left:8px;right:8px;top:271px;height:40px;border-radius:10px;background:linear-gradient(#43c8ef,#0c8ecb);border:2px solid #08739a;box-shadow:inset 0 0 0 2px #85e3fb;font-size:27px;line-height:36px;color:white}
+#phone .aid-concept-orders{left:8px;right:8px;top:322px;height:393px;gap:10px}
+#phone .aid-concept-orders article>h3{font-size:25px}
+#phone .aid-concept-orders .aid-order-reward{top:279px}
+#phone .aid-concept-orders .game-btn{bottom:15px;font-size:25px}
+#phone .shop-exact-donation{top:525px;left:35px;right:35px;height:105px}
+#phone .shop-exact-donation strong{font-size:29px;margin-bottom:7px}
+#phone .shop-exact-donation span{font-size:20px}
+#phone .shop-exact-donation>.icon{width:84px;height:80px}
+#phone .shop-exact-categories{top:643px;left:40px;right:40px;height:51px}
+#phone .shop-exact-products{top:645px;left:35px;right:35px;bottom:25px;gap:10px;padding:8px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr))}
+#phone .mine-exact-panel{top:525px;left:35px;right:35px;height:610px}
+#phone .mine-exact-claim{left:70px;right:70px;top:1154px}
+#phone .aid-daily{height:94px;padding-top:7px}
+#phone .aid-daily progress{margin-top:5px}
+#phone .aid-daily small{line-height:16px;margin-top:3px}
+#phone .aid-concept .aid-concept-publish{top:113px;height:137px}
+#phone .aid-concept-orders article>strong{top:161px}
+#phone .aid-concept-orders .aid-order-count{top:191px}
+#phone .aid-concept-orders article>progress{top:235px;margin-top:0}
+#phone .aid-concept-orders article>span{top:259px;font-size:20px;line-height:23px}
+#phone .aid-concept-orders .aid-order-reward{top:286px;height:35px;font-size:25px}
+#phone .aid-concept-orders .game-btn{left:24px;right:24px;width:calc(100% - 48px);bottom:17px;height:41px;font-size:24px}
+#phone .shop-exact-product h3{position:absolute;top:8px;left:8px;right:8px;height:32px;margin:0;font-size:25px;line-height:32px;text-align:center}
+#phone .shop-exact-product>.shop-concept-icon{left:8px;top:48px}
+#phone .shop-exact-product>.game-btn{top:auto;left:154px;right:10px;bottom:12px;height:38px;font-size:24px;display:flex;align-items:center;justify-content:center}
+#phone .shop-exact-price{top:48px;left:154px;right:10px;height:82px;justify-content:center}
+#phone .shop-exact-price b{font-size:23px;line-height:28px}
+#phone .shop-exact-price span{font-size:20px;line-height:24px;margin-top:4px;padding-top:4px}
+/* One action entry on the right; the request card only presents material and progress. */
+#phone .aid-concept-request h3{padding-top:15px;line-height:1.2}
+#phone .aid-concept-request .aid-concept-resource{left:44px;right:30px;top:60px;gap:28px;align-items:center}
+#phone .aid-concept-request .aid-concept-resource>img{width:112px;height:108px;object-fit:contain}
+#phone .aid-concept-request .aid-concept-resource>div{flex:1;min-width:0}
+#phone .aid-concept-request .aid-concept-resource strong{font-size:29px;line-height:1.2}
+#phone .aid-concept-request .aid-concept-resource b{font-size:47px;line-height:1.1;margin-top:8px}
+#phone .aid-concept-request>progress{left:26px;right:26px;width:calc(100% - 52px);bottom:62px;height:21px;margin:0}
+#phone .aid-concept-request .aid-concept-status{left:24px;right:24px;top:auto;bottom:16px;width:auto;min-height:34px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;font-size:20px}
+/* Equal-width request slots keep every action within its own card. */
+#phone .aid-own-grid{position:absolute;top:0;left:8px;right:8px;height:258px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#phone .aid-own-grid .aid-concept-request{position:relative;inset:auto;width:auto;height:258px;min-width:0}
+#phone .aid-own-grid .aid-concept-request h3{padding-top:15px;font-size:24px;line-height:29px;white-space:nowrap}
+#phone .aid-own-grid .aid-concept-request h3:before,#phone .aid-own-grid .aid-concept-request h3:after{font-size:17px;margin:0 7px}
+#phone .aid-own-grid .aid-concept-resource{left:24px;right:20px;top:53px;gap:16px;align-items:center}
+#phone .aid-own-grid .aid-concept-resource img{width:84px;height:82px;object-fit:contain;flex-shrink:0}
+#phone .aid-own-grid .aid-concept-resource>div{min-width:0;flex:1}
+#phone .aid-own-grid .aid-concept-resource strong{font-size:25px;line-height:30px;white-space:nowrap}
+#phone .aid-own-grid .aid-concept-resource b{font-size:38px;line-height:42px;margin-top:3px}
+#phone .aid-own-grid .aid-concept-resource small{font-size:25px}
+#phone .aid-own-grid .aid-concept-request>progress{top:144px;bottom:auto;left:22px;right:22px;width:calc(100% - 44px);height:17px;margin:0}
+#phone .aid-own-grid .aid-concept-status{top:167px;bottom:auto;left:16px;right:16px;width:auto;min-height:24px;font-size:18px;line-height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+#phone .aid-own-grid .aid-concept-request>.game-btn{left:26px;right:26px;bottom:17px;top:auto;width:calc(100% - 52px);height:43px;font-size:24px;line-height:1}
+/* Use the shared nine-slice gold asset: corners stay fixed at every width. */
+#phone .aid-own-grid .aid-concept-request>.game-btn,#phone .aid-concept-orders .game-btn,#phone .mine-exact-claim .game-btn{
+ background:none!important;
+ border:0 solid transparent;
+ border-image:url('assets/visual/button-gold-v2.png') 220 240 fill / 12px / 0 stretch;
+ clip-path:none;border-radius:12px;box-shadow:none;
+ -webkit-text-stroke-color:#986019;text-shadow:0 2px 1px #8d621b;
+}
+/* Association discovery: compact qualifications, shared tabs, aligned list. */
+#phone .guild-qualification{top:145px;left:42px;right:42px;height:86px;gap:12px}
+#phone .guild-qualification>button,#phone .guild-qualification>div{justify-content:center;padding:8px 14px;border:2px solid #ddc188;border-radius:15px;background:#fff5d7;gap:14px}
+#phone .guild-qualification .icon{width:52px;height:58px;object-fit:contain}
+#phone .guild-qualification span{font-size:22px;line-height:26px}
+#phone .guild-qualification b{font-size:24px;line-height:28px;margin-top:3px}
+#phone .guild-browser-tabs{top:250px;left:42px;right:42px;height:62px;gap:12px}
+#phone .guild-browser-tabs>span,#phone .guild-browser-tabs .guild-create{border:3px solid #ac7b30;border-image:none;border-radius:14px;box-shadow:inset 0 0 0 3px #fff2b0;background:linear-gradient(#ffe76c,#ffc112)!important;font-size:29px;line-height:1;padding:0}
+#phone .guild-browser-tabs .guild-create{border-color:#1786a5;background:linear-gradient(#32cce8,#099cc6)!important;box-shadow:inset 0 0 0 3px #b5effa}
+#phone .guild-browser-list{top:330px;bottom:100px;left:42px;right:42px;display:grid;grid-template-rows:repeat(5,minmax(0,1fr));gap:10px}
+#phone .guild-browser-card{height:auto;min-height:0;display:grid;grid-template-columns:119px minmax(0,1fr) 138px;gap:13px;padding:0 16px 0 8px;border-radius:18px;align-items:center}
+#phone .guild-browser-info strong{font-size:27px;line-height:34px}
+#phone .guild-browser-info small{font-size:19px}
+#phone .guild-browser-info>span{font-size:23px;line-height:28px;margin-top:3px}
+#phone .guild-browser-card .guild-apply{width:138px;height:54px;min-height:0;padding:0;font-size:27px;background:none!important;border:0;border-image:url('assets/visual/button-gold-v2.png') 220 240 fill / 12px / 0 stretch;border-radius:12px;box-shadow:none;clip-path:none;display:flex;align-items:center;justify-content:center}
+#phone .guild-browser-card .guild-apply.locked{font-size:22px;filter:grayscale(1);opacity:.72}
+#phone .guild-browser-footer{bottom:40px;left:42px;right:42px;height:42px;color:#86633b;font-size:20px;line-height:42px}
+#phone .guild-browser-footer .game-btn{height:42px;min-height:0}
+/* Contribution-button styling shared by association actions, fixed 14px corners. */
+#phone #game :is(.shop-exact-donation,.shop-exact-product,.aid-own-grid,.aid-concept-orders,.mine-exact-claim,.guild-browser-card,.guild-browser-footer) .game-btn{
+ background:none!important;border:0!important;
+ border-image:url('assets/visual/guild-button-gold.svg') 14 fill / 14px / 0 stretch!important;
+ border-radius:12px!important;box-shadow:none!important;clip-path:none!important;
+ color:#fff9e3;-webkit-text-stroke:3px #815829;paint-order:stroke fill;text-shadow:none;
+ display:flex;align-items:center;justify-content:center;
+}

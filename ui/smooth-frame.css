@@ -1,0 +1,6 @@
+/* Replace raster frame layers only; all layout, content and actions are retained. */
+#phone #game[data-page]::before,#phone[data-modal=pass] .modal::before{display:none!important}
+#phone #game[data-page],#phone[data-modal] .modal{isolation:isolate}
+#phone[data-modal]:not([data-modal=pass]) .modal{border-image:none!important;clip-path:none;box-shadow:none;background:none!important;overflow:visible;transform:none}
+#phone .smooth-frame{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:visible}
+#phone[data-modal]:not([data-modal=pass]) .modal-content{max-height:970px;overflow:auto}

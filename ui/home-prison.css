@@ -1,0 +1,248 @@
+/* Coordinates are percentages of the shared 680 × 680 building layer. */
+.residence-building{position:absolute;inset:0;background:url('assets/visual/residences-v1.png') var(--house-x) var(--house-y)/300% 200% no-repeat}
+.prison-scene.is-free .prison-name,.prison-scene.is-free .prison-bars,.prison-scene.is-free .prison-reinforcement{display:none!important}
+.prison-scene.is-free .prison-cell{left:60%;top:77%;width:50%;height:26%;overflow:visible}
+.prison-scene.is-free .prison-patrol{width:42.24%;bottom:0}
+.prison-scene.is-free .prison-mole.panda-miner{background-image:url('assets/visual/panda-miner-expressions-v2.png')}
+.prison-scene.is-free .prison-speech-anchor{left:60%;bottom:-3%}
+.building-tier-art .is-free .prison-cell{display:none}
+.prison-scene{
+ --prison-cycle:9.6s;
+ --prison-bar-width:5px;
+ --prison-metal:linear-gradient(90deg,#343e49 0%,#566574 24%,#b6c1c8 43%,#81909c 59%,#43505e 85%,#25313d 100%);
+ position:relative;
+ width:100%;
+ height:100%;
+ isolation:isolate;
+ background:transparent;
+ pointer-events:none;
+}
+.prison-scene *{box-sizing:border-box;pointer-events:none}
+/* Explicitly override both legacy building selectors, including the mine mask. */
+.prison-scene .prison-building,
+#phone .prison-scene .prison-building{
+ display:block;
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ max-width:none;
+ object-fit:contain;
+ mask:none;
+ -webkit-mask:none;
+ z-index:0;
+}
+.prison-scene .prison-name{
+ position:absolute;
+ left:34%;
+ top:28%;
+ width:36%;
+ height:10%;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ z-index:1;
+ color:#663a15;
+ font-family:'Microsoft YaHei',sans-serif;
+ font-size:27px;
+ font-weight:900;
+ line-height:1;
+ letter-spacing:2px;
+ text-shadow:0 1px #ffcf7f;
+ white-space:nowrap;
+}
+.prison-name strong{font-size:34px;line-height:1.1;color:#fff2cc;text-shadow:0 2px 2px #693309,1px 0 #693309,-1px 0 #693309}
+.prison-name small{font-size:23px;line-height:1.1;letter-spacing:0;color:#663a15;font-weight:900}
+.prison-scene .prison-cell,
+.prison-scene .prison-bars{
+ position:absolute;
+ left:35.8%;
+ top:50.4%;
+ width:33%;
+ height:39.6%;
+}
+.prison-scene .prison-cell{
+ overflow:hidden;
+ z-index:2;
+}
+.prison-scene .prison-patrol{
+ position:absolute;
+ left:0;
+ bottom:6.5%;
+ width:64%;
+ aspect-ratio:1;
+ transform:translateX(0);
+ animation:prison-patrol-travel var(--prison-cycle) linear infinite;
+ will-change:transform;
+}
+.prison-scene .prison-facing{
+ position:absolute;
+ inset:0;
+ transform-origin:50% 50%;
+ transform:scaleX(1);
+ animation:prison-patrol-facing var(--prison-cycle) steps(1,end) infinite;
+}
+.prison-scene .prison-mole{
+ display:block;
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ background-image:url('assets/home-layered/mole-walk-v1.png');
+ background-size:200% 200%;
+ background-repeat:no-repeat;
+ background-position:0 0;
+ animation:prison-mole-walk .65s steps(1,end) infinite;
+}
+.prison-scene .prison-shadow{
+ position:absolute;
+ left:18%;
+ bottom:1.5%;
+ width:71%;
+ height:8%;
+ border-radius:50%;
+ background:radial-gradient(ellipse,#10172185 0%,#10172145 48%,#10172100 74%);
+}
+.prison-scene .prison-bars{z-index:3}
+.prison-scene .prison-bar{
+ position:absolute;
+ top:0;
+ bottom:0;
+ left:var(--bar-position);
+ width:var(--prison-bar-width);
+ transform:translateX(-50%);
+ border:1px solid #273039;
+ border-radius:2px;
+ background:var(--prison-metal);
+ box-shadow:2px 1px 2px #0005;
+}
+.prison-scene .prison-crossbar{
+ position:absolute;
+ left:-1.5%;
+ width:103%;
+ height:7px;
+ border:1px solid #2c3540;
+ border-radius:2px;
+ background:linear-gradient(#b7c0c7 0%,#7c8a97 35%,#465360 65%,#303c48 100%);
+ box-shadow:0 2px 2px #0005;
+}
+.prison-scene .prison-crossbar-top{top:0}
+.prison-scene .prison-crossbar-bottom{bottom:0}
+.prison-scene .prison-lock{
+ position:absolute;
+ left:70.5%;
+ top:64%;
+ width:13px;
+ height:18px;
+ transform:translateX(-50%);
+ border:2px solid #51452a;
+ border-radius:3px;
+ background:linear-gradient(120deg,#e3c27b,#ac8645 65%,#745321);
+ box-shadow:1px 2px 2px #0005;
+}
+.prison-scene .prison-lock::before{
+ content:'';
+ position:absolute;
+ left:2px;
+ top:-9px;
+ width:5px;
+ height:8px;
+ border:2px solid #9cabb3;
+ border-bottom:0;
+ border-radius:5px 5px 0 0;
+}
+.prison-scene .prison-lock::after{
+ content:'';
+ position:absolute;
+ left:3px;
+ top:5px;
+ width:3px;
+ height:6px;
+ border-radius:50% 50% 1px 1px;
+ background:#574426;
+}
+.prison-scene .prison-reinforcement{
+ display:none;
+ position:absolute;
+ top:59%;
+ width:2.4%;
+ height:24%;
+ border:2px solid #39404a;
+ border-radius:4px;
+ background:var(--prison-metal);
+ box-shadow:2px 2px 2px #0005;
+ z-index:4;
+}
+.prison-scene .prison-reinforcement-left{left:32.7%}
+.prison-scene .prison-reinforcement-right{left:69.5%}
+.prison-scene .prison-reinforcement::before,
+.prison-scene .prison-reinforcement::after{
+ content:'';
+ position:absolute;
+ left:50%;
+ width:7px;
+ height:7px;
+ transform:translateX(-50%);
+ border:1px solid #313b45;
+ border-radius:50%;
+ background:linear-gradient(135deg,#d8e0e4,#6b7986 70%);
+ box-shadow:0 1px 1px #18212b;
+}
+.prison-scene .prison-reinforcement::before{top:7px}
+.prison-scene .prison-reinforcement::after{bottom:7px}
+.prison-scene.is-reinforced{--prison-bar-width:6.5px}
+.prison-scene.is-reinforced .prison-reinforcement{display:block}
+.prison-scene.is-reinforced .prison-crossbar{height:9px}
+/* 56.25% of the 64%-wide sprite is exactly 36% of the cell width. */
+.prison-scene .prison-speech-anchor{position:absolute;left:35.8%;bottom:12.574%;width:21.12%;aspect-ratio:1;z-index:8;pointer-events:none;animation:prison-patrol-travel var(--prison-cycle) linear infinite}
+.prison-scene .prison-speech{position:absolute;left:-70.74%;bottom:calc(100% + 14px);width:241.48%;box-sizing:border-box;z-index:8;padding:16px 20px;border:3px solid #493b2d;border-radius:25px;background:#fffef5;color:#493b2d;font-size:24px;font-weight:700;line-height:1.4;text-align:center;box-shadow:0 5px 0 #35241925;pointer-events:none}
+.prison-scene .prison-speech:after{content:'';position:absolute;left:calc(50% - 10px);bottom:-13px;width:20px;height:20px;background:#fffef5;border-right:3px solid #493b2d;border-bottom:3px solid #493b2d;transform:rotate(45deg)}
+@media(prefers-reduced-motion:reduce){.prison-scene .prison-speech-anchor{animation:none;transform:translateX(28.125%)}}
+@keyframes prison-patrol-travel{
+ 0%,4%{transform:translateX(0)}
+ 46%,54%{transform:translateX(56.25%)}
+ 96%,100%{transform:translateX(0)}
+}
+@keyframes prison-patrol-facing{
+ 0%,49.999%{transform:scaleX(1)}
+ 50%,99.999%{transform:scaleX(-1)}
+ 100%{transform:scaleX(1)}
+}
+/* Four independent square cells in a 2 × 2 RGBA sprite sheet. */
+.prison-scene .prison-mole.panda-miner{background-image:url('assets/visual/panda-prisoner-helmet-v1.png');background-size:200% 200%;background-position:var(--panda-x) var(--panda-y);transform-origin:50% 92%;animation:panda-waddle var(--prison-cycle) ease-in-out infinite}
+.prison-scene .hero-rig{position:absolute;inset:0;transform-origin:50% 92%;animation:panda-waddle var(--prison-cycle) ease-in-out infinite}
+.prison-scene .hero-rig .prison-mole.panda-miner{animation:none}
+@media(prefers-reduced-motion:reduce){.prison-scene .hero-rig{animation:none}}
+/* All four anchors share the footfall transform; turning stays on the outer wrapper. */
+@keyframes panda-waddle{
+ 0%,4%,46%,54%,96%,100%{transform:translateY(0) rotate(0) scale(1)}
+ 7%,19%,31%,43%,57%,69%,81%,93%{transform:translateY(-1.8%) rotate(-1.5deg) scale(.99,1.01)}
+ 10%,16%,22%,28%,34%,40%,60%,66%,72%,78%,84%,90%{transform:translateY(0) rotate(0) scale(1.015,.985)}
+ 13%,25%,37%,63%,75%,87%{transform:translateY(-1.8%) rotate(1.5deg) scale(.99,1.01)}
+}
+.prison-scene .prison-facing:has(.panda-miner){animation:panda-turn var(--prison-cycle) linear infinite}
+@keyframes panda-turn{
+ 0%,46%{transform:scaleX(-1)}
+ 49%{transform:scaleX(-.7)}
+ 50%{transform:scaleX(.7)}
+ 54%,96%{transform:scaleX(1)}
+ 99%{transform:scaleX(.7)}
+ 100%{transform:scaleX(-1)}
+}
+@media(prefers-reduced-motion:reduce){.prison-scene .prison-mole.panda-miner,.prison-scene .prison-facing:has(.panda-miner){animation:none}}
+@keyframes prison-mole-walk{
+ 0%{background-position:0 0}
+ 25%{background-position:100% 0}
+ 50%{background-position:0 100%}
+ 75%{background-position:100% 100%}
+ 100%{background-position:0 0}
+}
+@media(prefers-reduced-motion:reduce){
+ .prison-scene .prison-patrol,
+ .prison-scene .prison-facing,
+ .prison-scene .prison-mole{animation:none;will-change:auto}
+ .prison-scene .prison-patrol{transform:translateX(28.125%)}
+ .prison-scene .prison-facing{transform:scaleX(1)}
+ .prison-scene .prison-mole{background-position:0 0}
+}

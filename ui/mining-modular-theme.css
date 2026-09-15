@@ -1,0 +1,171 @@
+/* Mining modular UI kit V1
+   Wood, iron, rivets and gems are assembled with CSS; only compact character/icons remain raster. */
+#phone{
+ --kit-timber:linear-gradient(#32170715,#32170738),url('assets/visual/mining-wood-tile-v1.webp');
+ --kit-wood-dark:#4a2a1b;--kit-wood:#79451f;--kit-wood-light:#b56d2e;
+ --kit-iron:#30343d;--kit-iron-light:#626a76;--kit-rivet:#e0a94b;
+ --kit-paper:#fff1c8;--kit-paper-light:#fff9e4;--kit-ink:#54351d;
+ --kit-gold:#ffbf24;--kit-gold-light:#fff080;--kit-green:#6f9e35;
+}
+
+/* Page and modal shells: one scalable recipe replaces full-screen shell bitmaps. */
+#phone #game[data-page]:not([data-page=home]):not([data-page=gameplay])::before{
+ inset:50px 16px 8px!important;border:9px solid transparent!important;border-image:none!important;border-radius:22px!important;clip-path:none!important;
+ background:
+  radial-gradient(circle at 15px 15px,var(--kit-rivet) 0 3px,#352b28 4px 7px,transparent 8px) padding-box,
+  radial-gradient(circle at calc(100% - 15px) 15px,var(--kit-rivet) 0 3px,#352b28 4px 7px,transparent 8px) padding-box,
+  radial-gradient(circle at 15px calc(100% - 15px),var(--kit-rivet) 0 3px,#352b28 4px 7px,transparent 8px) padding-box,
+  radial-gradient(circle at calc(100% - 15px) calc(100% - 15px),var(--kit-rivet) 0 3px,#352b28 4px 7px,transparent 8px) padding-box,
+  linear-gradient(135deg,var(--kit-paper-light),var(--kit-paper)) padding-box,
+  repeating-linear-gradient(90deg,var(--kit-wood-dark) 0 22px,var(--kit-wood) 23px 48px,var(--kit-wood-light) 49px 53px,var(--kit-wood) 54px 78px) border-box!important;
+ box-shadow:inset 0 0 0 3px #e7be69,inset 0 0 0 7px var(--kit-iron),0 12px 22px #17100b99!important;
+}
+#phone[data-modal] .modal::before{
+ inset:48px 0 0!important;border:8px solid transparent!important;border-image:none!important;border-radius:20px!important;clip-path:none!important;
+ background:
+  radial-gradient(circle at 14px 14px,var(--kit-rivet) 0 3px,#352b28 4px 6px,transparent 7px) padding-box,
+  radial-gradient(circle at calc(100% - 14px) 14px,var(--kit-rivet) 0 3px,#352b28 4px 6px,transparent 7px) padding-box,
+  linear-gradient(135deg,var(--kit-paper-light),var(--kit-paper)) padding-box,
+  repeating-linear-gradient(90deg,#342f30 0 16px,#62656b 17px 20px,var(--kit-wood) 21px 58px,#3b302c 59px 63px) border-box!important;
+ box-shadow:inset 0 0 0 3px #e7be69,inset 0 0 0 6px var(--kit-iron),0 13px 25px #130d0a99!important;
+}
+
+/* Titles use the same small material recipe at any width. */
+#phone[data-ui-kit="mining-modular-v1"] #game[data-page]:not([data-page=home]):not([data-page=gameplay])>.page-title,
+#phone[data-ui-kit="mining-modular-v1"][data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal.modal>h2{
+ border:3px solid #252a32!important;border-image:none!important;border-radius:9px!important;
+ background-color:#79451f!important;
+ background-image:var(--kit-timber)!important;
+ background-position:center!important;background-size:auto,256px 256px!important;background-repeat:repeat!important;
+ box-shadow:inset 0 0 0 3px #d7943f,inset 0 -7px 10px #351b1299,0 4px 0 #1e2229,0 7px 12px #21150d66!important;
+ color:#fff3d2!important;text-shadow:0 2px #4a2414!important;
+}
+#phone[data-ui-kit="mining-modular-v1"] #game[data-page]:not([data-page=home]):not([data-page=gameplay])>.page-title::before,
+#phone[data-ui-kit="mining-modular-v1"] #game[data-page]:not([data-page=home]):not([data-page=gameplay])>.page-title::after,
+#phone[data-ui-kit="mining-modular-v1"][data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal.modal>h2::before,
+#phone[data-ui-kit="mining-modular-v1"][data-modal]:not([data-modal=pass]):not([data-modal=reward]) .modal.modal>h2::after{
+ content:'';position:absolute;top:50%;width:10px;height:10px;border-radius:50%;transform:translateY(-50%);
+ background:radial-gradient(circle at 35% 30%,#ffe18a 0 18%,var(--kit-rivet) 20% 46%,#4b352b 50% 72%,#222831 75%);box-shadow:0 1px 2px #1b110b;
+}
+#phone #game[data-page]>.page-title::before,#phone[data-ui-kit="mining-modular-v1"][data-modal] .modal.modal>h2::before{left:13px}
+#phone #game[data-page]>.page-title::after,#phone[data-ui-kit="mining-modular-v1"][data-modal] .modal.modal>h2::after{right:13px}
+
+/* Shared association header: long beam + small central name plate. */
+#phone #game:is([data-page=shop],[data-page=mine],[data-page=aid]) .guild-module-title{
+ border:3px solid #252a32!important;border-image:none!important;border-radius:8px!important;
+ background:var(--kit-timber)!important;
+ box-shadow:inset 0 0 0 3px #c98235,inset 0 -7px 9px #32180f99,0 4px 0 #1f232a,0 7px 12px #21150d70!important;
+}
+#phone .guild-module-title:before,#phone .guild-module-title:after{content:'';position:absolute;top:50%;width:12px;height:12px;border-radius:50%;transform:translateY(-50%);background:radial-gradient(circle at 35% 30%,#ffe18a 0 18%,var(--kit-rivet) 20% 45%,#3e3230 50% 70%,#20252d 73%);z-index:2}
+#phone .guild-module-title:before{left:12px}#phone .guild-module-title:after{right:12px}
+#phone .guild-module-title>span{
+ border:3px solid #242832!important;border-image:none!important;border-radius:8px!important;
+ background:linear-gradient(#a8612d,#81451f 68%,#5f321b)!important;
+ box-shadow:inset 0 0 0 3px #dda047,inset 0 -6px 8px #3c1d1399,0 3px 0 #20242b!important;
+}
+
+/* Tactile controls assembled from gradients; no button texture required. */
+#phone #game[data-page] .game-btn.game-btn,#phone[data-modal] .modal .game-btn{
+ border:2px solid #704015!important;border-image:none!important;border-radius:10px!important;
+ background:linear-gradient(#fff083 0,#ffd044 44%,#efa719 45%,#c9780d 100%)!important;
+ box-shadow:inset 0 0 0 2px #fff6b2,inset 0 -5px 0 #a9580d,0 3px 0 #4d301b,0 5px 8px #39231755!important;
+ color:#5a351b!important;text-shadow:0 1px #fff1a0!important;-webkit-text-stroke:0!important;
+ transition:transform .1s ease,filter .1s ease,box-shadow .1s ease;
+}
+#phone #game[data-page] .game-btn.game-btn.secondary,#phone[data-modal] .modal .game-btn.secondary{
+ border-color:#313743!important;background:linear-gradient(#747c88,#505761 48%,#333943 49%,#252a32)!important;
+ box-shadow:inset 0 0 0 2px #a9afb7,inset 0 -5px 0 #171b21,0 3px 0 #181511,0 5px 8px #1d151055!important;color:#fff0cb!important;text-shadow:0 2px #252a31!important;
+}
+#phone #game[data-page] .game-btn.game-btn.danger,#phone[data-modal] .modal .game-btn.danger{border-color:#69261e!important;background:linear-gradient(#ef8061,#c94e37 50%,#8f2f26 51%,#69231e)!important;color:#fff4db!important;text-shadow:0 2px #5b1f19!important}
+#phone #game[data-page] .game-btn:not(:disabled):active,#phone[data-modal] .modal .game-btn:not(:disabled):active{transform:translateY(3px);box-shadow:inset 0 0 0 2px #fff0a0,inset 0 -2px 0 #a9580d,0 1px 0 #4d301b!important}
+#phone #game[data-page] .game-btn:focus-visible,#phone[data-modal] .modal .game-btn:focus-visible{outline:4px solid #55d9f4!important;outline-offset:4px!important}
+#phone #game[data-page] .game-btn:disabled,#phone[data-modal] .modal .game-btn:disabled{filter:grayscale(.75) brightness(.9)!important;opacity:.72!important}
+
+/* Common cards: parchment center, wooden edge, thin iron brace. */
+#phone :is(.shop-exact-product,.mine-exact-panel,.aid-concept-request,.aid-concept-orders article,.credit-offer,.credit-note,.warehouse-dock,.activity-row,.debt-dialog-summary,.dialog-info){
+ border:3px solid var(--kit-wood-dark)!important;border-image:none!important;
+ background:
+  linear-gradient(90deg,var(--kit-iron) 0 5px,transparent 5px calc(100% - 5px),var(--kit-iron) calc(100% - 5px)) border-box,
+  linear-gradient(135deg,var(--kit-paper-light),var(--kit-paper)) padding-box!important;
+ box-shadow:inset 0 0 0 2px #edbd68,0 3px 0 #292329,0 6px 10px #4b2c1750!important;border-radius:12px!important;
+}
+
+/* Modular guild counter: one compact character image, all furniture and gems are CSS. */
+#phone .guild-module-screen{--guild-module-background:none}
+#phone .guild-module-scene{
+ isolation:isolate;background-image:
+  linear-gradient(90deg,transparent 0 18%,#211c1c99 18% 19%,transparent 19% 81%,#211c1c99 81% 82%,transparent 82%),
+  repeating-linear-gradient(0deg,transparent 0 61px,#2b2020 62px 69px,#a26330 70px 75px),
+  repeating-linear-gradient(90deg,#3e2d24 0 4px,#754621 5px 55px,#915a2d 56px 59px,#5a351f 60px 96px)!important;
+ border:5px solid var(--kit-iron)!important;box-shadow:inset 0 0 0 3px #bd7a39,inset 0 -20px 20px #1e130ca0,0 4px 0 #2b211d!important;
+}
+#phone .guild-module-scene:before{content:'矿';position:absolute;left:39px;top:27px;width:78px;height:78px;display:grid;place-items:center;border:7px solid #3b414b;border-radius:50%;background:radial-gradient(circle,#c38635 0 43%,#6e3d20 45% 59%,#222832 61%);box-shadow:0 4px 0 #251b18;color:#ffe086;font-size:38px;font-weight:900;text-shadow:0 2px #4b2414;z-index:1}
+#phone .guild-module-scene:after{content:'';position:absolute;left:0;right:0;bottom:0;height:27px;background:repeating-linear-gradient(90deg,#333841 0 10px,#8f5328 11px 56px,#b76a2d 57px 61px,#70401f 62px 92px);border-top:4px solid #252a32;box-shadow:inset 0 3px #d08a41;z-index:3}
+#phone .guild-counter-mole{position:absolute;left:50%;bottom:-11px;width:205px;height:205px;object-fit:contain;transform:translateX(-50%);filter:drop-shadow(0 5px 4px #180f0b99);z-index:2}
+#phone .guild-counter-sign{position:absolute;left:23px;bottom:31px;width:132px;height:55px;display:grid;place-items:center;border:3px solid #292d35;border-radius:6px;background:linear-gradient(#9b5a2c,#63371f);box-shadow:inset 0 0 0 2px #d89446,0 3px #231a18;color:#ffe4a1;font-size:23px;transform:rotate(-3deg);z-index:4}
+#phone .guild-counter-gems{position:absolute;right:22px;bottom:27px;width:170px;height:69px;display:flex;align-items:flex-start;justify-content:center;gap:5px;padding:6px 13px 0;border:5px solid #30353e;border-bottom-width:13px;background:linear-gradient(#8d5228,#54301e);box-shadow:inset 0 0 0 3px #c77b39,0 4px #251b17;z-index:4}
+#phone .guild-counter-gems i{display:block;width:24px;height:29px;clip-path:polygon(50% 0,100% 37%,78% 100%,22% 100%,0 37%);background:linear-gradient(135deg,#fff 0 12%,#36d9ff 14% 45%,#087bbd 47% 100%);filter:drop-shadow(0 2px 1px #1e1110)}
+#phone .guild-counter-gems i:nth-child(2),#phone .guild-counter-gems i:nth-child(5){background:linear-gradient(135deg,#fff 0 12%,#ef74ff 14% 45%,#7d22b0 47%)}
+#phone .guild-counter-gems i:nth-child(3){background:linear-gradient(135deg,#fff 0 12%,#ffe968 14% 45%,#e4810c 47%)}
+#phone .guild-counter-gems i:nth-child(4){background:linear-gradient(135deg,#fff 0 12%,#ff767c 14% 45%,#b52532 47%)}
+#phone .guild-counter-gems i:nth-child(even){margin-top:13px}
+
+/* Modular mine vignette: CSS beams, static lamp, gear, conveyor and cart. */
+#phone .modular-mine-scene{
+ background-image:
+  linear-gradient(64deg,transparent 0 18%,#1c2028 19% 23%,#6f4325 24% 29%,transparent 30%),
+  linear-gradient(-64deg,transparent 0 18%,#1c2028 19% 23%,#6f4325 24% 29%,transparent 30%),
+  radial-gradient(circle at 50% 115%,#71452b 0 18%,#3c302b 36%,#20242c 70%)!important;
+ border:5px solid var(--kit-iron)!important;box-shadow:inset 0 0 0 3px #ad6c31,inset 0 -24px 30px #120e0bb0,0 4px #30231c!important;overflow:hidden;
+}
+#phone .modular-mine-scene:after{content:'';position:absolute;left:-5%;right:-5%;bottom:31px;height:27px;border:5px solid #252a32;border-radius:10px;background:repeating-linear-gradient(90deg,#9b5b2c 0 20px,#3a3e47 21px 27px,#6d3d22 28px 47px);transform:rotate(-3deg);box-shadow:0 6px 0 #171b21;z-index:2}
+.mine-kit-lamp{position:absolute;left:62px;top:-5px;width:42px;height:91px;border-left:6px solid #30353e;border-right:6px solid #30353e;background:linear-gradient(90deg,#313741 0 20%,#ffc83c 22% 78%,#313741 80%);box-shadow:0 0 24px #ffba3799;z-index:2}.mine-kit-lamp:before{content:'';position:absolute;left:-14px;top:0;width:58px;height:13px;border-radius:7px;background:#30353e}.mine-kit-lamp:after{content:'';position:absolute;left:-10px;bottom:0;border-left:25px solid transparent;border-right:25px solid transparent;border-top:20px solid #30353e}
+.mine-kit-gear{position:absolute;right:72px;top:39px;width:92px;height:92px;border:14px dashed #555d68;border-radius:50%;background:radial-gradient(circle,#e5aa38 0 13%,#292f38 15% 31%,#9b602d 33% 52%,#252a32 54%);box-shadow:0 4px #171b20;z-index:1}
+.mine-kit-belt{position:absolute;right:-20px;bottom:67px;width:300px;height:58px;border:7px solid #292e37;border-radius:12px;background:repeating-linear-gradient(90deg,#8d5128 0 29px,#313640 30px 38px);transform:rotate(-13deg);box-shadow:0 6px #171b21;z-index:3}.mine-kit-belt b{position:absolute;top:-21px;width:35px;height:36px;clip-path:polygon(50% 0,100% 40%,76% 100%,22% 100%,0 40%);background:linear-gradient(135deg,#fff0a3,#ff8c1d 40%,#9f3615);filter:drop-shadow(0 3px 1px #21130c)}.mine-kit-belt b:nth-child(1){left:55px}.mine-kit-belt b:nth-child(2){left:122px}.mine-kit-belt b:nth-child(3){left:191px}
+.mine-kit-cart{position:absolute;left:52px;bottom:58px;width:183px;height:86px;border:7px solid #2e333c;clip-path:polygon(0 8%,100% 0,86% 78%,14% 86%);background:linear-gradient(#87502b,#533120);box-shadow:inset 0 0 0 4px #b77435;z-index:4}.mine-kit-cart:before,.mine-kit-cart:after{content:'';position:absolute;bottom:-8px;width:31px;height:31px;border:8px solid #282d35;border-radius:50%;background:#a7662f}.mine-kit-cart:before{left:18px}.mine-kit-cart:after{right:18px}.mine-kit-cart b{position:absolute;bottom:30px;width:42px;height:43px;clip-path:polygon(50% 0,100% 37%,78% 100%,22% 100%,0 37%);background:linear-gradient(135deg,#eaf4ff,#a3b5d1 45%,#485b77)}.mine-kit-cart b:nth-child(1){left:18px}.mine-kit-cart b:nth-child(2){left:67px}.mine-kit-cart b:nth-child(3){left:113px}
+#phone .modular-mine-scene>span{z-index:6}
+
+@media(prefers-reduced-motion:reduce){#phone .game-btn{transition:none!important}}
+
+#phone[data-ui-kit] #game[data-page] .game-btn.game-btn.secondary{
+ border-image:none!important;background:linear-gradient(#fff5d5,#ead4a3)!important;
+ border:2px solid #8b6037!important;color:#654323!important;-webkit-text-stroke:0!important;text-shadow:0 1px #fff8df!important;
+ box-shadow:inset 0 0 0 2px #fff9e8,inset 0 -3px #c29b60,0 2px #593b25!important;
+}
+#phone[data-ui-kit] #game[data-page] :is(.exact-tabs,.credit-tabs,.guild-tabs) .game-btn.selected{
+ color:#533019!important;text-shadow:0 1px #fff1b0!important;box-shadow:inset 0 0 0 2px #fff3a8,inset 0 -5px #a45c13,0 3px #4b3020!important;
+}
+#phone[data-ui-kit] .guild-counter-gems i{
+ background-image:linear-gradient(105deg,transparent 46%,#ffffff88 48% 51%,transparent 53%),linear-gradient(155deg,#b5faff 0 18%,#29c9f4 20% 50%,#086a9e 52% 75%,#123b64 77%);
+}
+#phone[data-ui-kit] .guild-module-scene{
+ background-image:linear-gradient(0deg,transparent 0 62%,#d79b494d 63% 65%,#29272d 66% 70%,transparent 71%),radial-gradient(ellipse at 18% 15%,#f5ba4840,transparent 58%),var(--kit-timber)!important;
+}
+#phone[data-ui-kit] :is(.exact-rank-row,.exact-self,.building-tier){
+ border-image:none!important;border:2px solid #b78a4b!important;border-radius:10px;
+ background:linear-gradient(110deg,#fff9e6,#f2dfb2)!important;box-shadow:inset 0 0 0 2px #fff8e0,0 2px #68482e!important;
+}
+#phone[data-ui-kit] .exact-self{background:linear-gradient(110deg,#f4e9c7,#e3d2a0)!important}
+#phone[data-ui-kit] .game-input{color:#51361f;background:#fff9e8;border-color:#a27a43;box-shadow:inset 0 2px 4px #73512a22}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(2),#phone[data-ui-kit] .guild-counter-gems i:nth-child(5){filter:hue-rotate(65deg)}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(3){filter:hue-rotate(185deg)}
+#phone[data-ui-kit] .guild-counter-gems i:nth-child(4){filter:hue-rotate(135deg)}
+#phone[data-ui-kit] .item-card:not(.unowned){border-color:#ac8149;box-shadow:inset 0 0 0 2px #fff8df,inset 0 -4px #d5b982;background:radial-gradient(ellipse at 50% 30%,#ffffff,#fff2cd 68%)}
+#phone[data-ui-kit] .item-card.unowned{box-shadow:inset 0 2px 5px #54473525;border-color:#b7aa89}
+#phone[data-ui-kit] .guild-module-title{background-size:auto,256px 256px!important}
+#phone[data-ui-kit] .guild-module-title>span,#phone[data-ui-kit] .guild-counter-sign{background-image:var(--kit-timber)!important;background-size:auto,256px 256px!important}
+#phone[data-ui-kit] .guild-module-scene{background-size:auto,auto,auto,256px 256px!important;background-repeat:repeat!important;background-position:center!important}
+#phone[data-ui-kit] #game[data-page=gameplay]::before{
+ inset:0!important;clip-path:none!important;border:8px solid #30343d!important;border-image:none!important;border-radius:18px!important;
+ background:linear-gradient(110deg,#fff8e2,#eddbb5)!important;box-shadow:inset 0 0 0 3px #cf9950,inset 0 0 0 7px #68452b!important;
+}
+#phone[data-ui-kit] #game[data-page=gameplay] .play-top>b{
+ border:8px solid #383a40;border-image:none;box-shadow:inset 0 0 0 2px #c08c47,0 3px #4a2d1c;
+ background-image:var(--kit-timber);background-size:auto,256px 256px;
+}
+#phone[data-ui-kit] #game[data-page=gameplay] .play-instruction{color:#654321;text-shadow:0 1px #fff9e4}
+#phone[data-ui-kit] .mine-kit-cart{left:28px;bottom:42px;width:210px;height:170px;border:0;clip-path:none;background:url('assets/visual/mining-cart-v1.webp') center bottom/contain no-repeat;box-shadow:none;filter:drop-shadow(0 5px 3px #100d0b88)}
+#phone[data-ui-kit] .mine-kit-cart:before,#phone[data-ui-kit] .mine-kit-cart:after,#phone[data-ui-kit] .mine-kit-cart b{display:none}
+#phone[data-ui-kit] .mine-kit-belt{background-image:repeating-linear-gradient(90deg,transparent 0 28px,#252b34 29px 35px,transparent 36px 40px),var(--kit-timber);background-size:auto,auto,128px 128px;box-shadow:inset 0 2px #c29457,0 6px #171b21}
+#phone[data-ui-kit] .mine-kit-belt b{clip-path:none;background:url('assets/icons/ore_copper.png') center/contain no-repeat;width:38px;height:38px}
+#phone[data-ui-kit] .modular-mine-scene:after{background-image:repeating-linear-gradient(90deg,transparent 0 24px,#454953 25px 31px,transparent 32px 40px),var(--kit-timber);background-size:auto,auto,128px 128px}
