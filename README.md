@@ -1,5 +1,12 @@
 # 挖矿还债记 · 独立前端设计工程
 
+## 在线预览（GitHub Pages）
+
+- [设计工作台](https://wanf12333.github.io/wakuang/)
+- [挖矿界面原型](https://wanf12333.github.io/wakuang/ui/index.html?mode=journey)
+
+Pages 从 main 分支根目录发布。设计提交合并并推送到 main 后自动更新，通常需等待发布任务完成。`.nojekyll` 保证原生 HTML/CSS/JS 与图片直接发布，无需安装依赖或 Cocos。浏览器预览数据保存在各自设备，不会同步玩家存档。
+
 本目录可单独复制给设计开发同事，也可作为新 Git 仓库使用。无需 Cocos、无需原项目、无需 npm install。未包含 SDK、玩家存档、引擎缓存或发布包。
 
 ## 启动
