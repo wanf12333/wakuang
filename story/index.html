@@ -291,33 +291,6 @@
     }
     .tutorial-view.open { display: block; }
     .tutorial-game-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .tutorial-top {
-      position: absolute;
-      z-index: 6;
-      left: 18px;
-      right: 18px;
-      top: 18px;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 9px;
-      align-items: center;
-    }
-    .tutorial-chip {
-      min-height: 52px;
-      display: grid;
-      place-items: center;
-      padding: 7px 10px;
-      border: 1px solid #8b6938;
-      border-radius: 9px;
-      color: #f2ddb5;
-      background: linear-gradient(#2c2014ee, #15100bed);
-      box-shadow: inset 0 0 0 2px #120c08, 0 3px 12px #000b;
-      text-align: center;
-      font-weight: 900;
-      font-size: clamp(12px, 2.2vw, 17px);
-    }
-    .tutorial-chip:first-child { justify-items: start; }
-    .tutorial-chip:last-child { justify-items: end; }
     .tutorial-dim {
       position: absolute;
       z-index: 2;
@@ -329,13 +302,24 @@
       position: absolute;
       z-index: 4;
       padding: 0;
-      border: 4px solid #ffd66f;
-      border-radius: 12px;
+      border: 3px solid #ffe08a;
+      border-radius: 14px;
       color: #fff3bd;
-      background: rgba(255,214,111,.06);
-      box-shadow: 0 0 0 999px rgba(5,3,2,.72), 0 0 24px 7px rgba(255,183,54,.68), inset 0 0 18px rgba(255,213,111,.2);
+      background: linear-gradient(135deg, rgba(255,231,145,.16), rgba(255,183,54,.035));
+      box-shadow: 0 0 0 999px rgba(5,3,2,.72), 0 0 20px 5px rgba(255,183,54,.64), inset 0 0 16px rgba(255,229,139,.26);
       cursor: pointer;
-      transition: left .28s ease, top .28s ease, width .28s ease, height .28s ease;
+      transition: left .28s ease, top .28s ease, width .28s ease, height .28s ease, border-radius .28s ease;
+      animation: guideGlow 1.25s ease-in-out infinite alternate;
+    }
+    .guide-spotlight::before {
+      content: "";
+      position: absolute;
+      inset: -8px -8px -8px 0;
+      border: 1px solid rgba(255,222,132,.75);
+      border-radius: inherit;
+      opacity: .2;
+      animation: guideRipple 1.25s ease-out infinite;
+      pointer-events: none;
     }
     .guide-spotlight::after {
       content: "☝";
@@ -348,23 +332,26 @@
     }
     .guide-spotlight.no-finger::after { display: none; }
     @keyframes guideTap { from { transform: translateY(0) scale(.96); } to { transform: translateY(-11px) scale(1.03); } }
+    @keyframes guideGlow { from { border-color: #ffe08a; box-shadow: 0 0 0 999px rgba(5,3,2,.72), 0 0 15px 3px rgba(255,183,54,.48), inset 0 0 12px rgba(255,229,139,.18); } to { border-color: #fff0b5; box-shadow: 0 0 0 999px rgba(5,3,2,.72), 0 0 26px 8px rgba(255,183,54,.82), inset 0 0 20px rgba(255,229,139,.34); } }
+    @keyframes guideRipple { from { transform: scale(.94); opacity: .72; } to { transform: scale(1.08); opacity: 0; } }
     .guide-card {
       position: absolute;
       z-index: 7;
       left: 20px;
       right: 20px;
-      bottom: 20px;
-      padding: 22px;
+      bottom: 18px;
+      box-sizing: border-box;
+      padding: 16px 18px;
       border: 2px solid #966e37;
-      border-radius: 14px 5px 14px 5px;
+      border-radius: 14px;
       background: linear-gradient(105deg, rgba(49,34,20,.98), rgba(17,12,8,.98));
       box-shadow: inset 0 0 0 3px #120c08, 0 14px 44px #000d;
     }
     .guide-step-label { color: #e8b654; font-size: 13px; font-weight: 900; letter-spacing: .1em; }
-    .guide-card h2 { margin: 7px 0 8px; font-family: Georgia, "Songti SC", serif; font-size: clamp(22px, 4.5vw, 32px); }
-    .guide-card p { min-height: 55px; margin: 0; color: #ddccb0; font-size: clamp(15px, 2.8vw, 21px); line-height: 1.55; }
-    .guide-actions { margin-top: 15px; display: grid; grid-template-columns: 100px 1fr; gap: 10px; }
-    .guide-actions button { min-height: 52px; border-radius: 8px; font-weight: 900; cursor: pointer; }
+    .guide-card h2 { margin: 4px 0 5px; font-family: Georgia, "Songti SC", serif; font-size: clamp(20px, 4.1vw, 28px); }
+    .guide-card p { min-height: 44px; margin: 0; color: #ddccb0; font-size: clamp(15px, 2.6vw, 19px); line-height: 1.45; }
+    .guide-actions { margin-top: 10px; display: grid; grid-template-columns: 100px 1fr; gap: 10px; }
+    .guide-actions button { min-height: 48px; border-radius: 8px; font-weight: 900; cursor: pointer; }
     .guide-actions .guide-back { border: 1px solid #715633; color: #d8c3a0; background: #17100a; }
     .guide-actions .guide-next { border: 1px solid #ffd16d; color: #2d1908; background: linear-gradient(#f0bd58, #ba7622); }
     .tutorial-toast {
@@ -512,11 +499,6 @@
 
     <section class="tutorial-view" id="tutorialView" aria-label="第一关新手教学">
       <img class="tutorial-game-art" src="../generated-images/mining-ui-latest/p0-05-gameplay-720x1280.png" alt="6×6 挖宝教学棋盘">
-      <header class="tutorial-top">
-        <div class="tutorial-chip" id="tutorialLevel">教学关 · 第1关</div>
-        <div class="tutorial-chip" id="tutorialEnergy">铲子能量 8/8</div>
-        <div class="tutorial-chip" id="tutorialTreasure">宝物 0/6</div>
-      </header>
       <div class="tutorial-dim"></div>
       <button class="guide-spotlight" id="guideSpotlight" type="button" aria-label="当前教学高亮区域"></button>
       <section class="guide-card" id="guideCard" aria-live="polite">
@@ -809,32 +791,32 @@
       {
         title: { zh: "找齐全部宝物", en: "Find Every Treasure" },
         text: { zh: "教学关是6×6棋盘，共藏有6个宝物。找到全部宝物，才能带走本局收获。", en: "The tutorial uses a 6×6 board with six treasures. Find every treasure to keep the haul." },
-        action: { zh: "下一步", en: "Next" }, rect: [7, 20, 90, 64], finger: false
+        action: { zh: "下一步", en: "Next" }, rect: [1.2, 23.5, 97.3, 65], finger: false
       },
       {
         title: { zh: "先看三条规律", en: "Learn the Three Rules" },
         text: { zh: "每行、每列、每个材质区域恰好1个宝物；任意两个宝物在八个方向都不能相邻。", en: "Each row, column, and material region contains exactly one treasure. No two treasures may touch, even diagonally." },
-        action: { zh: "我记住了", en: "Got It" }, rect: [7, 12, 86, 8], finger: false
+        action: { zh: "我记住了", en: "Got It" }, rect: [7.5, 17.2, 86, 5.6], finger: false
       },
       {
         title: { zh: "单击插旗", en: "Tap to Place a Flag" },
         text: { zh: "判断某格可能藏有宝物时，单击插旗；再次单击可以取消。插旗不消耗铲子能量。", en: "When you think a cell hides treasure, tap once to place a flag. Tap again to remove it. Flags cost no shovel energy." },
-        action: { zh: "模拟单击", en: "Try a Tap" }, rect: [68, 53, 15, 10], finger: true
+        action: { zh: "模拟单击", en: "Try a Tap" }, rect: [23, 48, 17, 12], finger: true
       },
       {
         title: { zh: "双击挖掘", en: "Double-tap to Dig" },
         text: { zh: "确认目标后双击格子进行挖掘。挖到宝物或挖空，都会消耗1点铲子能量。", en: "Once you are sure, double-tap the cell to dig. Treasure or empty soil, every dig costs one shovel energy." },
-        action: { zh: "模拟双击", en: "Try a Double-tap" }, rect: [53, 43, 15, 10], finger: true
+        action: { zh: "模拟双击", en: "Try a Double-tap" }, rect: [38, 47, 30, 19], finger: true
       },
       {
         title: { zh: "本关有8点铲能", en: "Eight Shovel Energy" },
         text: { zh: "铲子能量＝棋盘边长＋2。6×6棋盘提供8点能量，刚好允许最多挖空2次。", en: "Shovel energy equals board width plus two. A 6×6 board gives eight energy, allowing at most two empty digs." },
-        action: { zh: "下一步", en: "Next" }, rect: [35, 1, 30, 6], finger: false
+        action: { zh: "下一步", en: "Next" }, rect: [3.5, 7.5, 93, 5.8], finger: false
       },
       {
         title: { zh: "没找齐，就一无所有", en: "All Treasures or Nothing" },
         text: { zh: "能量耗尽或主动退出前没有找齐6个宝物，本局临时收获全部作废。现在开始第一关。", en: "If energy runs out or you quit before finding all six treasures, the temporary haul is lost. Now begin level one." },
-        action: { zh: "开始第一关", en: "Start Level One" }, rect: [7, 20, 90, 64], finger: false
+        action: { zh: "开始第一关", en: "Start Level One" }, rect: [1.2, 23.5, 97.3, 65], finger: false
       }
     ];
 
@@ -1055,9 +1037,6 @@
       $("guideBack").textContent = isEnglish ? "Previous" : "上一步";
       $("guideBack").disabled = state.tutorialStep === 0;
       $("guideNext").textContent = step.action[state.lang];
-      $("tutorialLevel").textContent = isEnglish ? "Tutorial · Level 1" : "教学关 · 第1关";
-      $("tutorialEnergy").textContent = isEnglish ? `Shovel ${state.tutorialStep >= 4 ? "7/8" : "8/8"}` : `铲子能量 ${state.tutorialStep >= 4 ? "7/8" : "8/8"}`;
-      $("tutorialTreasure").textContent = isEnglish ? `Treasure ${state.tutorialStep >= 4 ? "1/6" : "0/6"}` : `宝物 ${state.tutorialStep >= 4 ? "1/6" : "0/6"}`;
       $("tutorialToast").textContent = isEnglish ? "Now find all six treasures yourself. The main screen unlocks after the tutorial level." : "现在请亲手找齐6个宝物。完成教学关后才会进入主界面。";
     }
 
@@ -1109,7 +1088,14 @@
     $("dialogConfirm").addEventListener("click", () => state.modalAction ? state.modalAction() : closeModal());
     $("modalLayer").addEventListener("click", event => { if (event.target === $("modalLayer")) closeModal(); });
     $("guideNext").addEventListener("click", advanceTutorial);
-    $("guideSpotlight").addEventListener("click", advanceTutorial);
+    $("tutorialView").addEventListener("click", event => {
+      if (event.target.closest(".guide-actions")) return;
+      const spotlight = $("guideSpotlight");
+      const rect = spotlight.getBoundingClientRect();
+      if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) {
+        advanceTutorial();
+      }
+    });
     $("guideBack").addEventListener("click", previousTutorial);
     document.addEventListener("keydown", event => {
       if ($("tutorialView").classList.contains("open")) {
