@@ -46,6 +46,7 @@
 #phone#phone#phone .pv-links{display:flex;gap:12px}
 #phone#phone#phone .pv-links .pv-link{min-height:50px;flex:1;padding:4px;font-size:22px;line-height:32px;color:#63763d!important;background:none!important;border:0!important;border-image:none!important;box-shadow:none!important;text-decoration:underline}
 #phone#phone#phone .pv-online-details h3{font-size:36px;text-align:center;margin:8px 0 20px}
+#phone#phone#phone .pv-online-details{position:relative}
 #phone#phone#phone .pv-online-details>p{text-align:center;margin:0 0 26px}
 #phone#phone#phone .pv-online-row{display:grid;grid-template-columns:160px 1fr 150px;grid-template-rows:50px 38px;align-items:center;gap:8px;padding:20px 10px;border-bottom:1px solid #c7ac7c;height:152px}
 #phone#phone#phone .pv-online-row>.game-btn{grid-column:3;grid-row:1}
@@ -93,3 +94,47 @@
 #phone#phone#phone .pv-cost b{display:inline-block;min-width:114px;font-size:26px;line-height:36px;text-align:left}
 #phone#phone#phone .pv-ach-target p b{display:inline-block;min-width:86px;text-align:center}
 #phone#phone#phone .pv-materials{height:60px;display:flex;align-items:center;justify-content:space-around;font-size:23px}
+
+/* Check-in refinement: one reward path, game-world materials, no nested dashboard cards. */
+#phone#phone#phone .pv-checkin{
+ --checkin-ink:#55361d;
+ --checkin-muted:#806744;
+ --checkin-gold:#b87914;
+ --checkin-green:#657c3e;
+ --checkin-line:#c9ad79;
+}
+#phone#phone#phone[data-modal="checkin"] .modal{height:1080px!important}
+#phone#phone#phone[data-modal="checkin"] .modal{animation:none!important}
+#phone#phone#phone .pv-checkin .pv-daily-hero{height:214px}
+#phone#phone#phone .pv-checkin .pv-day-index{text-align:center;font-size:22px;line-height:30px;color:var(--checkin-muted)}
+#phone#phone#phone .pv-checkin .pv-pouch{left:34px;top:28px;width:330px;height:184px}
+#phone#phone#phone .pv-checkin .pv-daily-amount{left:370px;right:12px;top:38px}
+#phone#phone#phone .pv-checkin .pv-daily-amount b{font-size:78px;line-height:108px;color:var(--checkin-gold)}
+#phone#phone#phone .pv-checkin .pv-primary{height:76px;min-height:76px;margin:6px 0 16px;font-size:31px;line-height:48px}
+#phone#phone#phone .pv-checkin .pv-week{height:282px;grid-template-rows:134px 134px;margin-bottom:20px}
+#phone#phone#phone .pv-checkin .pv-day{position:relative;gap:2px;box-shadow:none}
+#phone#phone#phone .pv-checkin .pv-day.is-current{border-color:#c99a3f;background:#fff1c7;box-shadow:0 4px 10px #8b5a1e1f}
+#phone#phone#phone .pv-checkin .pv-day.is-claimed{background:#eee9d7;color:#6b7654}
+#phone#phone#phone .pv-checkin .pv-day .icon{width:46px;height:46px}
+#phone#phone#phone .pv-checkin .pv-seventh .icon{width:100px;height:100px}
+#phone#phone#phone .pv-checkin .pv-online{padding-top:16px}
+#phone#phone#phone .pv-checkin .pv-section-heading>span{font-size:21px;color:var(--checkin-muted)}
+#phone#phone#phone .pv-checkin .pv-section-heading>span b{color:var(--checkin-green)}
+#phone#phone#phone .pv-checkin .pv-online-summary{height:222px;gap:22px;padding:8px 4px 0;background:none;border:0;border-radius:0}
+#phone#phone#phone .pv-checkin .pv-online-focus{width:168px;gap:3px;padding-right:16px;border-right-color:var(--checkin-line)}
+#phone#phone#phone .pv-checkin .pv-online-focus>span{font-size:22px;line-height:30px;font-weight:700}
+#phone#phone#phone .pv-checkin .pv-online-focus-reward{display:flex;align-items:center;justify-content:center;gap:6px;height:54px;margin-top:8px}
+#phone#phone#phone .pv-checkin .pv-online-focus-reward>.icon{width:38px;height:38px}
+#phone#phone#phone .pv-checkin .pv-online-focus-reward>b{font-size:29px;line-height:38px}
+#phone#phone#phone .pv-checkin .pv-online-focus .game-btn{width:138px;height:54px;min-height:54px;padding:3px;font-size:23px}
+#phone#phone#phone .pv-checkin .pv-online-track{padding:4px 0}
+#phone#phone#phone .pv-checkin .pv-timeline{margin:15px 0 9px}
+#phone#phone#phone .pv-checkin .pv-links .pv-link{min-height:48px;text-underline-offset:4px}
+#phone#phone#phone .pv-visually-hidden{display:none!important}
+#phone .modal-corner-back{position:absolute;z-index:5;left:28px;top:44px;width:58px;height:58px;padding:0;border:2px solid #7d5227;border-radius:50%;background:linear-gradient(#fff3ca,#e7bd6b);box-shadow:inset 0 0 0 3px #fff5d3,0 3px 7px #3e271f4d}
+#phone .modal-corner-back::before{content:'';position:absolute;left:23px;top:17px;width:15px;height:15px;border-left:5px solid #603a1d;border-bottom:5px solid #603a1d;transform:rotate(45deg)}
+#phone .modal-corner-back:active{transform:scale(.94)}
+#phone .modal-corner-back:focus-visible{outline:4px solid #32abc0;outline-offset:3px}
+#phone#phone#phone .pv-checkin .pv-day:focus-visible,
+#phone#phone#phone .pv-checkin .pv-timeline button:focus-visible,
+#phone#phone#phone .pv-checkin .pv-links .pv-link:focus-visible{outline:4px solid #32abc0;outline-offset:3px}
