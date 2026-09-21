@@ -199,3 +199,9 @@
 #phone#phone#phone .sv-rewards .reward-item{width:182px!important;height:212px!important;min-height:212px!important;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px!important;padding:12px!important;font-size:24px!important;line-height:34px!important}
 #phone#phone#phone .sv-rewards .reward-item>img{width:88px!important;height:88px!important;object-fit:contain}
 #phone#phone#phone .sv-rewards .reward-item b{font-size:28px!important;line-height:38px!important}
+
+/* Claimed and daily-limit actions keep their existing skins; only their color is unified. */
+#phone#phone#phone[data-modal="checkin"] .pv-checkin .pv-primary[data-ui-skin="paper"]:disabled{background:none!important;border-color:transparent!important;border-image:url('assets/shared-ui-v1/button.png') 18 fill / 18px / 0 stretch!important;box-shadow:none!important;border-radius:0!important}
+#phone#phone#phone[data-modal="checkin"] .pv-checkin .pv-primary:disabled,
+#phone#phone#phone[data-modal="checkin"] .pv-checkin .pv-online-focus .game-btn:disabled,
+#phone#phone#phone[data-modal="pass"] .pass-bottom .game-btn:disabled{filter:sepia(.38) saturate(1.25) brightness(1.16)!important;opacity:1!important;color:#80592d!important}

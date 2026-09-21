@@ -37,8 +37,9 @@
 #phone#phone#phone .pv-online-focus>small{font-size:16px;line-height:21px;color:#73834c}
 #phone#phone#phone .pv-online-track{flex:1;min-width:0;padding:8px 0}
 #phone#phone#phone .pv-online-track>strong{display:block;font-size:23px;line-height:34px;white-space:nowrap}
-#phone#phone#phone .pv-timeline{display:flex;justify-content:space-between;margin:18px 0 12px;background:linear-gradient(transparent 17px,#b4a181 17px,#b4a181 23px,transparent 23px)}
-#phone#phone#phone .pv-timeline button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0;width:62px;color:#998567;font:inherit;opacity:1!important;filter:none!important}
+#phone#phone#phone .pv-timeline{position:relative;display:flex;justify-content:space-between;margin:18px 0 12px;background:linear-gradient(transparent 17px,#b4a181 17px,#b4a181 23px,transparent 23px)}
+#phone#phone#phone .pv-timeline>i{position:absolute;z-index:0;left:0;top:17px;height:6px;border-radius:4px;background:linear-gradient(90deg,#789740,#a5bb56);box-shadow:0 1px 2px #46602266;transition:width .3s ease-out}
+#phone#phone#phone .pv-timeline button{position:relative;z-index:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0;width:62px;color:#998567;font:inherit;opacity:1!important;filter:none!important}
 #phone#phone#phone .pv-timeline b{font-size:32px;line-height:40px}
 #phone#phone#phone .pv-timeline .is-ready{color:#c48c0a}
 #phone#phone#phone .pv-timeline .is-claimed{color:#638046}
@@ -120,13 +121,16 @@
 #phone#phone#phone .pv-checkin .pv-online{padding-top:16px}
 #phone#phone#phone .pv-checkin .pv-section-heading>span{font-size:21px;color:var(--checkin-muted)}
 #phone#phone#phone .pv-checkin .pv-section-heading>span b{color:var(--checkin-green)}
-#phone#phone#phone .pv-checkin .pv-online-summary{height:222px;gap:22px;padding:8px 4px 0;background:none;border:0;border-radius:0}
+#phone#phone#phone .pv-checkin .pv-online-summary{height:194px;gap:22px;padding:8px 4px 0;background:none;border:0;border-radius:0}
 #phone#phone#phone .pv-checkin .pv-online-focus{width:168px;gap:3px;padding-right:16px;border-right-color:var(--checkin-line)}
 #phone#phone#phone .pv-checkin .pv-online-focus>span{font-size:22px;line-height:30px;font-weight:700}
 #phone#phone#phone .pv-checkin .pv-online-focus-reward{display:flex;align-items:center;justify-content:center;gap:6px;height:54px;margin-top:8px}
 #phone#phone#phone .pv-checkin .pv-online-focus-reward>.icon{width:38px;height:38px}
 #phone#phone#phone .pv-checkin .pv-online-focus-reward>b{font-size:29px;line-height:38px}
 #phone#phone#phone .pv-checkin .pv-online-focus .game-btn{width:138px;height:54px;min-height:54px;padding:3px;font-size:23px}
+#phone#phone#phone .pv-checkin .pv-heading-link,#phone#phone#phone .pv-checkin .pv-vip-link{min-height:0!important;padding:0!important;background:none!important;border:0!important;border-image:none!important;box-shadow:none!important;color:#647e3f!important;font-size:20px!important;line-height:30px!important;text-decoration:underline;text-underline-offset:4px;text-shadow:none!important}
+#phone#phone#phone .pv-checkin .pv-heading-link{width:auto!important;margin-left:auto;margin-right:12px;white-space:nowrap}
+#phone#phone#phone .pv-checkin .pv-vip-link{width:auto!important;height:30px!important;margin-top:0}
 #phone#phone#phone .pv-checkin .pv-online-track{padding:4px 0}
 #phone#phone#phone .pv-checkin .pv-timeline{margin:15px 0 9px}
 #phone#phone#phone .pv-checkin .pv-links .pv-link{min-height:48px;text-underline-offset:4px}
